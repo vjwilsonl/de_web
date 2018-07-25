@@ -159,3 +159,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Includes
+include( get_template_directory() . '/include/enqueue.php' );
+
+// Hooks
+add_action('wp_enqueue_scripts', 'de_enqueue');
+
+/**
+*	Custom Theme Options Page
+*
+**/
+if ( function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Theme Options',
+		'menu_title' => 'Theme Options',
+		'menu_slug'	 => 'theme-options',
+		'capability' => 'edit_posts',
+		'parent_slug'=> '',
+		'position'   => false,
+		'icon_url'	 => false
+		)
+	);
+
+
+}
+
+// Nav walker
+
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
