@@ -32,7 +32,10 @@ get_header();
 					<!-- News Section -->
 					<?php get_template_part( 'template-parts/home-news' ); ?>
 					<!-- End of News Section -->
+					<!-- Social media -->
+
 				</div>
+				<?php get_template_part( 'template-parts/home-social' ); ?>
 			</div>
 		</div>
 		<!-- End Of Features News Social -->
