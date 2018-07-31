@@ -229,7 +229,7 @@ ul > li {
   overflow: visible;
 }
 .hamburger:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .hamburger-box {
@@ -378,7 +378,7 @@ button:focus {
 .btn {
   font-family: "Archivo", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   position: relative;
   display: inline-block;
   padding: 1rem 1.5rem;
@@ -439,6 +439,40 @@ button:focus {
   color: #536dfe;
 }
 
+.dropdown .btn {
+  padding: 0.75rem 1.5rem;
+}
+
+.dropdown-menu {
+  color: #536dfe;
+  border: 2px solid #536dfe;
+  border-radius: 0;
+  font-size: 13px;
+  background: #f5f5f5;
+  z-index: 2;
+}
+.dropdown-menu .dropdown-item {
+  color: #536dfe;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+}
+.dropdown-menu .dropdown-item:hover {
+  color: #fff;
+  background: #536dfe;
+}
+
+.sorting-result {
+  text-align: right;
+  text-transform: uppercase;
+  color: #536dfe;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+}
+
+.pagination .page-link {
+  color: #536dfe;
+}
+
 /* Forms */
 .form-bluebg .form-subscription input {
   background: transparent;
@@ -449,7 +483,6 @@ button:focus {
 .form-bluebg .form-subscription input::placeholder {
   color: #fff;
   font-size: 12px;
-  text-decoration: italic;
 }
 .form-bluebg .form-subscription .form-control {
   color: #fff;
@@ -472,7 +505,6 @@ button:focus {
 .form-whitebg textarea::placeholder,
 .form-whitebg input::placeholder {
   font-size: 12px;
-  text-decoration: italic;
   color: inherit;
 }
 .form-whitebg .form-check {
@@ -488,6 +520,22 @@ button:focus {
   border-color: transparent;
   box-shadow: none;
   border-bottom: 1px solid #8c9eff;
+}
+
+/* FA Icon */
+.circle-icon {
+  background: #536dfe;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+  padding: 13px;
+}
+.circle-icon:hover, .circle-icon:active, .circle-icon:focus {
+  background: #8c9eff;
 }
 
 /* Hover Effects */
@@ -585,7 +633,6 @@ header.main-header .subnav-links li .subnav-search {
 header.main-header .subnav-links li input::placeholder {
   color: #fff;
   font-size: 12px;
-  text-decoration: italic;
 }
 header.main-header .navbar-wrapper {
   background-color: #8c9eff;
@@ -834,6 +881,7 @@ section.section-webcomics .caption h2 {
   color: #fff;
   font-family: "Archivo", sans-serif;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 section.section-webcomics .caption p {
   color: #fff;
@@ -846,6 +894,67 @@ section.section-webcomics img.webcomics-cover {
   z-index: -1;
   transition: all 0.5s ease-in-out;
   opacity: 0.75;
+}
+
+/* Webcomics Single */
+.chapter-link {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  padding: 1rem 0 0 1.5rem !important;
+}
+.chapter-link h6 {
+  display: inline-block;
+}
+.chapter-link .up {
+  color: #1de9b6;
+  font-size: 12px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.chapter-link--primary {
+  background: #fff;
+  color: #536dfe;
+  border: 0;
+  border-radius: 0;
+}
+
+.chapter-link-animated {
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+.chapter-link-animated:before {
+  background: #536dfe;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  z-index: -1;
+}
+.chapter-link-animated:hover h6 {
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.chapter-link-animated:hover:before {
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}
+
+section.section-wc-single {
+  margin-top: 1.5rem;
 }
 
 /* News and Features Section */

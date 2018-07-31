@@ -17,7 +17,7 @@
     margin-bottom: 2rem;
   }
 }
-/* For phone landscape and tablet portrait */
+/* For phone portriat, landscape and tablet portrait */
 @media only screen and (max-width: 992px) {
   header.main-header .subnav-links {
     display: none;
@@ -71,6 +71,10 @@
     margin-top: 0.5rem;
   }
 
+  .sidebar-left {
+    margin-top: 0 !important;
+  }
+
   footer.footer .form-bluebg {
     margin: 2rem 0;
   }
@@ -88,6 +92,18 @@
   .footer-border-mobile {
     display: block;
     min-height: 0px;
+  }
+
+  .sidebar {
+    margin-top: 2em;
+  }
+
+  .dropdown-menu a.dropdown-item {
+    padding: 0.5rem;
+  }
+
+  .sorting {
+    margin-top: 1em;
   }
 }
 /* For phone landscape and tablet portrait, excluding phone portrait */
