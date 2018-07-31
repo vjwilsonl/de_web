@@ -26,12 +26,12 @@
 				<div class="col-6 col-md-8 col-lg-3">
 					<div class="footer-text">
 						<p>
-							284 River Valley Road<br>
-							#01-01<br>
-							Singapore 238325
+							<?= (class_exists('acf')) ? get_field('street_name', 'options') : ''; ?><br>
+							<?= (class_exists('acf')) ? get_field('unit_no', 'options') : ''; ?><br>
+							Singapore <?= (class_exists('acf')) ? get_field('postal_code', 'options') : ''; ?>
 						</p>
 						<p>
-							email@differenceengine.sg
+							<?= (class_exists('acf')) ? get_field('contact_email', 'options') : ''; ?>
 						</p>
 					</div>
 					<div class="footer-social-links mt-4">
@@ -70,7 +70,7 @@
 			<div class="row mt-4">
 				<div class="col-12">
 					<div class="footer-bottom">
-						<p>All content copyright © & Trademarked TM 2018 Difference Engine or their respective owners. Image and its logos are ® and © 2018 Difference Engine. All rights reserved.</p>
+						<p><?= (class_exists('acf')) ? get_field('footer_text', 'options') : ''; ?></p>
 					</div>
 				</div>
 			</div>

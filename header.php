@@ -35,7 +35,7 @@
 	<header class="main-header">
 		<div class="row no-gutters px-3">
 			<div class="col-sm-12 col-lg-4">
-				<a class="navbar-brand" href="#"><img src="<?= get_template_directory_uri() ?>/assets/images/DE_logo_horizontal.png" alt="DE Logo"></a>
+				<a class="navbar-brand" href="<?= get_home_url(); ?>"><img src="<?= get_template_directory_uri() ?>/assets/images/DE_logo_horizontal.png" alt="DE Logo"></a>
 		  	</div>
 			<div class="col-sm-12 col-lg-8">
 				<!-- Secondary menu -->

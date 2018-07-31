@@ -44,7 +44,7 @@
 	            			<h4><?= $artist_name; ?></h4>
 						</div>
 					</div>
-				    <a class="blog-caption hvr-underline-from-left" href="features-single.html">
+				    <a class="blog-caption hvr-underline-from-left" href="<?= get_post_permalink() ?>">
 					    <div class="card-body p-1">
 					    	<p class="card-text"><?= $publish_date; ?></p>
 						    <h3 class="card-title"><?= the_title(); ?></h3>

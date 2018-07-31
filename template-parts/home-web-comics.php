@@ -39,7 +39,7 @@
 					?>
 				<div class="col-sm-6 col-lg-3">
 					<!-- Image thumbnail -->
-				    <a class="thumbnail text-left hvr-underline-from-left">
+				    <a class="thumbnail text-left hvr-underline-from-left" href="<?= get_post_permalink() ?>">
 				    	<div class="caption">
 				            <h2><?= the_title(); ?></h2>
 				            <p>By <?= $artist_name; ?></p>

@@ -188,3 +188,9 @@ if ( function_exists('acf_add_options_page')) {
 
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
+//remove span from contact form 7 element
+// add_filter('wpcf7_form_elements', function($content) {
+//     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+//     return $content;
+// });

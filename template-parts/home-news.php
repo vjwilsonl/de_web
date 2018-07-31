@@ -35,7 +35,7 @@
 			<div class="col-sm-12 col-lg-6">
 				<div class="card">
 				    <img class="card-img-top" src="<?= get_the_post_thumbnail_url() ?>" alt="Card image cap">
-				    <a class="blog-caption hvr-underline-from-left" href="news-single.html">
+				    <a class="blog-caption hvr-underline-from-left" href="<?= get_post_permalink() ?>">
 					    <div class="card-body p-1">
 						    	<p class="card-text"><?= $publish_date ?></p>
 							    <h3 class="card-title"><?= the_title(); ?></h3>
