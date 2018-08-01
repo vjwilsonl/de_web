@@ -194,3 +194,58 @@ require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 //     return $content;
 // });
+
+/**
+ * Posts per page for CPT archive
+ * prevent 404 if posts per page on main query
+ * is greater than the posts per page for product cpt archive
+ *
+ */
+
+function prefix_change_cpt_archive_per_page( $query ) {
+
+	if ( $query->is_main_query() && ! is_admin() && is_post_type_archive( 'news' ) ) {
+		$query->set( 'posts_per_page', '6' );
+	}
+
+}
+add_action( 'pre_get_posts', 'prefix_change_cpt_archive_per_page' );
+
+
+// Pagination
+function get_bootstrap_paginate_links($query) {
+	global $paged;
+	$pages = $query->max_num_pages;
+
+	if(!$pages)
+		$pages = 1;
+
+
+	if(1 != $pages)
+	{
+		echo '<nav aria-label="Page navigation">';
+		echo '<ul class="pagination justify-content-center">';
+		//echo '<li class="page-item disabled hidden-md-down d-none d-lg-block"><span class="page-link">Page '.$paged.' of '.$pages.'</span></li>';
+
+		if($paged > 1) {
+			echo '<li class="page-item"><a class="page-link" href="' . get_pagenum_link( $paged - 1 ) . '" aria-label="Previous Page"><span class="hidden-sm-down d-none d-md-block">Previous</span></a></li>';
+		} else {
+			echo '<li class="page-item disabled"><span class="page-link hidden-sm-down d-none d-md-block">Previous</span></li>';
+		}
+
+		for ($i=1; $i <= $pages; $i++)
+		{
+			echo ($paged == $i)? '<li class="page-item active"><span class="page-link">'.$i.'</span></li>' : '<li class="page-item"><a class="page-link" href="'.get_pagenum_link($i).'"><span class="sr-only">Page </span>'.$i.'</a></li>';
+		}
+
+		if ($paged < $pages) {
+			echo '<li class="page-item"><a class="page-link" href="'.get_pagenum_link($paged + 1).'" aria-label="Next Page"><span class="hidden-sm-down d-none d-md-block">Next </span></a></li>';
+		} else {
+			echo '<li class="page-item disabled"><span class="page-link hidden-sm-down d-none d-md-block">Next</span></li>';
+		}
+
+
+		echo '</ul>';
+		echo '</nav>';
+	}
+}
