@@ -19,11 +19,11 @@
                                 <div class="col-12">
                                     <div class="sidebar-links">
                                         <ul class="list">
-                                            <li class="list-item"><a class="link-animated after" href="#">Adventure</a></li>
-                                            <li class="list-item"><a class="link-animated after" href="#">Sci-fi</a></li>
-                                            <li class="list-item"><a class="link-animated after" href="#">Slice of Life</a></li>
-                                            <li class="list-item"><a class="link-animated after" href="#">Mystery</a></li>
-                                            <li class="list-item"><a class="link-animated after" href="#">Romance</a></li>
+                                            <?php
+                                                $web_comics_categories = get_categories('web_comics');
+                                                foreach ($web_comics_categories as $category): ?>
+                                                <li class="list-item"><a class="link-animated after" href="<?=get_category_link( $category->term_id )?>"><?= $category->name ?></a></li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </div>
                                 </div>

@@ -940,3 +940,9 @@ module.exports = select;
 
 //Initialize Clipboard
 new ClipboardJS('.copy-link');
+
+$('a[data-toggle="tooltip"]').tooltip({
+    animated: 'fade',
+    // placement: 'bottom',
+    trigger: 'hover'
+});
