@@ -1,5 +1,50 @@
 <?php get_header(); ?>
 
+<?php
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+    if(isset($_GET['order-by'])):
+        $get_order = $_GET['order-by'];
+    endif;
+
+    $category_name = '';
+    if(isset( $_GET['category'])):
+        $category_name = $_GET['category'];
+    endif;
+
+    if($get_order == 'asc' || $get_order == 'desc'):
+        $args = array(
+            'post_type'         => 'web_comics',
+            'category_name'     => $category_name,
+            'posts_per_page'    => 9,
+            'order'             => $get_order,
+            'orderby'           => 'post_title',
+            'paged'             => $paged,
+            'page'              => $paged,
+        );
+    else:
+        $args = array(
+            'post_type'         => 'web_comics',
+            'category_name'     => $category_name,
+            'posts_per_page'    => 9,
+            'order'             => 'DESC',
+            'orderby'           => 'ID',
+            'paged'             => $paged,
+            'page'              => $paged,
+        );
+    endif;
+
+    $web_comics = new WP_Query( $args );
+    $count_post = $web_comics->post_count;
+
+    $args = array(
+        'post_type'         => 'web_comics',
+        'category_name'     => $category_name,
+    );
+    $total_web_comics = new WP_Query( $args );
+    $total_count_post = $total_web_comics->post_count;
+?>
+
     <main>
         <div class="container">
             <section class="section-webcomics">
@@ -22,7 +67,8 @@
                                             <?php
                                                 $web_comics_categories = get_categories('web_comics');
                                                 foreach ($web_comics_categories as $category): ?>
-                                                <li class="list-item"><a class="link-animated after" href="<?=get_category_link( $category->term_id )?>"><?= $category->name ?></a></li>
+
+                                                <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>?category=<?= $category->name ?>"><?= $category->name ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
@@ -38,15 +84,20 @@
                                     <button class="btn btn--primary dropdown-toggle" type="button" id="sortingButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Sort by
                                     </button>
-                                    <div class="dropdown-menu collapse" aria-labelledby="sortingButton">
-                                        <a class="dropdown-item" href="#">Title (A-Z)</a>
-                                        <a class="dropdown-item" href="#">Title (Z-A)</a>
-                                        <a class="dropdown-item" href="#">Newest</a>
-                                    </div>
+                                    <form method="get">
+                                        <?php if(isset( $_GET['category'])): ?>
+                                            <input type="hidden" name="category" value="<?= $_GET['category'] ?>">
+                                        <?php endif; ?>
+                                        <div class="dropdown-menu collapse" aria-labelledby="sortingButton">
+                                            <button type="submit" name="order-by" value="asc" class="dropdown-item" >Title (A-Z)</button>
+                                            <button type="submit" name="order-by" value="desc" class="dropdown-item" >Title (Z-A)</button>
+                                            <button type="submit" name="order-by" value="new" class="dropdown-item" >Newest</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <p class="sorting-result">9 of 13 of results</p>
+                                <p class="sorting-result"><?= $count_post ?> of <?= $total_count_post ?> of results</p>
                             </div>
                         </div>
 
@@ -54,19 +105,6 @@
                         <div class="row webcomics-block">
 
                             <?php
-                                $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
-                                $args = array(
-                                    'post_type'      => 'web_comics',
-                                    'posts_per_page' => 9,
-                                    'order'          => 'DESC',
-                                    'orderby'        => 'ID',
-                                    'paged'          => $paged,
-                                    'page'           => $paged,
-                                );
-
-                                $web_comics = new WP_Query( $args );
-
                                 if ( $web_comics->have_posts() ) :
                                     while( $web_comics->have_posts() ) : $web_comics->the_post();
 
