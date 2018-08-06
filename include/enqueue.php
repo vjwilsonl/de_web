@@ -12,6 +12,12 @@ function de_enqueue() {
 	wp_register_script('de-jseffects', get_template_directory_uri() . '/assets/js/effects.js');
 
 	wp_enqueue_script('de-jseffects');
+
+    //if (is_post_type_archive('news') || is_post_type_archive('features') || is_post_type_archive('web_comics')) {
+        wp_register_script('de-clipboard', get_template_directory_uri() . '/assets/js/clipboard.js' , array(), FALSE, TRUE);
+
+        wp_enqueue_script('de-clipboard');
+    //}
 }
 
 ?>

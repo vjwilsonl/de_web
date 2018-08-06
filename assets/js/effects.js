@@ -31,11 +31,11 @@ $(document).ready(function() {
 		var titleHeight = $('.post-heading').height();
 		var scrollHeight = headerHeight + imgHeight + titleHeight;
 
-	  	if ($(this).scrollTop() > scrollHeight) {							// When scroll height reach the share button
-	   		$('.share-buttons').addClass('share-buttons--fix');				// Add class to fix the placement of button
-	  	} else {
-	    	$('.share-buttons').removeClass('share-buttons--fix');			// Else remove class
-	  	}
+	  	// if ($(this).scrollTop() > scrollHeight) {							// When scroll height reach the share button
+	   	// 	$('.share-buttons').addClass('share-buttons--fix');				// Add class to fix the placement of button
+	  	// } else {
+	    // 	$('.share-buttons').removeClass('share-buttons--fix');			// Else remove class
+	  	// }
 	});
 
 	$(window).scroll(function(e) {
