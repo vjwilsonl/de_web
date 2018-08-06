@@ -60,8 +60,8 @@ get_header();
 												<li class="list-inline-item"><a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;">
 <i class="fab fa-facebook-f circle-icon"></i></a></li>
 												<li class="list-inline-item"><a class="w-inline-block social-share-btn tw" href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=%20Check%20up%20this%20awesome%20content' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;"><i class="fab fa-twitter circle-icon"></i></a></li>
-												<li class="list-inline-item"><a href="facebook.com"><i class="fas fa-link circle-icon"></i></a></li>
-												<li class="list-inline-item"><a href="facebook.com"><i class="fas fa-envelope circle-icon"></i></a></li>
+	<!-- 											<li class="list-inline-item"><a href="facebook.com"><i class="fas fa-link circle-icon"></i></a></li>
+												<li class="list-inline-item"><a href="facebook.com"><i class="fas fa-envelope circle-icon"></i></a></li> -->
 											</ul>
 										</div>
 									</div>

@@ -41,6 +41,12 @@
 				</div>
 				<div class="col-sm-12 col-lg-7">
 					<div class="form-bluebg">
+					<h4>Subscribe to our newsletter</h4>
+					<?php echo do_shortcode( '[contact-form-7 id="87" title="Mail Chimp" html_class="form-subscription"]' ); ?>
+					</div>
+				</div>
+				<!-- <div class="col-sm-12 col-lg-7">
+					<div class="form-bluebg">
 						<h4>Subscribe to our newsletter</h4>
 						<form class="form-subscription">
 							<div class="form-row">
@@ -64,7 +70,7 @@
 							</div>
 						</form>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<!-- Copyright -->
 			<div class="row mt-4">

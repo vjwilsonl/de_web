@@ -27,27 +27,7 @@
 			<!-- Subscription form -->
 		<div class="form-bluebg">
 			<h4>Subscribe to our newsletter</h4>
-			<form class="form-subscription">
-			  <div class="form-row">
-				    <div class="col-6">
-				      <input type="text" class="form-control" placeholder="Full Name">
-				    </div>
-				    <div class="col-6">
-				      <input type="text" class="form-control" placeholder="Email">
-				    </div>
-			   </div>
-			   <div class="form-row">
-				    <div class="col-12">
-				    	<div class="form-check">
-					    	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">I've read and accept the <a class="link-animated after" href="#">terms and conditions.</a></label>
-						</div>
-				    </div>
-				    <div class="col-12">
-				      <button type="submit" class="btn btn--white btn-animated">Submit</button>
-				    </div>
-			  </div>
-			</form>
+			<?php echo do_shortcode( '[contact-form-7 id="87" title="Mail Chimp" html_class="form-subscription"]' ); ?>
 		</div>
 		</div>
 	</div>
