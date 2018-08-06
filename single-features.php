@@ -29,7 +29,7 @@
                                                 <li class="align-middle"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" title="Share on Facebook."><i class="fab fa-facebook-f"></i></a></li>
                                                 <li class="align-middle"><a href="https://twitter.com/home/?status=<?php the_title(); ?> - <?php the_permalink(); ?>" target="_blank" title="Tweet this!"><i class="fab fa-twitter"></i></a></li>
                                                 <li class="align-middle"><a class="copy-link" data-clipboard-text="<?php the_permalink(); ?>" tabindex="0" data-trigger="click" data-toggle="tooltip" title="Copy Link"><i class="fas fa-link"></i></a></li>
-                                                <li class="align-middle"><a href="mailto:?subject=Look at this website&body=Hi, I found this website and thought you might like it <?php the_title(); ?> - <?php the_permalink(); ?>" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                                                <li class="align-middle"><a href="mailto:?subject=Look at this website&body=Hi, I found this website and thought you might like it <?php the_title(); ?> - <?php the_permalink(); ?>" target=""><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
