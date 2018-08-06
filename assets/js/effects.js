@@ -48,6 +48,37 @@ $(document).ready(function() {
 	    	$('.sticky-logo').hide();										// Hide alt-logo
 		};
 	});
+
+	$(window).on('load resize',function(e) {
+		if ($(window).width() < 1201) {												// When window size is less than 1201px (mobile & tablet)
+			var position = $(window).scrollTop();
+			$(window).scroll(function() {
+				var scroll = $(window).scrollTop();
+			    if (scroll > position) {											// When scrolled down
+			        // $('.wc-pagination-mobile').slideUp(200);
+			        $('.wc-pagination-mobile').addClass('translate-up');			// Slide up top bar
+			        $('.wc-pagination-fix-mobile').addClass('translate-down');		// Slide down bottom bar
+			    } else {															// When scrolled up
+			    	// $('.wc-pagination-mobile').slideDown(200);
+			    	$('.wc-pagination-mobile').removeClass('translate-up');			// Slide down top bar 
+			    	$('.wc-pagination-fix-mobile').removeClass('translate-down');	// Slide up bottom bar
+			    };
+			    position = scroll;
+			});
+		} else if ($(window).width() >= 1200) {										// When window size is more or equal than 1200px (desktop)
+			var position = $(window).scrollTop();									
+			$(window).scroll(function() {											
+				var scroll = $(window).scrollTop();									
+			    if (scroll > position) {											// When scrolled down
+			        $('.wc-pagination-web').addClass('translate-up');				// Slide up top bar
+			    } else {															// When scrolled up
+			    	$('.wc-pagination-web').removeClass('translate-up');			// Slide down top bar
+			    };
+			    position = scroll;
+			});
+		}
+	});
 });
 
-// ===== Scroll to Top ==== 
+
+

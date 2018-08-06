@@ -25,6 +25,68 @@ $white: #fff;
 
 $white-border: 1px solid #fff;
 
+.translate-up {
+	transform: translateY(-80px);
+	transition: 0.5s;
+}
+
+.translate-down {
+	transform: translateY(80px);
+	transition: 0.5s;
+}
+
+.wc-pagination-web,
+.wc-pagination-mobile,
+.wc-pagination-fix-mobile {
+	z-index: 3;
+	display: none;
+	background-color: $de-blue;
+	transition: 0.5s;
+
+	.pagination {
+
+		.chapter-pg {
+			position: relative;
+		    display: block;
+		    padding: .5rem .75rem;
+		    margin-left: -1px;
+		    line-height: 1.25;
+		    color: $white;
+		    background-color: transparent;
+		    border: 0;
+		}
+
+		.page-link {
+			background-color: transparent;
+			color: $white;
+			border: 0;
+
+			&:focus,
+			&:hover {
+				color: $de-light-blue;
+			}
+		}
+
+		.page-item.disabled .page-link {
+			color: $de-light-blue;
+		}
+	}
+}
+
+.wc-read-share {
+	.list-inline-item {
+		padding: .5rem .75rem;
+		color: $white;
+	}
+}
+
+.wc-control {
+	background: $de-blue;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 
 /*Body*/
 
@@ -33,6 +95,12 @@ body {
   color: $dark-grey;
   font-size: 13px;
   background-color: $de-grey;
+}
+
+body {
+	&.wc-read {
+		background-color: $white;
+	}
 }
 
 a {
@@ -45,6 +113,9 @@ a:hover {
 	color: $de-light-blue;
 }
 
+
+/* Cards */
+
 .card,
 .card-img-top {
 	border: 0;
@@ -53,6 +124,11 @@ a:hover {
 
 .card-columns .card {
 	margin-bottom: 1.5rem;
+}
+
+/* Float */
+.fl-left {
+	display: inline-block;
 }
 
 /* Headings */
@@ -107,6 +183,10 @@ body:not(.home) {
 			margin-top: 0;
 		}
 	}
+}
+
+.coming-soon {
+	background: $de-blue;
 }
 
 section, aside {
@@ -216,10 +296,37 @@ ul> li {
 	}
 }
 
+/* Modal Box */
+.modal-content {
+    border: 1px solid $de-blue;
+    border-radius: 0;
+}
+
+.modal-header {
+	border-bottom: 0;
+}
+
+.close {
+	color: $de-blue;
+	opacity: 1;
+
+	&:hover,
+	&:focus {
+		color: $de-light-blue;
+	}
+}
+
 /* Share buttons */
+
+.wc-read-share {
+	.share-buttons {
+		color: $white;
+	}
+}
 
 .share-buttons {
     background: none;
+    border: 0;
 
 	ul li {
 		width: 40px;

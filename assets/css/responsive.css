@@ -19,6 +19,22 @@
 }
 /* For phone portriat, landscape and tablet portrait */
 @media only screen and (max-width: 992px) {
+  .wc-pagination-mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .wc-pagination-fix-mobile {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   header.main-header .subnav-links {
     display: none;
   }
@@ -127,6 +143,17 @@
 }
 /* For desktop */
 @media only screen and (min-width: 1201px) {
+  .wc-pagination-web {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /*.wc-pagination-mobile {
+  	display: none;
+  }*/
   body:not(.home) section.section-news .card,
   body:not(.home) section.section-features .card {
     margin-bottom: 2rem;
@@ -134,6 +161,21 @@
 }
 /* For tablet landscape */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  .wc-pagination-mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  	/*.wc-pagination-web {
+  		display: block;
+  	}
+  
+  	.wc-pagination-mobile {
+  		display: none;
+  	}*/
   .comics-item .btn {
     width: 100%;
     margin-bottom: 1rem;
