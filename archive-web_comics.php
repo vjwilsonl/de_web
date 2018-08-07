@@ -68,7 +68,7 @@
                                                 $web_comics_categories = get_categories('web_comics');
                                                 foreach ($web_comics_categories as $category): ?>
 
-                                                <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>?category=<?= $category->name ?>"><?= $category->name ?></a></li>
+                                                <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>?category=<?= $category->slug ?>"><?= $category->name ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
@@ -139,7 +139,7 @@
                                             <!-- New flag -->
                                             <?php if(get_field('status_flag') != "None"): ?>
                                             <div class="flag-wrapper">
-                                                <strong class="flag-new flag"><?=get_field('status_flag')?></strong>
+                                                <strong class="<?=(get_field('status_flag') == "New")? "flag-new" : "flag-comingsoon" ?> flag"><?=get_field('status_flag')?></strong>
                                             </div>
                                             <?php endif; ?>
                                         </div>
