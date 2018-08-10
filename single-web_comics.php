@@ -22,6 +22,7 @@ while ( have_posts() ) :
 ?>
 			<?php if ($valid_chapter) : ?> <!-- show reader -->
 				<?php include( locate_template( 'template-parts/webcomic/chapter.php', false, false )); ?>
+				<?php get_footer(); ?>
 			<?php else: ?> <!-- show web comic info -->
 				<?php get_header(); ?>
 				<?php include( locate_template( 'template-parts/webcomic/info.php', false, false )); ?>

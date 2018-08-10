@@ -5,7 +5,13 @@
 			</div>
 	</section>
 <?php else: ?>
-	<section class="section-about">
+	<?php 
+		$page = strtolower(get_the_title());
+		if ($page == 'contact us') {
+			$page = 'contact';
+		}
+	?>
+	<section class="section-<?= $page ?>">
 		<div class="row">
 			<div class="col-12 section-title">
 				<h1><?= the_title(); ?></h1>
