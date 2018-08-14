@@ -74,7 +74,9 @@
                 <div class="col-8 pl-3">
                     <div class="row p-2">
                         <div class="col-1">
-                            <i class="fas fa-list-ul" style="color: white"></i>
+                            <a href="<?= $current_url ?>#chapters">
+                               <i class="fas fa-list-ul" style="color: white"></i> 
+                            </a>
                         </div>
                         <div class="col">
                             <h6 style="color: white; margin-bottom: 0"><?= the_title() ?> - <?= $curr_chapter['chapter_title']; ?></h6>
