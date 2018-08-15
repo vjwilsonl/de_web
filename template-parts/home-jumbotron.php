@@ -16,7 +16,7 @@
 <div class="jumbotron">
 	<div class="row no-gutters">
 		<div class="col-sm-12 jumbotron-image-mobile">
-			<img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/DE_jumbotron_artmobile.jpg">
+			<img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/DE_jumbotron_artmobile2.jpg">
 		</div>
 		<div class="col-sm-12 col-lg-6 jumbotron-image">
 		</div>

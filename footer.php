@@ -84,10 +84,10 @@
         </footer>
         <div class="row no-gutters">
             <div class="col-12 footer-border-mobile">
-                <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/DE_jumbotron_artmobile.jpg">
+                <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/DE_jumbotron_artmobile2.jpg">
             </div>
             <div class="col-12 footer-border">
-                <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/DE_footer_img.png">
+                <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/DE_footer_img2.png">
             </div>
         </div>
     </div>
