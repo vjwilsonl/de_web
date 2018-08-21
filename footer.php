@@ -12,7 +12,12 @@
 ?>
 
 	</div><!-- #content -->
-
+<?php
+        if (class_exists('acf')) {
+                $footer_logo = get_field('footer_logo', 'option');
+                $footer_logo_url = (isset($footer_logo['url'])) ? $footer_logo['url'] : get_template_directory_uri().'/assets/images/DE_logo_square.svg' ;
+        }
+?>
 	<!-- Footer -->
     <div class="footer-sticky">
         <footer class="footer bg-blue">
@@ -20,7 +25,7 @@
                 <div class="row">
                     <div class="col-6 col-md-4 col-lg-2">
                         <div class="footer-brand">
-                            <img src="<?= get_template_directory_uri() ?>/assets/images/DE_logo_square.svg">
+                            <img src="<?= $footer_logo_url; ?>">
                         </div>
                     </div>
                     <div class="col-6 col-md-8 col-lg-3">

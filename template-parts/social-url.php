@@ -13,6 +13,6 @@
 ?>
 <?php if ( class_exists('acf')): ?>
 	<?= (get_field('facebook_url', 'options')) ? '<li class="list-inline-item btn-wrapper"><a class="link-animated after" href="'. get_field('facebook_url', 'options') . ' ">facebook</a></li>' : '' ; ?>
-	<?= (get_field('instagram_url', 'options')) ? '<li class="list-inline-item btn-wrapper"><a class="link-animated after" href="'. get_field('instagram_url', 'options') . ' ">twitter</a></li>' : '' ; ?>
-	<?= (get_field('twitter_url', 'options')) ? '<li class="list-inline-item btn-wrapper"><a class="link-animated after" href="'. get_field('twitter_url', 'options') . ' ">instagram</a></li>' : '' ; ?>
+	<?= (get_field('instagram_url', 'options')) ? '<li class="list-inline-item btn-wrapper"><a class="link-animated after" href="'. get_field('instagram_url', 'options') . ' ">instagram</a></li>' : '' ; ?>
+	<?= (get_field('twitter_url', 'options')) ? '<li class="list-inline-item btn-wrapper"><a class="link-animated after" href="'. get_field('twitter_url', 'options') . ' ">twitter</a></li>' : '' ; ?>
 <?php endif; ?>

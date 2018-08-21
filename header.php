@@ -29,13 +29,18 @@
 
 	<?php wp_head(); ?>
 </head>
-
+<?php
+        if ( class_exists('acf') ) {
+                $header_logo = get_field('header_logo', 'option');
+                $header_logo_url = (isset($header_logo['url'])) ? $header_logo['url'] : get_template_directory_uri().'/assets/images/DE_logo_horizontal.png' ;
+        }
+?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<header class="main-header">
 		<div class="row no-gutters px-3">
 			<div class="col-sm-12 col-lg-4">
-				<a class="navbar-brand" href="<?= get_home_url(); ?>"><img src="<?= get_template_directory_uri() ?>/assets/images/DE_logo_horizontal.png" alt="DE Logo"></a>
+				<a class="navbar-brand" href="<?= get_home_url(); ?>"><img src="<?= $header_logo_url; ?>" alt="DE Logo"></a>
 		  	</div>
 			<div class="col-sm-12 col-lg-8">
 				<!-- Secondary menu -->

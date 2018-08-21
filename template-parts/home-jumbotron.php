@@ -12,6 +12,17 @@
  */
 ?>
 <!-- Jumbotron-->
+<?php 
+
+if (class_exists('acf')) {
+	$jumbotron_title = get_field('jumbotron_title', 'options');
+	$jumbotron_desc = get_field('jumbotron_description', 'options');
+} else {
+	$jumbotron_title = '';
+	$jumbotron_desc = '';
+}
+
+?>
 <section class="section-jumbotron">
 <div class="jumbotron">
 	<div class="row no-gutters">
@@ -21,10 +32,8 @@
 		<div class="col-sm-12 col-lg-6 jumbotron-image">
 		</div>
 		<div class="col-sm-12 col-lg-6 jumbotron-caption bg-blue align-middle">
-			<h1>Difference Engine is a Singapore-based independent comics publishing house.</h1>
-			<p>We are inspired by the wealth of stories coming from Asia and are driven by the commitment to share those narratives with the world. We believe in sparking imagination through the make-believe, in the ability of visual storytelling to shape ideas, and in a reality powered by comics.</p>
-			<!--<a class="btn btn--white btn-animated" href="#" role="button">Learn more<i class="fas fa-chevron-right" style="margin-left: 0.5em"></i></a>-->
-			<!-- Subscription form -->
+			<h1><?= $jumbotron_title; ?></h1>
+			<p><?= $jumbotron_desc; ?></p>
 		<div class="form-bluebg">
 			<h4>Subscribe to our newsletter</h4>
 			<?php echo do_shortcode( '[contact-form-7 id="87" title="Mail Chimp" html_class="form-subscription"]' ); ?>
