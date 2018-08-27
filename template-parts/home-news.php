@@ -35,13 +35,16 @@
 			<div class="col-sm-12 col-lg-6">
 				<div class="card">
 				    <img class="card-img-top" src="<?= get_the_post_thumbnail_url() ?>" alt="Card image cap">
-				    <a class="blog-caption hvr-underline-from-left" href="<?= get_post_permalink() ?>">
+				    <div class="blog-caption">
 					    <div class="card-body p-1">
-						    	<p class="card-text"><?= $publish_date ?></p>
-							    <h3 class="card-title"><?= the_title(); ?></h3>
-							    <p class="card-text"><?= $trimmed_content; ?></p>
+					    	<p class="card-text"><?= $publish_date ?></p>
+						    <h3 class="card-title"><a class="hvr-highlight hvr-highlight-thick" href="<?= get_post_permalink() ?>"><?= the_title(); ?></a></h3>
+						    <p class="card-text"><?= $trimmed_content; ?></p>
 				    	</div>
-			    	</a>
+				    	<div class="card-tags mt-3">
+				    		Tags: <a href="index.html">Tag 1</a>, <a href="index.html">Tag 2</a>, Tag 3, Tag 4
+				    	</div>
+				    </div>
 			    </div>
 			</div>
 		<?php endwhile; ?>
