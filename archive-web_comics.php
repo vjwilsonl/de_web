@@ -67,9 +67,9 @@
                                             <?php
                                                 $web_comics_categories = get_categories('web_comics');
                                                 foreach ($web_comics_categories as $category): ?>
-
-                                                <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>?category=<?= $category->slug ?>"><?= $category->name ?></a></li>
-                                            <?php endforeach; ?>
+                                                    <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>?category=<?= $category->slug ?>"><?= $category->name ?></a></li>
+                                                <?php endforeach; ?>
+                                            <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>">ALL</a></li>
                                         </ul>
                                     </div>
                                 </div>
