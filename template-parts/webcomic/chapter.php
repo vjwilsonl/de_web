@@ -17,6 +17,7 @@
 
 	<?php wp_head(); ?>
 </head>
+
 <?php 
     global $wp;
     $current_url     = home_url( $wp->request ); 
@@ -33,8 +34,8 @@
                 <div class="col-4 pl-3">
                     <div class="row p-2">
                         <div class="col-1">
-                            <a href="<?= $current_url ?>#chapters">
-                                <i class="fas fa-list-ul" style="color: white"></i>
+                            <a href="/">
+                                <i class="fas fa-home" style="color: white; font-size: 14px;"></i>
                             </a>
                         </div>
                         <div class="col">
@@ -48,7 +49,12 @@
                         <li class="page-item p-0 <?= (!$has_previous) ? 'disabled' : ''; ?>">
                           <a class="page-link" href="<?= '?chapter='. ($chapter - 1); ?>" tabindex="-1"><i class="fas fa-angle-left"></i></a>
                         </li>
-                        <li class="page-item p-0"><span class="chapter-pg">Ch. <?= $chapter; ?></span></li>
+                        <li class="page-item p-0">
+                            <a href="<?= $current_url ?>#chapters">
+                                <i class="fas fa-list-ul" style="color: white"></i>
+                            </a>
+                            <span class="chapter-pg">Ch. <?= $chapter; ?></span>
+                        </li>
                         <li class="page-item p-0 <?= (!$has_next) ? 'disabled' : ''; ?>">
                           <a class="page-link" href="<?= '?chapter='. ($chapter + 1); ?>"><i class="fas fa-angle-right"></i></a>
                         </li>
@@ -74,8 +80,8 @@
                 <div class="col-8 pl-3">
                     <div class="row p-2">
                         <div class="col-1">
-                            <a href="<?= $current_url ?>#chapters">
-                               <i class="fas fa-list-ul" style="color: white"></i> 
+                            <a href="/">
+                                <i class="fas fa-home" style="color: white; font-size: 14px;"></i>
                             </a>
                         </div>
                         <div class="col">
@@ -127,7 +133,12 @@
                     <li class="page-item p-0 <?= (!$has_previous) ? 'disabled' : ''; ?>">
                       <a class="page-link" href="<?= '?chapter='. ($chapter - 1); ?>" tabindex="-1"><i class="fas fa-angle-left"></i> Prev</a>
                     </li>
-                    <li class="page-item p-0 mx-4"><span class="chapter-pg">Ch. <?= $chapter; ?></span></li>
+                    <li class="page-item p-0">
+                        <a href="<?= $current_url ?>#chapters">
+                            <i class="fas fa-list-ul" style="color: white"></i>
+                        </a>
+                        <span class="chapter-pg">Ch. <?= $chapter; ?></span>
+                    </li>
                     <li class="page-item p-0 <?= (!$has_next) ? 'disabled' : ''; ?>">
                       <a class="page-link" href="<?= '?chapter='. ($chapter + 1); ?>">Next <i class="fas fa-angle-right"></i></a>
                     </li>

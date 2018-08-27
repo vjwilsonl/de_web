@@ -42,7 +42,7 @@
 				    <a class="thumbnail text-left hvr-underline-from-left" href="<?= get_post_permalink() ?>">
 				    	<div class="caption">
 				            <h2><?= the_title(); ?></h2>
-				            <p>By <?= $artist_name; ?></p>
+				            <p><?= ($artist_name) ? 'By '. $artist_name : ''; ?></p>
 				        </div>	
 				        <div class="overlay">
 				        	<img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="webcomics-cover">
