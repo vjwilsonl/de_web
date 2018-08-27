@@ -25,7 +25,7 @@
   .wc-pagination-mobile .pagination .chapter-pg,
   .wc-pagination-fix-mobile .pagination .chapter-pg {
     position: relative;
-    display: block;
+    display: inline-block;
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
@@ -97,29 +97,35 @@ h2 {
   font-family: "Archivo Black", sans-serif;
   text-transform: uppercase;
   color: #0077C8;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-style: normal; }
 
 h3,
 h4,
 h5,
 h6 {
   font-family: "Archivo", sans-serif;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   color: #0077C8;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-style: normal; }
 
 h1 {
-  font-size: 30px; }
+  font-size: 30px;
+  font-style: normal; }
 
 h2 {
-  font-size: 24px; }
+  font-size: 24px;
+  font-style: normal; }
 
 h3 {
-  font-size: 22px; }
+  font-size: 22px;
+  font-style: normal; }
 
 h4 {
-  font-size: 18px; }
+  font-size: 18px;
+  font-style: normal; }
 
 p {
   word-wrap: break-word; }
@@ -186,7 +192,7 @@ ul > li {
     text-decoration: none;
     color: #0077C8;
     font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     text-transform: uppercase; }
   .sidebar a:hover {
     color: #72C7E7; }
@@ -251,7 +257,7 @@ ul > li {
 .post-content blockquote {
   font-size: 18px;
   font-family: "Archivo", sans-serif;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   line-height: 1.4;
   padding: 0 1rem;
@@ -374,7 +380,7 @@ ul > li {
   vertical-align: top;
   font-weight: normal;
   font-family: "Archivo", sans-serif;
-  font-weight: 600; }
+  font-weight: bold; }
 
 .flag-new {
   background: #ff8a80; }
@@ -397,7 +403,7 @@ button:focus {
 
 .btn {
   font-family: "Archivo", sans-serif;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 13px;
   position: relative;
   display: inline-block;
@@ -461,7 +467,7 @@ button:focus {
   z-index: 2; }
   .dropdown-menu .dropdown-item {
     color: #0077C8;
-    font-weight: 600;
+    font-weight: bold;
     padding: 0.75rem 1.5rem; }
     .dropdown-menu .dropdown-item:hover {
       color: #fff;
@@ -472,7 +478,7 @@ button:focus {
   text-transform: uppercase;
   color: #0077C8;
   font-family: "Archivo", sans-serif;
-  font-weight: 600; }
+  font-weight: bold; }
 
 .pagination .page-link {
   color: #0077C8; }
@@ -531,6 +537,23 @@ button:focus {
     background: #72C7E7; }
 
 /* Hover Effects */
+.hvr-highlight {
+  flex: 1;
+  line-height: 1.2;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #B9E6EB 0, #B9E6EB 100%);
+  background-position: 0 1.2em;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: 1s; }
+
+.hvr-highlight:hover {
+  background-size: 100% 100%;
+  transition: 1s; }
+
+.hvr-highlight-thick {
+  background-position: 0 -0.1em; }
+
 .hvr-forward {
   display: inline-block;
   vertical-align: middle;
@@ -625,7 +648,7 @@ header.main-header {
         font-size: 14px;
         color: #fff;
         font-family: "Archivo", sans-serif;
-        font-weight: 600;
+        font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 0.5rem 1.5rem; }
@@ -647,7 +670,7 @@ header.main-header {
     font-size: 14px;
     color: #fff;
     font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 0.5rem 1.5rem; }
@@ -689,7 +712,7 @@ section.section-jumbotron {
     padding: 2.5rem; }
     section.section-jumbotron .jumbotron-caption h1 {
       font-family: "Archivo", sans-serif;
-      font-weight: 600;
+      font-weight: bold;
       color: #fff;
       margin-bottom: 1rem; }
     section.section-jumbotron .jumbotron-caption p {
@@ -742,7 +765,7 @@ section.section-genre .genre-link {
     outline: none; }
   section.section-genre .genre-link h3 {
     font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     letter-spacing: 0;
     position: absolute;
     top: 50%;
@@ -809,7 +832,7 @@ section.section-webcomics .caption {
   section.section-webcomics .caption h2 {
     color: #fff;
     font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 0.5rem; }
   section.section-webcomics .caption p {
     color: #fff; }
@@ -837,7 +860,7 @@ section.section-webcomics img.webcomics-cover {
     color: #1de9b6;
     font-size: 12px;
     font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     margin-left: 0.5rem; }
 
 .chapter-link--primary {
@@ -882,6 +905,9 @@ section.section-features {
     padding: 1rem;
     background-color: #fff; }
 
+section.section-news .card-body {
+  min-height: 235px; }
+
 section.section-features .blog-caption {
   background-color: #0077C8; }
 section.section-features p {
@@ -902,6 +928,9 @@ section.section-features .caption {
 
 section.section-contact .contact-item i {
   color: #0077C8; }
+
+.post-related {
+  border-top: 1px solid #0077C8; }
 
 /* Footer */
 .footer {
