@@ -31,6 +31,7 @@
 			<?php $news->the_post(); 
 				$trimmed_content = wp_filter_nohtml_kses( wp_trim_words( get_the_content(), 25, "" ) );
 				$publish_date = get_the_date( 'F j, Y');
+                $post_tags = get_the_tags();
 			?>
 			<div class="col-sm-12 col-lg-6">
 				<div class="card">
@@ -42,7 +43,19 @@
 						    <p class="card-text"><?= $trimmed_content; ?></p>
 				    	</div>
 				    	<div class="card-tags mt-3">
-				    		Tags: <a href="index.html">Tag 1</a>, <a href="index.html">Tag 2</a>, Tag 3, Tag 4
+                            <?php
+                                if ( $post_tags ):
+                                    echo "Tags: ";
+                                    $last_tag = end(array_keys($post_tags));
+                                    foreach( $post_tags as $key => $value ):
+                                        if($key == $last_tag):
+                                            echo "<a href='" . get_post_type_archive_link( 'news' ) ?>?tag=<?= $value->slug . "'>" . $value->name . "</a>";
+                                        else:
+                                            echo "<a href='" . get_post_type_archive_link( 'news' ) ?>?tag=<?= $value->slug . "'>" . $value->name . "</a>" . ", ";
+                                        endif;
+                                    endforeach;
+                                endif;
+                            ?>
 				    	</div>
 				    </div>
 			    </div>
