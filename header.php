@@ -25,6 +25,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo:400,600" rel="stylesheet">
+    <link href="//cloud.typenetwork.com/projects/2596/fontface.css/" rel="stylesheet" type="text/css">
 
 
 	<?php wp_head(); ?>
