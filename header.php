@@ -65,9 +65,11 @@
 		    		</span>
 		  		</button>
 				<div class="col-sm-12 col-lg-12 collapse navbar-collapse" id="navbar-primenu">
-					<div class="sticky-logo" style="display:none">
-						<img src="<?= get_template_directory_uri() ?>/assets/images/DE_sticky_logo.svg">
-					</div>
+					<a href="<?= get_home_url(); ?>">
+						<div class="sticky-logo" style="display:none">
+							<img src="<?= get_template_directory_uri() ?>/assets/images/DE_sticky_logo.svg">
+						</div>
+					</a>
 					<?php 
 						wp_nav_menu( array(
 							'theme_location'  => 'menu-1',
