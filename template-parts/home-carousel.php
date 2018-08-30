@@ -41,9 +41,11 @@
 			    <span class="sr-only">Next</span>
 			  </a>
 			  <ol class="carousel-indicators">
-			    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			  	<?php foreach ($carousel as $key => $value): ?>
+			    	<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key; ?>" 
+			    		class="<?= ($key == 0) ? 'active' : '' ; ?>">
+			    	</li>
+				<?php endforeach; ?>
 			  </ol>
 			</div>
 		</div>

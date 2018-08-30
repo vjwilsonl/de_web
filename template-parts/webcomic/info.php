@@ -26,7 +26,7 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="wc-content-wrapper">
-										<p><?= the_content(); ?></p>
+										<?= the_content(); ?>
 									</div>
 								</div>
 							</div>

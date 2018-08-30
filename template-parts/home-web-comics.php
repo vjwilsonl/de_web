@@ -33,7 +33,7 @@
 				<?php while ($web_comics->have_posts()): ?>
 					<?php 
 						$web_comics->the_post();
-						$artist_name = (class_exists('acf')) ? ((get_field('artist_name')) ? get_field('artist_name') : '') : '' ;
+						$creator = get_field('creator');
 						$status_flag = (class_exists('acf')) ? ((get_field('status_flag')) ? get_field('status_flag') : '') : '' ;
 						$flag_class = ($status_flag) ? ((strtolower($status_flag) == 'new') ? 'flag-new' : 'flag-comingsoon') : '';
 					?>
@@ -42,7 +42,20 @@
 				    <a class="thumbnail text-left hvr-underline-from-left" href="<?= get_post_permalink() ?>">
 				    	<div class="caption">
 				            <h2><?= the_title(); ?></h2>
-				            <p><?= ($artist_name) ? 'By '. $artist_name : ''; ?></p>
+				            <p>
+				            	<?php
+                                    if(is_array($creator) && !empty($creator)):
+                                        $last_creator = end(array_keys($creator));
+                                        foreach ($creator as $key => $value):
+                                            if($key == $last_creator):
+                                                echo $value['name'];
+                                            else:
+                                                echo $value['name'] . " / ";
+                                            endif;
+                                        endforeach;
+                                    endif;
+                                ?>
+							</p>
 				        </div>	
 				        <div class="overlay">
 				        	<img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="webcomics-cover">
