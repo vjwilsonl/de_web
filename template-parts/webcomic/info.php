@@ -79,7 +79,7 @@
 											<div class="col-3">
 												<img class="rounded-circle w-100" src="<?= ($value['image']['url']) ? $value['image']['url'] : '' ; ?>">			
 											</div>
-											<div class="col-9">
+											<div class="col-9 wc-creator-section">
 												<h3><?= $value['name']; ?></h3>
 												<strong><?= $value['role']; ?></strong>
 												<?= $value['description']; ?>

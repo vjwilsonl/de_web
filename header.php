@@ -30,10 +30,13 @@
 
 	<?php wp_head(); ?>
 </head>
+
 <?php
         if ( class_exists('acf') ) {
                 $header_logo = get_field('header_logo', 'option');
                 $header_logo_url = (isset($header_logo['url'])) ? $header_logo['url'] : get_template_directory_uri().'/assets/images/DE_logo_horizontal.png' ;
+                $sticky_header_logo = get_field('sticky_header_logo', 'option');
+                $sticky_header_logo_url = (isset($sticky_header_logo['url'])) ? $sticky_header_logo['url'] : get_template_directory_uri().'/assets/images/DE_sticky_logo.svg' ;
         }
 ?>
 <body <?php body_class(); ?>>
@@ -67,7 +70,7 @@
 				<div class="col-sm-12 col-lg-12 collapse navbar-collapse" id="navbar-primenu">
 					<a href="<?= get_home_url(); ?>">
 						<div class="sticky-logo" style="display:none">
-							<img src="<?= get_template_directory_uri() ?>/assets/images/DE_sticky_logo.svg">
+							<img src="<?= $sticky_header_logo_url; ?>">
 						</div>
 					</a>
 					<?php 
