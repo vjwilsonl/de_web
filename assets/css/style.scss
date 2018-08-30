@@ -509,13 +509,15 @@ ul> li {
 	   			backface-visibility: hidden;
 	    position: relative;
 	  	transition: 0.5s color ease;
-	    text-decoration: none;
+	    text-decoration: underline;
 	    color: $white;
 	}
 
 	a {
 		&:hover {
 			color: $de-light-blue;
+			text-decoration: none;
+			transition: 0.5s ease;
 		}
 
 		&.after:after {
@@ -1330,6 +1332,15 @@ section.section-webcomics {
 
 section.section-wc-single {
 	margin-top: 1.5rem;
+}
+
+/* web comic creator anchor tag */
+.wc-creator-section p a,
+.wc-creator-section p a:active,
+.wc-creator-section p a:hover {
+  text-transform: none;
+  font-family: inherit;
+  font-weight: normal;
 }
 
 /* News and Features Section */
