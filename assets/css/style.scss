@@ -1,15 +1,16 @@
 /*Import font-face*/
 
-@font-face {
+/*@font-face {
     font-family: InputMonoReg;
     src: url(../fonts/InputMono-Regular.ttf) format('truetype');
-}
+}*/
 
 /*Variables*/
 
 $archivo-black: "Archivo Black", sans-serif;
 $archivo: "Archivo", sans-serif;
-$input-mono: "InputMonoReg", sans-serif;
+$input-mono: "Input Mono Reg", sans-serif;
+$input-mono-bold: "Input Mono Bd", sans-serif;
 
 $dark-grey: #585858;
 /*$de-blue: #536dfe;*/
@@ -115,6 +116,12 @@ a:hover {
 	color: $de-light-blue;
 }
 
+p {
+	strong {
+		font-family: $input-mono-bold;
+	}
+}
+
 
 /* Cards */
 
@@ -149,7 +156,6 @@ h2 {
 
 h3,
 h4,
-h5,
 h6 {
 	font-family: $archivo;
 	font-weight: bold;
@@ -177,6 +183,14 @@ h3 {
 h4 {
 	font-size: 18px;
 	font-style: normal;
+}
+
+h5 {
+	font-family: $archivo;
+	font-weight: bold;
+	text-transform: none;
+	color: $de-blue;
+	margin-bottom: 1rem;
 }
 
 p {
@@ -356,8 +370,8 @@ ul> li {
 	}
 
 	&.share-buttons--fix {
-		position: sticky;
-		top: 80px;
+		position: fixed;
+		top: 80;
 		z-index: 2;
 	}
 }
