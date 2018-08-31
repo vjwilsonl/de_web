@@ -44,7 +44,7 @@
 	<header class="main-header">
 		<div class="row no-gutters px-3">
 			<div class="col-sm-12 col-lg-4">
-				<a class="navbar-brand" href="<?= get_home_url(); ?>"><img src="<?= $header_logo_url; ?>" alt="DE Logo"></a>
+				<a class="navbar-brand" href="<?= get_home_url(); ?>"><img class="img-fluid" src="<?= $header_logo_url; ?>" alt="DE Logo"></a>
 		  	</div>
 			<div class="col-sm-12 col-lg-8">
 				<!-- Secondary menu -->
