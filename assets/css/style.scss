@@ -370,8 +370,8 @@ ul> li {
 	}
 
 	&.share-buttons--fix {
-		position: fixed;
-		top: 80;
+		position: sticky;
+		top: 80px;
 		z-index: 2;
 	}
 }

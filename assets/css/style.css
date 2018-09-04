@@ -253,8 +253,8 @@ ul > li {
       .share-buttons ul li a:hover {
         color: #72C7E7; }
   .share-buttons.share-buttons--fix {
-    position: fixed;
-    top: 80;
+    position: sticky;
+    top: 80px;
     z-index: 2; }
 
 /* Links on text post*/
