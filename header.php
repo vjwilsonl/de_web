@@ -17,6 +17,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<?=get_template_directory_uri()?>/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?=get_template_directory_uri()?>/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=get_template_directory_uri()?>/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?=get_template_directory_uri()?>/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?=get_template_directory_uri()?>/assets/favicon/safari-pinned-tab.svg" color="#0077c8">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Bootstrap CSS & JS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
