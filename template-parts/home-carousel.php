@@ -25,7 +25,14 @@
 			  	<?php foreach ($carousel as $key => $value): ?>
 			  		<?php if (isset($value['poster']['url']) && $value['poster']['url']): ?>
 					    <div class="carousel-item <?= (!$key) ? 'active' : '' ?>">
-					      <img class="d-block w-100" src="<?= $value['poster']['url']; ?>" alt="<?= $value['poster']['alt'] ?>">
+					    	
+					    	<?php if ($value['url']): ?>
+					    		<a href="<?= $value['url'] ?>">
+					    	<?php endif; ?>
+					    			<img class="d-block w-100" src="<?= $value['poster']['url']; ?>" alt="<?= $value['poster']['alt'] ?>">
+					    	<?php if ($value['url']): ?>
+					    		</a>
+					    	<?php endif; ?>
 					    </div>
 					<?php endif; ?>
 				<?php endforeach; ?>

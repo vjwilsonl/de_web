@@ -29,7 +29,7 @@
 	<div class="row blog-block mt-4">
 		<?php while ( $news->have_posts() ): ?>
 			<?php $news->the_post(); 
-				$trimmed_content = wp_filter_nohtml_kses( wp_trim_words( get_the_content(), 25, "" ) );
+				$trimmed_content = wp_trim_words( get_the_content(), 25, "" );
 				$publish_date = get_the_date( 'F j, Y');
                 $post_tags = get_the_tags();
 			?>
@@ -40,8 +40,9 @@
 					    <div class="card-body p-1">
 					    	<p class="card-text"><?= $publish_date ?></p>
 						    <h3 class="card-title"><a class="hvr-highlight hvr-highlight-thick" href="<?= get_post_permalink() ?>"><?= the_title(); ?></a></h3>
-						    <p class="card-text"><?= $trimmed_content; ?></p>
+						    <p class="card-text"><?= $trimmed_content; ?> (...)</p>
 				    	</div>
+				    	<? /*
 				    	<div class="card-tags mt-3">
                             <?php
                                 if ( $post_tags ):
@@ -57,6 +58,8 @@
                                 endif;
                             ?>
 				    	</div>
+				    	*/ 
+				    	?>
 				    </div>
 			    </div>
 			</div>

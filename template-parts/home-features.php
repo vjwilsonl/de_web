@@ -32,7 +32,7 @@
 			<?php $features->the_post(); 
 
 				$artist_name = (class_exists('acf')) ? ((get_field('artist_name')) ? get_field('artist_name') : '') : '' ;
-				$trimmed_content = wp_filter_nohtml_kses( wp_trim_words( get_the_content(), 25, "" ) );
+				$trimmed_content = wp_trim_words( get_the_content(), 25, "" );
 				$publish_date = get_the_date( 'F j, Y');
 
 			?>

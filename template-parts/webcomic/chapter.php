@@ -152,6 +152,7 @@
 <main>
     <div class="container">
         <section class="section-wc-content">
+            <br>
             <?php if ( is_array($curr_chapter['comic_gallery']) && count($curr_chapter['comic_gallery'])): ?>
             <div class="row no-gutters">
                 <div class="wc-img-area" style="max-width: 600px; margin: auto">

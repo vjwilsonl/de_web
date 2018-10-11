@@ -6,6 +6,9 @@
                 <div class="row">
                     <div class="col-12 section-title">
                         <h1>Features</h1>
+                        <p> 
+                            <?= the_field('features_listing_intro', 'option');  ?>
+                        </p>
                     </div>
                 </div>
                 <div class="row blog-block mb-4">
@@ -26,7 +29,7 @@
                         if ( $features->have_posts() ) :
                             while ( $features->have_posts() ) : $features->the_post();
 
-                                $trimmed_content = wp_filter_nohtml_kses( wp_trim_words( get_the_content(), 25, "" ) );
+                                $trimmed_content = wp_trim_words( get_the_content(), 25, "" );
                                 $publish_date = get_the_date( 'F j, Y');
                                 $artist_name = (class_exists('acf')) ? ((get_field('artist_name')) ? get_field('artist_name') : '') : '' ;
                                 ?>
