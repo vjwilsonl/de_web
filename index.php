@@ -17,7 +17,7 @@ get_header();
 
 	<main class="main">
 		<!-- Jumbotron-->
-		<?php get_template_part( 'template-parts/home-jumbotron' ); ?>
+		<?php //get_template_part( 'template-parts/home-jumbotron' ); ?>
 		<!-- Carousel -->
 		<?php get_template_part( 'template-parts/home-carousel' ); ?>
 		<!-- Web Comics -->
@@ -35,7 +35,7 @@ get_header();
 					<!-- Social media -->
 
 				</div>
-				<?php get_template_part( 'template-parts/home-social' ); ?>
+				<?php //get_template_part( 'template-parts/home-social' ); ?>
 			</div>
 		</div>
 		<!-- End Of Features News Social -->
