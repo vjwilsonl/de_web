@@ -57,10 +57,7 @@
                 <ul class="list-inline subnav-links">
                     <?php get_template_part( 'template-parts/social-url' ) ?>
                     <li class="list-inline-item">
-                        <form class="form-inline">
-                          <input class="subnav-search form-control" type="search" placeholder="Search" aria-label="Search">
-                          <button class="fa-button" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
+                        <?php get_search_form(); ?>
                     </li>
                 </ul>
             </div>
