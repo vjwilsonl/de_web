@@ -31,6 +31,167 @@ $white: #fff;
 $de-divider: 1px solid $light-grey;
 $white-border: 1px solid $light-grey;
 
+/*Body*/
+
+body {
+  font-family: $dinosaur;
+  color: $dark-grey;
+  font-size: 13px;
+  background-color: $de-background;
+}
+
+body {
+  &.wc-read {
+    background-color: $de-background;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $de-pink;
+}
+
+p {
+  strong {
+    font-family: $dinosaur;
+    font-weight: $font-medium;
+  }
+}
+
+/* Header and Navigation */
+
+header.main-header {
+  background-color: $de-background;
+  color: $de-pink;
+
+  .subnav-links, .subnav-links a, .subnav-links button {
+    color: $de-pink;
+    padding: 0.5rem 0;
+    text-align: right;
+    font-size: 12px;
+
+    .list-inline {
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
+
+    li {
+      .subnav-search {
+        border: 0;
+        border-bottom: $de-pink;
+        background-color: transparent;
+        border-radius: 0;
+      }
+
+      input, input::placeholder {
+        color: $de-pink;
+        font-size: 12px;
+        border-bottom: 1 solid $de-pink;
+      }
+    }
+  }
+}
+
+.navbar-wrapper {
+  background-color: $de-background;
+  margin-bottom: 25px;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: $de-background;
+    display: none;
+
+    .navbar {
+      .navbar-brand {
+        img {
+          max-height: 80px;
+          padding: 1rem 1.5rem 1rem 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  padding: 0;
+
+  div {
+    padding: 0;
+  }
+
+  .navbar-brand {
+    img {
+      max-height: 80px;
+    }
+  }
+}
+
+.navbar-nav {
+  height: 73px;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  .nav-item {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 65px;
+
+    a {
+      font-size: 14px;
+      color: $de-blue;
+      font-family: $dinosaur;
+      font-weight: $font-medium;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.9rem 1.5rem 0.5rem 1.5rem;
+      height: 65px;
+    }
+
+    a:hover {
+      padding-top: 0.9rem;
+      color: $de-pink;
+      background-image: url(../images/MenuFrame.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center -5px;
+      overflow: visible;
+      height: 65px;
+    }
+  }
+
+  .active > .nav-link, .show > .nav-link, .nav-link:focus {
+    padding-top: 0.9rem;
+    color: $de-pink;
+    //border: 2px solid $de-pink;
+    //border-image-source: url(../images/MenuFrame.svg);
+    //border-image-slice: 21;
+    //border-image-width: 26px;
+    //border-image-outset: 7;
+    //border-image-repeat: unset;
+    background-image: url("../images/MenuFrame.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center -5px;
+    overflow: visible;
+    height: 65px;
+  }
+
+  .dropdown-menu {
+    background-color: $de-light-blue;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
 .translate-up {
   transform: translateY(-80px);
   transition: 0.5s;
@@ -94,38 +255,6 @@ $white-border: 1px solid $light-grey;
   right: 0;
 }
 
-/*Body*/
-
-body {
-  font-family: $dinosaur;
-  color: $dark-grey;
-  font-size: 13px;
-  background-color: $de-background;
-}
-
-body {
-  &.wc-read {
-    background-color: $de-background;
-  }
-}
-
-a {
-  cursor: pointer;
-}
-
-a:hover {
-  text-decoration: none;
-  color: $de-pink;
-}
-
-p {
-  strong {
-    font-family: $dinosaur;
-    font-weight: $font-medium;
-  }
-}
-
-
 /* Cards */
 
 .card,
@@ -150,7 +279,7 @@ p {
 
 h1,
 h2 {
-  font-family: $archivo-black;
+  font-family: $dinosaur;
   text-transform: uppercase;
   color: $de-blue;
   margin-bottom: 1rem;
@@ -160,7 +289,7 @@ h2 {
 h3,
 h4,
 h6 {
-  font-family: $archivo;
+  font-family: $dinosaur;
   font-weight: bold;
   text-transform: uppercase;
   color: $de-blue;
@@ -189,7 +318,7 @@ h4 {
 }
 
 h5 {
-  font-family: $archivo;
+  font-family: $dinosaur;
   font-weight: bold;
   text-transform: none;
   color: $de-blue;
@@ -896,125 +1025,6 @@ button {
   &:focus:before,
   &:active:before {
     right: 0;
-  }
-}
-
-
-/* Header and Navigation */
-
-header.main-header {
-  background-color: $de-blue;
-
-  .navbar-brand {
-    img {
-      width: 350px;
-      padding: 1rem 1.5rem 1rem 1.5rem;
-    }
-  }
-
-  .subnav-links {
-    padding: 0.5rem 1rem;
-    text-align: right;
-    font-size: 12px;
-
-    .list-inline {
-      margin-bottom: 0;
-      margin-right: 1rem;
-    }
-
-    li {
-      .subnav-search {
-        border: 0;
-        border-bottom: $white-border;
-        background-color: transparent;
-        border-radius: 0;
-      }
-
-      input::placeholder {
-        color: $white;
-        font-size: 12px;
-      }
-    }
-  }
-
-  .navbar-wrapper {
-    background-color: $de-light-blue;
-
-    &.sticky {
-      position: fixed;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      background-color: $de-light-blue;
-      display: none;
-
-      .navbar-nav {
-        .nav-item {
-          a {
-            font-size: 14px;
-            color: $white;
-            font-family: $archivo;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.5rem 1.5rem;
-          }
-
-          a:hover {
-            color: $de-dark-blue;
-          }
-        }
-
-        .active > .nav-link, .show > .nav-link, .nav-link:focus {
-          color: $de-dark-blue;
-        }
-
-        .dropdown-menu {
-          background-color: $de-light-blue;
-          border: 0;
-          border-radius: 0;
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  .sticky-logo {
-    padding: 5px;
-
-    img {
-      width: 145px;
-      margin-right: 2rem;
-    }
-  }
-
-  .navbar-nav {
-    .nav-item {
-      a {
-        font-size: 14px;
-        color: $white;
-        font-family: $archivo;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 0.5rem 1.5rem;
-      }
-
-      a:hover {
-        color: $de-dark-blue;
-      }
-    }
-
-    .active > .nav-link, .show > .nav-link, .nav-link:focus {
-      color: $de-dark-blue;
-    }
-
-    .dropdown-menu {
-      background-color: $de-light-blue;
-      border: 0;
-      border-radius: 0;
-      margin: 0;
-    }
   }
 }
 

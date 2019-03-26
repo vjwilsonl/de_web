@@ -47,60 +47,53 @@
 ?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-
-    <div class="container-fluid">
-
+    <div class="container">
         <header class="main-header">
-
-            <div class="container">
-                <div class="col-sm-12 offset-lg-4 col-lg-8">
-                    <!-- Secondary menu -->
-                    <ul class="list-inline subnav-links">
-                        <?php get_template_part( 'template-parts/social-url' ) ?>
-                        <li class="list-inline-item">
-                            <?php get_search_form(); ?>
-                        </li>
-                    </ul>
-                </div>
+            <div class="row no-gutters px-3">
+            <div class="col-sm-12 offset-lg-4 col-lg-8">
+                <!-- Secondary menu -->
+                <ul class="list-inline subnav-links">
+                    <?php get_template_part( 'template-parts/social-url' ) ?>
+                    <li class="list-inline-item">
+                        <?php get_search_form(); ?>
+                    </li>
+                </ul>
             </div>
 
-            <div class="navbar-wrapper">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg">
-                        <div class="col-sm-6 col-lg-3">
-                            <a class="navbar-brand" href="<?= get_home_url(); ?>"><img class="img-fluid" src="<?= $header_logo_url; ?>" alt="<?= $header_logo_url; ?>"></a>
-                        </div>
-                        <!-- Hamburger button -->
-                        <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primenu" aria-controls="navbar-primenu" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                        <div class="col-sm-12 col-lg-9 collapse navbar-collapse" id="navbar-primenu">
-                            <!-- <a href="<?= get_home_url(); ?>">
-                                <div class="sticky-logo" style="display:none">
-                                    <img alt="Difference Engine Logo" src="<?= $sticky_header_logo_url; ?>">
-                                </div>
-                            </a> -->
-                            <?php
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location'  => 'menu-1',
-                                        'container'       => FALSE,
-                                        'menu_class'      => 'navbar-nav nav-fill w-100',
-                                        'container_class' => 'nav-item',
-                                        'depth'           => 2,
-                                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                                        'walker'          => new WP_Bootstrap_Navwalker(),
-                                    )
-                                );
-                            ?>
-                        </div>
-                    </nav>
-                </div>
+            <div class="row navbar-wrapper">
+                <nav class="navbar navbar-expand-lg sticky-top">
+                    <div class="col-sm-6 col-lg-3">
+                        <a class="navbar-brand" href="<?= get_home_url(); ?>"><img class="img-fluid" src="<?= $header_logo_url; ?>" alt="<?= $header_logo_url; ?>"></a>
+                    </div>
+                    <!-- Hamburger button -->
+                    <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primenu" aria-controls="navbar-primenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <div class="col-sm-12 col-lg-9 collapse navbar-collapse" id="navbar-primenu">
+                        <a href="<?= get_home_url(); ?>">
+                            <div class="sticky-logo" style="display:none">
+                                <img alt="Difference Engine Logo" src="<?= $sticky_header_logo_url; ?>">
+                            </div>
+                        </a>
+                        <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location'  => 'menu-1',
+                                    'container'       => FALSE,
+                                    'menu_class'      => 'navbar-nav nav-fill w-100',
+                                    'container_class' => 'nav-item',
+                                    'depth'           => 2,
+                                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                                    'walker'          => new WP_Bootstrap_Navwalker(),
+                                )
+                            );
+                        ?>
+                    </div>
+                </nav>
             </div>
         </header>
-
     </div>
 
     <div id="content" class="site-content">

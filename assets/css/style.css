@@ -2,6 +2,112 @@
 @import url("https://use.typekit.net/nkj5yba.css");
 @import url("https://fonts.googleapis.com/css?family=Mukta");
 /*Variables*/
+/*Body*/
+body {
+  font-family: "dinosaur", san-serif;
+  color: #545454;
+  font-size: 13px;
+  background-color: #F7F7F7; }
+
+body.wc-read {
+  background-color: #F7F7F7; }
+
+a {
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: none;
+  color: #FF0098; }
+
+p strong {
+  font-family: "dinosaur", san-serif;
+  font-weight: 500; }
+
+/* Header and Navigation */
+header.main-header {
+  background-color: #F7F7F7;
+  color: #FF0098; }
+  header.main-header .subnav-links, header.main-header .subnav-links a, header.main-header .subnav-links button {
+    color: #FF0098;
+    padding: 0.5rem 0;
+    text-align: right;
+    font-size: 12px; }
+    header.main-header .subnav-links .list-inline, header.main-header .subnav-links a .list-inline, header.main-header .subnav-links button .list-inline {
+      margin-bottom: 0;
+      margin-right: 1rem; }
+    header.main-header .subnav-links li .subnav-search, header.main-header .subnav-links a li .subnav-search, header.main-header .subnav-links button li .subnav-search {
+      border: 0;
+      border-bottom: #FF0098;
+      background-color: transparent;
+      border-radius: 0; }
+    header.main-header .subnav-links li input, header.main-header .subnav-links li input::placeholder, header.main-header .subnav-links a li input, header.main-header .subnav-links a li input::placeholder, header.main-header .subnav-links button li input, header.main-header .subnav-links button li input::placeholder {
+      color: #FF0098;
+      font-size: 12px;
+      border-bottom: 1 solid #FF0098; }
+
+.navbar-wrapper {
+  background-color: #F7F7F7;
+  margin-bottom: 25px; }
+  .navbar-wrapper.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #F7F7F7;
+    display: none; }
+    .navbar-wrapper.sticky .navbar .navbar-brand img {
+      max-height: 80px;
+      padding: 1rem 1.5rem 1rem 1.5rem; }
+
+.navbar {
+  padding: 0; }
+  .navbar div {
+    padding: 0; }
+  .navbar .navbar-brand img {
+    max-height: 80px; }
+
+.navbar-nav {
+  height: 73px;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto; }
+  .navbar-nav .nav-item {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 65px; }
+    .navbar-nav .nav-item a {
+      font-size: 14px;
+      color: #002677;
+      font-family: "dinosaur", san-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.9rem 1.5rem 0.5rem 1.5rem;
+      height: 65px; }
+    .navbar-nav .nav-item a:hover {
+      padding-top: 0.9rem;
+      color: #FF0098;
+      background-image: url(../images/MenuFrame.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center -5px;
+      overflow: visible;
+      height: 65px; }
+  .navbar-nav .active > .nav-link, .navbar-nav .show > .nav-link, .navbar-nav .nav-link:focus {
+    padding-top: 0.9rem;
+    color: #FF0098;
+    background-image: url("../images/MenuFrame.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center -5px;
+    overflow: visible;
+    height: 65px; }
+  .navbar-nav .dropdown-menu {
+    background-color: #72C7E7;
+    border: 0;
+    border-radius: 0;
+    margin: 0; }
+
 .translate-up {
   transform: translateY(-80px);
   transition: 0.5s; }
@@ -56,27 +162,6 @@
   left: 0;
   right: 0; }
 
-/*Body*/
-body {
-  font-family: "dinosaur", san-serif;
-  color: #545454;
-  font-size: 13px;
-  background-color: #F7F7F7; }
-
-body.wc-read {
-  background-color: #F7F7F7; }
-
-a {
-  cursor: pointer; }
-
-a:hover {
-  text-decoration: none;
-  color: #FF0098; }
-
-p strong {
-  font-family: "dinosaur", san-serif;
-  font-weight: 500; }
-
 /* Cards */
 .card,
 .card-img-top {
@@ -93,7 +178,7 @@ p strong {
 /* Headings */
 h1,
 h2 {
-  font-family: "Archivo Black", sans-serif;
+  font-family: "dinosaur", san-serif;
   text-transform: uppercase;
   color: #002677;
   margin-bottom: 1rem;
@@ -102,7 +187,7 @@ h2 {
 h3,
 h4,
 h6 {
-  font-family: "Archivo", sans-serif;
+  font-family: "dinosaur", san-serif;
   font-weight: bold;
   text-transform: uppercase;
   color: #002677;
@@ -126,7 +211,7 @@ h4 {
   font-style: normal; }
 
 h5 {
-  font-family: "Archivo", sans-serif;
+  font-family: "dinosaur", san-serif;
   font-weight: bold;
   text-transform: none;
   color: #002677;
@@ -634,76 +719,6 @@ button:focus {
     transition-timing-function: ease-out; }
   .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
     right: 0; }
-
-/* Header and Navigation */
-header.main-header {
-  background-color: #002677; }
-  header.main-header .navbar-brand img {
-    width: 350px;
-    padding: 1rem 1.5rem 1rem 1.5rem; }
-  header.main-header .subnav-links {
-    padding: 0.5rem 1rem;
-    text-align: right;
-    font-size: 12px; }
-    header.main-header .subnav-links .list-inline {
-      margin-bottom: 0;
-      margin-right: 1rem; }
-    header.main-header .subnav-links li .subnav-search {
-      border: 0;
-      border-bottom: 1px solid #E5E5E5;
-      background-color: transparent;
-      border-radius: 0; }
-    header.main-header .subnav-links li input::placeholder {
-      color: #fff;
-      font-size: 12px; }
-  header.main-header .navbar-wrapper {
-    background-color: #72C7E7; }
-    header.main-header .navbar-wrapper.sticky {
-      position: fixed;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      background-color: #72C7E7;
-      display: none; }
-      header.main-header .navbar-wrapper.sticky .navbar-nav .nav-item a {
-        font-size: 14px;
-        color: #fff;
-        font-family: "Archivo", sans-serif;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 0.5rem 1.5rem; }
-      header.main-header .navbar-wrapper.sticky .navbar-nav .nav-item a:hover {
-        color: #006DA3; }
-      header.main-header .navbar-wrapper.sticky .navbar-nav .active > .nav-link, header.main-header .navbar-wrapper.sticky .navbar-nav .show > .nav-link, header.main-header .navbar-wrapper.sticky .navbar-nav .nav-link:focus {
-        color: #006DA3; }
-      header.main-header .navbar-wrapper.sticky .navbar-nav .dropdown-menu {
-        background-color: #72C7E7;
-        border: 0;
-        border-radius: 0;
-        margin: 0; }
-  header.main-header .sticky-logo {
-    padding: 5px; }
-    header.main-header .sticky-logo img {
-      width: 145px;
-      margin-right: 2rem; }
-  header.main-header .navbar-nav .nav-item a {
-    font-size: 14px;
-    color: #fff;
-    font-family: "Archivo", sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 0.5rem 1.5rem; }
-  header.main-header .navbar-nav .nav-item a:hover {
-    color: #006DA3; }
-  header.main-header .navbar-nav .active > .nav-link, header.main-header .navbar-nav .show > .nav-link, header.main-header .navbar-nav .nav-link:focus {
-    color: #006DA3; }
-  header.main-header .navbar-nav .dropdown-menu {
-    background-color: #72C7E7;
-    border: 0;
-    border-radius: 0;
-    margin: 0; }
 
 /* Jumbotron */
 section.section-jumbotron {
