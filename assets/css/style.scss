@@ -96,29 +96,6 @@ header.main-header {
   }
 }
 
-.navbar-wrapper {
-  background-color: $de-background;
-  margin-bottom: 25px;
-
-  &.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    background-color: $de-background;
-    display: none;
-
-    .navbar {
-      .navbar-brand {
-        img {
-          max-height: 80px;
-          padding: 1rem 1.5rem 1rem 1.5rem;
-        }
-      }
-    }
-  }
-}
-
 .navbar {
   padding: 0;
 
@@ -128,7 +105,7 @@ header.main-header {
 
   .navbar-brand {
     img {
-      max-height: 80px;
+      max-height: 70px;
     }
   }
 }
@@ -170,12 +147,6 @@ header.main-header {
   .active > .nav-link, .show > .nav-link, .nav-link:focus {
     padding-top: 0.9rem;
     color: $de-pink;
-    //border: 2px solid $de-pink;
-    //border-image-source: url(../images/MenuFrame.svg);
-    //border-image-slice: 21;
-    //border-image-width: 26px;
-    //border-image-outset: 7;
-    //border-image-repeat: unset;
     background-image: url("../images/MenuFrame.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -189,6 +160,29 @@ header.main-header {
     border: 0;
     border-radius: 0;
     margin: 0;
+  }
+}
+
+.navbar-wrapper {
+  background-color: $de-background;
+  margin-bottom: 25px;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: $de-background;
+    display: none;
+
+    .navbar {
+      .navbar-brand {
+        img {
+          max-height: 70px;
+          padding: 0.3rem 0;
+        }
+      }
+    }
   }
 }
 

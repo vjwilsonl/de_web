@@ -17,8 +17,6 @@
 
     <main class="main">
         <div class="container section-wrapper">
-            <!-- Jumbotron-->
-            <?php get_template_part( 'template-parts/home-jumbotron' ); ?>
             <!-- Carousel -->
             <?php get_template_part( 'template-parts/home-carousel' ); ?>
             <!-- Web Comics -->

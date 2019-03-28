@@ -45,26 +45,12 @@ header.main-header {
       font-size: 12px;
       border-bottom: 1 solid #FF0098; }
 
-.navbar-wrapper {
-  background-color: #F7F7F7;
-  margin-bottom: 25px; }
-  .navbar-wrapper.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    background-color: #F7F7F7;
-    display: none; }
-    .navbar-wrapper.sticky .navbar .navbar-brand img {
-      max-height: 80px;
-      padding: 1rem 1.5rem 1rem 1.5rem; }
-
 .navbar {
   padding: 0; }
   .navbar div {
     padding: 0; }
   .navbar .navbar-brand img {
-    max-height: 80px; }
+    max-height: 70px; }
 
 .navbar-nav {
   height: 73px;
@@ -107,6 +93,20 @@ header.main-header {
     border: 0;
     border-radius: 0;
     margin: 0; }
+
+.navbar-wrapper {
+  background-color: #F7F7F7;
+  margin-bottom: 25px; }
+  .navbar-wrapper.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #F7F7F7;
+    display: none; }
+    .navbar-wrapper.sticky .navbar .navbar-brand img {
+      max-height: 70px;
+      padding: 0.3rem 0; }
 
 .translate-up {
   transform: translateY(-80px);

@@ -39,15 +39,16 @@ $(document).ready(function () {
   });
 
   $(window).scroll(function (e) {
-    var headerHeight = $('.main-header').height();
+    const headerHeight = $('.main-header').height();
     if ($(this).scrollTop() > headerHeight) { // When scroll height reach the nav bar
       $('.navbar-wrapper').addClass('sticky').slideDown(1000); // Fix the nav bar wrapper to the top of window
-      // $('.sticky-logo').show(); // Show alt-logo
+      $('.sticky-logo').show(); // Show alt-logo
+      $('.main-logo').hide(); // Hide main-logo
     } else {
       $('.navbar-wrapper').removeClass('sticky').removeAttr('style'); // Else remove the sticky class
-      // $('.sticky-logo').hide(); // Hide alt-logo
+      $('.sticky-logo').hide(); // Hide alt-logo
+      $('.main-logo').show(); // Show main-logo
     }
-    ;
   });
 
   // $(window).on('load resize',function(e) {

@@ -42,7 +42,7 @@
         $header_logo            = get_field( 'header_logo', 'option' );
         $header_logo_url        = ( isset( $header_logo['url'] ) ) ? $header_logo['url'] : get_template_directory_uri() . '/assets/images/DifferenceEngineLogo.svg';
         $sticky_header_logo     = get_field( 'sticky_header_logo', 'option' );
-        $sticky_header_logo_url = ( isset( $sticky_header_logo['url'] ) ) ? $sticky_header_logo['url'] : get_template_directory_uri() . '/assets/images/DE_sticky_logo.svg';
+        $sticky_header_logo_url = ( isset( $sticky_header_logo['url'] ) ) ? $sticky_header_logo['url'] : get_template_directory_uri() . '/assets/images/DifferenceEngine-StickyLogo.svg';
     }
 ?>
 <body <?php body_class(); ?>>
@@ -56,7 +56,7 @@
                 <div class="col-sm-12 offset-lg-4 col-lg-8">
                     <!-- Secondary menu -->
                     <ul class="list-inline subnav-links">
-                        <?php get_template_part( 'template-parts/social-url' ) ?>
+                        <?php get_template_part( 'template-parts/social-url-icon' ) ?>
                         <li class="list-inline-item">
                             <?php get_search_form(); ?>
                         </li>
@@ -68,7 +68,10 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-lg">
                         <div class="col-sm-6 col-lg-3">
-                            <a class="navbar-brand" href="<?= get_home_url(); ?>"><img class="img-fluid" src="<?= $header_logo_url; ?>" alt="<?= $header_logo_url; ?>"></a>
+                            <a class="navbar-brand" href="<?= get_home_url(); ?>">
+                                <img class="img-fluid main-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine">
+                                <img class="img-fluid sticky-logo" src="<?= $sticky_header_logo_url; ?>" alt="Difference Engine" style="display: none;">
+                            </a>
                         </div>
                         <!-- Hamburger button -->
                         <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primenu" aria-controls="navbar-primenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,11 +80,6 @@
                             </span>
                         </button>
                         <div class="col-sm-12 col-lg-9 collapse navbar-collapse" id="navbar-primenu">
-                            <!-- <a href="<?= get_home_url(); ?>">
-                                <div class="sticky-logo" style="display:none">
-                                    <img alt="Difference Engine Logo" src="<?= $sticky_header_logo_url; ?>">
-                                </div>
-                            </a> -->
                             <?php
                                 wp_nav_menu(
                                     array(
