@@ -12,7 +12,7 @@
      */
 ?>
 <?php
-    $args       = array(
+    $args = array(
         'post_type'      => 'web_comics',
         'posts_per_page' => 4,
         'order'          => 'DESC',
@@ -22,54 +22,49 @@
 ?>
 
 <?php if ( $web_comics->have_posts() ): ?>
-    <div class="container">
-        <section class="section-webcomics">
-            <div class="row">
-                <div class="col-12 section-title">
-                    <h1>Rad Online</h1>
-                </div>
+    <section class="section-webcomics">
+        <div class="row">
+            <div class="col-12 section-title">
+                <h1>Read Online</h1>
             </div>
-            <div class="row webcomics-block mt-4">
-                <?php while( $web_comics->have_posts() ): ?>
-                    <?php
-                    $web_comics->the_post();
-                    $creator     = get_field( 'creator' );
-                    $status_flag = ( class_exists( 'acf' ) ) ? ( ( get_field( 'status_flag' ) ) ? get_field( 'status_flag' ) : '' ) : '';
-                    $flag_class  = ( $status_flag ) ? ( ( strtolower( $status_flag ) == 'new' ) ? 'flag-new' : 'flag-comingsoon' ) : '';
-                    ?>
-                    <div class="col-sm-6 col-lg-6">
-                        <!-- Image thumbnail -->
-                        <a class="thumbnail text-left hvr-underline-from-left" href="<?= get_post_permalink() ?>">
-                            <div class="caption">
-                                <h2><?= the_title(); ?></h2>
-                                <p>
-                                    <?php
-                                        if ( is_array( $creator ) && ! empty( $creator ) ):
-                                            $last_creator = end( array_keys( $creator ) );
-                                            foreach ( $creator as $key => $value ):
-                                                if ( $key == $last_creator ):
-                                                    echo $value['name'];
-                                                else:
-                                                    echo $value['name'] . " / ";
-                                                endif;
-                                            endforeach;
+        </div>
+        <div class="row">
+            <?php while( $web_comics->have_posts() ): ?>
+                <?php
+                $web_comics->the_post();
+                $creator     = get_field( 'creator' );
+                $status_flag = ( class_exists( 'acf' ) ) ? ( ( get_field( 'status_flag' ) ) ? get_field( 'status_flag' ) : '' ) : '';
+                ?>
+                <div class="col-sm-6 col-lg-6 webcomics-card">
+                    <a class="" href="<?= get_post_permalink() ?>">
+                        <div class="webcomics-image">
+                            <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="webcomics-cover">
+                        </div>
+                    </a>
+                    <div class="webcomics-body">
+                        <h2 class="webcomics-title"><?= the_title(); ?></h2>
+                        <p class="webcomics-text">
+                            <?php
+                                if ( is_array( $creator ) && ! empty( $creator ) ):
+                                    $last_creator = end( array_keys( $creator ) );
+                                    foreach ( $creator as $key => $value ):
+                                        if ( $key == $last_creator ):
+                                            echo $value['name'];
+                                        else:
+                                            echo $value['name'] . " / ";
                                         endif;
-                                    ?>
-                                </p>
-                            </div>
-                            <div class="overlay">
-                                <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="webcomics-cover">
-                            </div>
-                        </a>
-                        <!-- New flag -->
-                        <?php if ( $status_flag && ( strtolower( $status_flag ) != 'none' ) ): ?>
-                            <div class="flag-wrapper">
-                                <strong class="<?= $flag_class; ?> flag"><?= $status_flag; ?></strong>
-                            </div>
-                        <?php endif; ?>
+                                    endforeach;
+                                endif;
+                            ?>
+                        </p>
+                        <p class="webcomics-read">
+                            <a class="" href="<?= get_post_permalink() ?>">
+                                READ COMIC <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </p>
                     </div>
-                <?php endwhile; ?>
-            </div>
-        </section>
-    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    </section>
 <?php endif; ?>
