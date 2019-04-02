@@ -889,11 +889,21 @@ section.section-webcomics .webcomics-cover {
   object-fit: cover; }
 
 section.section-webcomics .webcomics-image {
-  background: url("../images/DottedOverlay.svg");
   width: 100%;
   height: 200px;
   object-fit: cover;
   z-index: 5; }
+
+section.section-webcomics .webcomics-image-hover {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 5; }
+
+section.section-webcomics .webcomics-image-hover:hover {
+  background: url("../images/DottedOverlay.svg");
+  transition: 1s ease; }
 
 section.section-webcomics .webcomics-body .webcomics-text {
   font-family: "Mukta", san-serif;
