@@ -19,20 +19,13 @@
         <div class="container section-wrapper">
             <!-- Carousel -->
             <?php get_template_part( 'template-parts/home-carousel' ); ?>
+
             <!-- Web Comics -->
             <?php get_template_part( 'template-parts/home-web-comics' ); ?>
-            <!-- Features, News, Social -->
 
-            <div class="row no-gutters">
-                <div class="col-sm-12 col-lg-8">
-                    <!-- Features -->
-                    <?php get_template_part( 'template-parts/home-features' ); ?>
-                    <!-- End Of Features -->
-                    <!-- News Section -->
-                    <?php get_template_part( 'template-parts/home-news' ); ?>
-                    <!-- End of News Section -->
-                </div>
-            </div>
+            <!-- Blog -->
+            <?php get_template_part( 'template-parts/home-blog' ); ?>
+
         </div>
         <!-- End Of Features News Social -->
     </main>

@@ -1,0 +1,71 @@
+/* Webcomics Section */
+
+section.section-webcomics {
+  .webcomics-card {
+    margin: 20px 0;
+  }
+
+  .webcomics-image {
+    position: relative;
+    height: 200px;
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+
+  .webcomics-image:after {
+    content: '';
+    color: #FF0098;
+    position: absolute;
+    height: 106%;
+    width: 80%;
+    border: 0;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-style: solid;
+    top: 0;
+    right: -11px;
+  }
+
+  .webcomics-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .webcomics-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    z-index: 5;
+  }
+
+  .webcomics-image-hover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 5;
+  }
+
+  .webcomics-image-hover:hover {
+    background: $image-hover;
+    transition: 1s ease;
+  }
+
+  .webcomics-body {
+    .webcomics-title {
+
+    }
+
+    .webcomics-text {
+      font-family: $mukta;
+      font-size: 14px;
+    }
+
+    .webcomics-read a {
+      color: $de-pink;
+      letter-spacing: 1px;
+    }
+  }
+
+}
