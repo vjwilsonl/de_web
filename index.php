@@ -1,35 +1,101 @@
 <?php
     /**
-     * The main template file
+     * The template for displaying archive pages
      *
-     * This is the most generic template file in a WordPress theme
-     * and one of the two required files for a theme (the other being style.css).
-     * It is used to display a page when nothing more specific matches a query.
-     * E.g., it puts together the home page when no home.php file exists.
-     *
-     * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/
+     * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
      *
      * @package Difference_Engine
      */
 
     get_header();
 ?>
+    <main>
+        <div class="container">
+            <section class="section-news">
+                <div class="row">
+                    <div class="col-12 section-title">
+                        <h1>Blog</h1>
+                        <p>
+                            <?= the_field('news_listing_intro', 'option');  ?>
+                        </p>
+                    </div>
+                </div>
 
-    <main class="main">
-        <div class="container section-wrapper">
-            <!-- Carousel -->
-            <?php get_template_part( 'template-parts/home-carousel' ); ?>
+                <div class="row blog-block mt-4">
 
-            <!-- Web Comics -->
-            <?php get_template_part( 'template-parts/home-web-comics' ); ?>
+                    <?php
+                        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-            <!-- Blog -->
-            <?php get_template_part( 'template-parts/home-blog' ); ?>
+                        $tag_name = '';
+                        if(isset( $_GET['tag'])):
+                            $tag_name = $_GET['tag'];
+                        endif;
 
+                        $args = array(
+                            'tag'               => $tag_name,
+                            'posts_per_page'    => 6,
+                            'order'             => 'DESC',
+                            'orderby'           => 'ID',
+                            'paged'             => $paged,
+                            'page'              => $paged
+                        );
+
+                        $news = new WP_Query( $args );
+                        if ( $news->have_posts() ) :
+                            while ( $news->have_posts() ) : $news->the_post();
+
+                                $trimmed_content = wp_trim_words( get_the_content(), 25, "" );
+                                $publish_date = get_the_date( 'F j, Y');
+                                $post_tags = get_the_tags();
+                                ?>
+
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>">
+                                        <div class="blog-caption">
+                                            <div class="card-body p-1">
+                                                <p class="card-text"><?= $publish_date ?></p>
+                                                <h3 class="card-title"><a class="hvr-highlight hvr-highlight-thick" href="<?= get_post_permalink() ?>"><?= the_title(); ?></a></h3>
+                                                <p class="card-text"><?= $trimmed_content; ?> (...)</p>
+                                            </div>
+                                            <?php /*
+                                            <div class="card-tags mt-3">
+                                                <?php
+                                                    if ( $post_tags ):
+                                                        echo "Tags: ";
+                                                        $last_tag = end(array_keys($post_tags));
+                                                        foreach( $post_tags as $key => $value ):
+                                                            if($key == $last_tag):
+                                                                echo "<a href='" . get_post_type_archive_link( 'news' ) ?>?tag=<?= $value->slug . "'>" . $value->name . "</a>";
+                                                            else:
+                                                                echo "<a href='" . get_post_type_archive_link( 'news' ) ?>?tag=<?= $value->slug . "'>" . $value->name . "</a>" . ", ";
+                                                            endif;
+                                                        endforeach;
+                                                    endif;
+                                                ?>
+                                            </div>
+                                            */
+                                            ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            <?php
+                            endwhile;
+                        else: ?>
+
+                            <p>There are no news published yet. Come back later.</p>
+
+                        <?php endif;
+
+                    ?>
+
+                </div>
+
+                <!-- Page Navigation -->
+                <?php get_bootstrap_paginate_links($news) ?>
         </div>
-        <!-- End Of Features News Social -->
     </main>
-
 <?php
-    // get_sidebar();
     get_footer();
