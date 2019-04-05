@@ -58,15 +58,17 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#blogCarouselIndicators" data-slide-to="0" class="<?=($row === 1) ? "active" : "" ?>""></li>
-                                        <li data-target="#blogCarouselIndicators" data-slide-to="1" class="<?=($row === 2) ? "active" : "" ?>""></li>
-                                        <li data-target="#blogCarouselIndicators" data-slide-to="2" class="<?=($row === 3) ? "active" : "" ?>""></li>
-                                    </ol>
                                 </div>
                             </div>
                         </div>
                     <?php $row++; endwhile; ?>
+                    <div class="col-sm-12 offset-lg-6 col-lg-6">
+                        <ol class="carousel-indicators">
+                            <li data-target="#blogCarouselIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarouselIndicators" data-slide-to="1" ></li>
+                            <li data-target="#blogCarouselIndicators" data-slide-to="2" ></li>
+                        </ol>
+                    </div>
                     <a class="carousel-control-prev blog-carousel-control" href="#blogCarouselIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
