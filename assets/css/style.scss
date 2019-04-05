@@ -50,6 +50,7 @@ body {
 
 a {
   cursor: pointer;
+  color: $de-pink;
 }
 
 a:hover {
@@ -416,7 +417,7 @@ ul > li {
     position: relative;
     transition: 0.5s color ease;
     text-decoration: none;
-    color: $de-blue;
+    color: $de-pink;
     font-family: $archivo;
     font-weight: bold;
     text-transform: uppercase;
@@ -1243,6 +1244,9 @@ section.section-genre {
 
 /* Blog */
 @import "components/blog";
+
+/* Blog */
+@import "components/for-educators";
 
 /* Webcomics Single */
 

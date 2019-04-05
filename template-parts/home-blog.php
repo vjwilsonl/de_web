@@ -21,9 +21,16 @@
 
 <?php if ( $blog_post->have_posts() ): ?>
     <section class="section-blog">
-        <div class="row">
-            <div class="col-12 section-title">
+        <div class="row section-title">
+            <div class="col-6">
                 <h1>Blog</h1>
+            </div>
+            <div class="col-6">
+                <p class="text-right align-middle blog-read-all">
+                    <a class="" href="<?= get_post_type_archive_link('post'); ?>">
+                        SEE ALL <i class="fas fa-arrow-right"></i>
+                    </a>
+                </p>
             </div>
         </div>
         <div class="row">

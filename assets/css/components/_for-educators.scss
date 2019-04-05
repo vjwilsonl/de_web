@@ -1,22 +1,22 @@
-/* Webcomics Section */
+/* For Educators Section */
 
-section.section-webcomics {
-  .webcomics-card {
+section.section-for-educators {
+  .for-educators-card {
     margin: 20px 0;
   }
 
-  .webcomics-read-all {
+  .for-educators-read-all {
     margin-top: 1rem;
   }
 
-  .webcomics-image {
+  .for-educators-image {
     position: relative;
     height: 200px;
     overflow: visible;
     margin-bottom: 20px;
   }
 
-  .webcomics-image:after {
+  .for-educators-image:after {
     content: '';
     color: #FF0098;
     position: absolute;
@@ -30,20 +30,20 @@ section.section-webcomics {
     right: -8px;
   }
 
-  .webcomics-cover {
+  .for-educators-cover {
     width: 100%;
     height: 200px;
     object-fit: cover;
   }
 
-  .webcomics-image {
+  .for-educators-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
     z-index: 5;
   }
 
-  .webcomics-image-hover {
+  .for-educators-image-hover {
     position: absolute;
     top: 0;
     width: 100%;
@@ -51,24 +51,24 @@ section.section-webcomics {
     z-index: 5;
   }
 
-  .webcomics-image-hover:hover {
+  .for-educators-image-hover:hover {
     background: $image-hover;
     transition: 1s ease;
   }
 
-  .webcomics-body {
-    .webcomics-title {
+  .for-educators-body {
+    .for-educators-title {
 
     }
 
-    .webcomics-text {
+    .for-educators-text {
       font-family: $mukta;
       font-size: 14px;
     }
 
-    .webcomics-read a {
+    .for-educators-read a {
       color: $de-pink;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
   }
 

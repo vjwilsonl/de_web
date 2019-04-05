@@ -23,9 +23,16 @@
 
 <?php if ( $web_comics->have_posts() ): ?>
     <section class="section-webcomics">
-        <div class="row">
-            <div class="col-12 section-title">
+        <div class="row section-title">
+            <div class="col-6">
                 <h1>Read Online</h1>
+            </div>
+            <div class="col-6">
+                <p class="text-right align-middle webcomics-read-all">
+                    <a class="" href="<?= get_post_type_archive_link('web_comics'); ?>">
+                        SEE ALL <i class="fas fa-arrow-right"></i>
+                    </a>
+                </p>
             </div>
         </div>
         <div class="row">
