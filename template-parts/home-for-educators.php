@@ -45,7 +45,7 @@
                             <div class="for-educators-image-hover"></div>
                         </div>
                     </a>
-                    <div class="webcomics-body">
+                    <div class="for-educators-body">
                         <h2 class="for-educators-title"><?= the_title(); ?></h2>
                     </div>
                 </div>

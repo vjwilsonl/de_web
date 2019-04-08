@@ -236,9 +236,9 @@ function get_bootstrap_paginate_links($query) {
 		//echo '<li class="page-item disabled hidden-md-down d-none d-lg-block"><span class="page-link">Page '.$paged.' of '.$pages.'</span></li>';
 
 		if($paged > 1) {
-			echo '<li class="page-item"><a class="page-link" href="' . get_pagenum_link( $paged - 1 ) . '" aria-label="Previous Page"><span class="hidden-sm-down d-none d-md-block">Previous</span></a></li>';
+			echo '<li class="page-item"><a class="page-link" href="' . get_pagenum_link( $paged - 1 ) . '" aria-label="Previous Page"><span class="d-md-block">Previous</span></a></li>';
 		} else {
-			echo '<li class="page-item disabled"><span class="page-link hidden-sm-down d-none d-md-block">Previous</span></li>';
+			echo '<li class="page-item disabled"><span class="page-link d-md-block">Previous</span></li>';
 		}
 
 		for ($i=1; $i <= $pages; $i++)
@@ -247,9 +247,9 @@ function get_bootstrap_paginate_links($query) {
 		}
 
 		if ($paged < $pages) {
-			echo '<li class="page-item"><a class="page-link" href="'.get_pagenum_link($paged + 1).'" aria-label="Next Page"><span class="hidden-sm-down d-none d-md-block">Next </span></a></li>';
+			echo '<li class="page-item"><a class="page-link" href="'.get_pagenum_link($paged + 1).'" aria-label="Next Page"><span class="d-md-block">Next </span></a></li>';
 		} else {
-			echo '<li class="page-item disabled"><span class="page-link hidden-sm-down d-none d-md-block">Next</span></li>';
+			echo '<li class="page-item disabled"><span class="page-link d-md-block">Next</span></li>';
 		}
 
 

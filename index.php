@@ -9,79 +9,88 @@
 
     get_header();
 ?>
+
+<?php
+    $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+    
+    $args = array(
+        'posts_per_page'    => 7,
+        'order'             => 'DESC',
+        'orderby'           => 'ID',
+        'paged'             => $paged,
+        'page'              => $paged
+    );
+    $blog_post = new WP_Query( $args );
+?>
+    
     <main>
         <div class="container">
-            <section class="section-news">
+            <section class="section-blog">
                 <div class="row">
                     <div class="col-12 section-title">
                         <h1>Blog</h1>
-                        <p>
-                            <?= the_field('news_listing_intro', 'option');  ?>
-                        </p>
                     </div>
                 </div>
 
-                <div class="row blog-block mt-4">
-
+                <div class="row blog-block">
                     <?php
-                        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-
-                        $tag_name = '';
-                        if(isset( $_GET['tag'])):
-                            $tag_name = $_GET['tag'];
-                        endif;
-
-                        $args = array(
-                            'tag'               => $tag_name,
-                            'posts_per_page'    => 6,
-                            'order'             => 'DESC',
-                            'orderby'           => 'ID',
-                            'paged'             => $paged,
-                            'page'              => $paged
-                        );
-
-                        $news = new WP_Query( $args );
-                        if ( $news->have_posts() ) :
-                            while ( $news->have_posts() ) : $news->the_post();
+                        if ( $blog_post->have_posts() ) :
+                            $row = 1;
+                            while ( $blog_post->have_posts() ) : $blog_post->the_post();
 
                                 $trimmed_content = wp_trim_words( get_the_content(), 25, "" );
                                 $publish_date = get_the_date( 'F j, Y');
-                                $post_tags = get_the_tags();
                                 ?>
+                                <?php if($row === 1) : ?>
 
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="card">
-                                        <img class="card-img-top" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>">
-                                        <div class="blog-caption">
-                                            <div class="card-body p-1">
-                                                <p class="card-text"><?= $publish_date ?></p>
-                                                <h3 class="card-title"><a class="hvr-highlight hvr-highlight-thick" href="<?= get_post_permalink() ?>"><?= the_title(); ?></a></h3>
-                                                <p class="card-text"><?= $trimmed_content; ?> (...)</p>
+                                    <div class="col-sm-12 col-lg-12 blog-card-big">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-lg-6">
+                                                <div class="blog-image">
+                                                    <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover">
+                                                    <div class="blog-image-hover"></div>
+                                                </div>
                                             </div>
-                                            <?php /*
-                                            <div class="card-tags mt-3">
-                                                <?php
-                                                    if ( $post_tags ):
-                                                        echo "Tags: ";
-                                                        $last_tag = end(array_keys($post_tags));
-                                                        foreach( $post_tags as $key => $value ):
-                                                            if($key == $last_tag):
-                                                                echo "<a href='" . get_post_type_archive_link( 'news' ) ?>?tag=<?= $value->slug . "'>" . $value->name . "</a>";
-                                                            else:
-                                                                echo "<a href='" . get_post_type_archive_link( 'news' ) ?>?tag=<?= $value->slug . "'>" . $value->name . "</a>" . ", ";
-                                                            endif;
-                                                        endforeach;
-                                                    endif;
-                                                ?>
+                                            <div class="col-sm-12 col-lg-6">
+                                                <div class="blog-body">
+                                                    <p class="blog-date"><?= $publish_date ?></p>
+                                                    <h2 class="blog-title"><?= the_title(); ?></h2>
+                                                    <p class="blog-text">
+                                                        <?= $trimmed_content . " (...)"; ?>
+                                                    </p>
+                                                    <p class="blog-read">
+                                                        <a class="" href="<?= get_post_permalink() ?>">
+                                                            READ MORE <i class="fas fa-arrow-right"></i>
+                                                        </a>
+                                                    </p>
+                                                </div>
                                             </div>
-                                            */
-                                            ?>
                                         </div>
+                                    </div>
 
+                                <?php else: ?>
+                                <div class="col-sm-12 col-lg-4 blog-card">
+                                    <a class="" href="<?= get_post_permalink() ?>">
+                                        <div class="blog-image">
+                                            <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover">
+                                            <div class="blog-image-hover"></div>
+                                        </div>
+                                    </a>
+                                    <div class="blog-body">
+                                        <p class="blog-date"><?= $publish_date ?></p>
+                                        <h2 class="blog-title"><?= the_title(); ?></h2>
+                                        <p class="blog-text">
+                                            <?= $trimmed_content . " (...)"; ?>
+                                        </p>
+                                        <p class="blog-read">
+                                            <a class="" href="<?= get_post_permalink() ?>">
+                                                READ MORE <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
-
-                            <?php
+                                <?php endif ?>
+                            <?php $row++;
                             endwhile;
                         else: ?>
 
@@ -94,8 +103,8 @@
                 </div>
 
                 <!-- Page Navigation -->
-                <?php get_bootstrap_paginate_links($news) ?>
+                <?php get_bootstrap_paginate_links($blog_post) ?>
         </div>
     </main>
-<?php
-    get_footer();
+
+<?php get_footer();

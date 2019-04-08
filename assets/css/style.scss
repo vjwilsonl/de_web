@@ -193,6 +193,18 @@ header.main-header {
   }
 }
 
+nav[aria-label="Page navigation"] {
+  margin: 2rem 0;
+  ul.pagination {
+    li.active {
+      span {
+        background-color: $de-pink;
+        border-color: $de-pink;
+      }
+    }
+  }
+}
+
 .translate-up {
   transform: translateY(-80px);
   transition: 0.5s;

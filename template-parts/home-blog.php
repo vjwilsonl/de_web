@@ -34,15 +34,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 col-lg-12">
+            <div class="col-sm-12 col-lg-12 blog-card-big">
                 <div id="blogCarouselIndicators" class="carousel slide blog-carousel" data-ride="carousel">
                     <?php $row = 1; ?>
                     <?php while( $blog_post->have_posts() ): ?>
                         <?php
-                        $blog_post->the_post();
-                        $trimmed_content = wp_trim_words( get_the_content(), 25, "" );
-                        $publish_date    = get_the_date( 'F j, Y' );
-                        $post_tags       = get_the_tags();
+                            $blog_post->the_post();
+                            $trimmed_content = wp_trim_words( get_the_content(), 25, "" );
+                            $publish_date    = get_the_date( 'F j, Y' );
                         ?>
                         <div class="carousel-item <?=($row === 1) ? "active" : "" ?>">
                             <div class="row">

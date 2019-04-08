@@ -112,6 +112,12 @@ header.main-header {
       max-height: 70px;
       padding: 0.3rem 0; }
 
+nav[aria-label="Page navigation"] {
+  margin: 2rem 0; }
+  nav[aria-label="Page navigation"] ul.pagination li.active span {
+    background-color: #FF0098;
+    border-color: #FF0098; }
+
 .translate-up {
   transform: translateY(-80px);
   transition: 0.5s; }
@@ -974,33 +980,48 @@ section.section-blog .carousel-indicators li.active {
 section.section-blog .blog-read-all {
   margin-top: 1rem; }
 
-section.section-blog .blog-image {
+section.section-blog .blog-card-big .blog-image {
   position: relative;
   height: 400px;
   overflow: visible;
   margin-bottom: 20px; }
 
-section.section-blog .blog-cover {
+section.section-blog .blog-card-big .blog-cover {
   width: 100%;
   height: 400px;
   object-fit: cover; }
 
-section.section-blog .blog-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  z-index: 5; }
-
-section.section-blog .blog-image-hover {
+section.section-blog .blog-card-big .blog-image-hover {
   position: absolute;
   top: 0;
   width: 100%;
   height: 400px;
   z-index: 5; }
 
-section.section-blog .blog-image-hover:hover {
+section.section-blog .blog-card-big .blog-image-hover:hover {
   background: url("../images/DottedOverlay.svg");
   transition: 1s ease; }
+
+section.section-blog .blog-card {
+  margin: 2rem 0; }
+  section.section-blog .blog-card .blog-image {
+    position: relative;
+    height: 200px;
+    overflow: visible;
+    margin-bottom: 20px; }
+  section.section-blog .blog-card .blog-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; }
+  section.section-blog .blog-card .blog-image-hover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 5; }
+  section.section-blog .blog-card .blog-image-hover:hover {
+    background: url("../images/DottedOverlay.svg");
+    transition: 1s ease; }
 
 section.section-blog .blog-body .blog-text {
   font-family: "Mukta", san-serif;

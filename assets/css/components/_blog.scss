@@ -40,37 +40,64 @@ section.section-blog {
     margin-top: 1rem;
   }
 
-  .blog-image {
-    position: relative;
-    height: 400px;
-    overflow: visible;
-    margin-bottom: 20px;
+  .blog-card-big {
+    .blog-image {
+      position: relative;
+      height: 400px;
+      overflow: visible;
+      margin-bottom: 20px;
+    }
+
+    .blog-cover {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .blog-image-hover {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 400px;
+      z-index: 5;
+    }
+
+    .blog-image-hover:hover {
+      background: $image-hover;
+      transition: 1s ease;
+    }
   }
 
-  .blog-cover {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-  }
 
-  .blog-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    z-index: 5;
-  }
+  .blog-card {
 
-  .blog-image-hover {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 400px;
-    z-index: 5;
-  }
+    margin: 2rem 0;
 
-  .blog-image-hover:hover {
-    background: $image-hover;
-    transition: 1s ease;
+    .blog-image {
+      position: relative;
+      height: 200px;
+      overflow: visible;
+      margin-bottom: 20px;
+    }
+
+    .blog-cover {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-image-hover {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 5;
+    }
+
+    .blog-image-hover:hover {
+      background: $image-hover;
+      transition: 1s ease;
+    }
   }
 
   .blog-body {
