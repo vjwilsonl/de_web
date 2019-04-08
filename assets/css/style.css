@@ -16,6 +16,9 @@ a {
   cursor: pointer;
   color: #FF0098; }
 
+a.email-link, a.email-link:hover, a.email-link:visited {
+  color: #545454; }
+
 a:hover {
   text-decoration: none;
   color: #FF0098; }
@@ -189,7 +192,6 @@ h3,
 h4,
 h6 {
   font-family: "dinosaur", san-serif;
-  font-weight: bold;
   text-transform: uppercase;
   color: #002677;
   margin-bottom: 1rem;
@@ -522,29 +524,6 @@ button:focus {
   border: 2px solid #002677;
   border-radius: 0; }
 
-.btn-animated {
-  transition-property: color;
-  transition-duration: 0.5s; }
-  .btn-animated:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #002677;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
-    z-index: -1; }
-  .btn-animated:hover {
-    color: #fff; }
-    .btn-animated:hover:before {
-      transform: scaleX(1);
-      transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66); }
-
 .btn--white {
   background: transparent;
   color: #fff;
@@ -591,11 +570,11 @@ button:focus {
   border-bottom: 1px solid #E5E5E5; }
 
 .form-bluebg .form-subscription input::placeholder {
-  color: #fff;
+  color: #545454;
   font-size: 12px; }
 
 .form-bluebg .form-subscription .form-control {
-  color: #fff; }
+  color: #FF0098; }
 
 .form-bluebg .form-subscription .form-check {
   margin: 1rem 0; }
@@ -838,6 +817,71 @@ section.section-genre .genre-link-animated {
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66); }
 
+/* Input Forms & Button */
+/* Input */
+input.form-control, input.form-control:focus {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #FF0098;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0; }
+
+input.form-control::placeholder {
+  color: #545454;
+  font-family: "Mukta", san-serif;
+  font-size: 12px; }
+
+.form-check {
+  margin: 1rem 0; }
+
+button.btn {
+  font-family: "dinosaur", san-serif;
+  font-weight: normal;
+  font-size: 13px;
+  color: #FF0098;
+  background-color: #F7F7F7;
+  padding: 0.5rem 2rem;
+  border: 2px solid #FF0098;
+  border-radius: 0;
+  overflow: visible; }
+
+button.btn:after {
+  content: '';
+  color: #FF0098;
+  position: absolute;
+  height: 109%;
+  width: 100%;
+  border: 0;
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+  border-style: solid;
+  top: 3px;
+  right: -6px; }
+
+.btn-animated {
+  transition-property: color;
+  transition-duration: 0.5s; }
+  .btn-animated:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #FF0098;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1; }
+  .btn-animated:hover {
+    color: #F7F7F7; }
+    .btn-animated:hover:before {
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66); }
+
 /* Web Comics */
 /* Webcomics Section */
 section.section-webcomics .webcomics-card {
@@ -898,7 +942,8 @@ section.section-webcomics .webcomics-body .webcomics-read a {
 /* Blog */
 /* Blog Section */
 section.section-blog .blog-carousel {
-  margin: 20px 0; }
+  margin: 20px 0;
+  overflow: hidden; }
 
 section.section-blog .carousel-indicators {
   position: absolute;
@@ -1022,6 +1067,55 @@ section.section-for-educators .for-educators-body .for-educators-read a {
   color: #FF0098;
   letter-spacing: 1px; }
 
+/* Footer */
+/* Footer */
+.footer {
+  margin-top: 3rem; }
+  .footer .footer-text p {
+    font-family: "Mukta", san-serif; }
+  .footer .footer-copyright {
+    font-family: "Mukta", san-serif; }
+
+.footer-border-mobile {
+  display: none;
+  min-height: 0; }
+
+/* Return to top button */
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+  background: #FF0098;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+#return-to-top:hover {
+  bottom: 30px; }
+
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
 /* Webcomics Single */
 .chapter-link {
   position: relative;
@@ -1121,55 +1215,3 @@ section.section-contact .contact-item i {
 
 .post-related {
   border-top: 1px solid #002677; }
-
-/* Footer */
-.footer {
-  margin-top: 3rem;
-  padding-top: 3rem;
-  padding-bottom: 1.5rem; }
-  .footer .footer-brand img {
-    width: 80%; }
-  .footer .footer-social-links a {
-    color: #fff; }
-  .footer .footer-social-links a:hover, .footer .footer-social-links a:active, .footer .footer-social-links a:focus {
-    color: #72C7E7; }
-
-.footer-border-mobile {
-  display: none;
-  min-height: 0px; }
-
-/* Return to top button */
-#return-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 3;
-  background: #FF0098;
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
-
-#return-to-top:hover {
-  bottom: 30px; }
-
-#return-to-top i {
-  color: #fff;
-  margin: 0;
-  position: relative;
-  left: 16px;
-  top: 13px;
-  font-size: 19px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; }

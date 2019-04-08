@@ -53,6 +53,10 @@ a {
   color: $de-pink;
 }
 
+a.email-link, a.email-link:hover, a.email-link:visited {
+  color: $dark-grey;
+}
+
 a:hover {
   text-decoration: none;
   color: $de-pink;
@@ -287,7 +291,6 @@ h3,
 h4,
 h6 {
   font-family: $dinosaur;
-  font-weight: bold;
   text-transform: uppercase;
   color: $de-blue;
   margin-bottom: 1rem;
@@ -750,36 +753,6 @@ button {
   border-radius: 0;
 }
 
-.btn-animated {
-  transition-property: color;
-  transition-duration: 0.5s;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: $de-blue;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
-    z-index: -1;
-  }
-
-  &:hover {
-    color: $white;
-
-    &:before {
-      transform: scaleX(1);
-      transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-    }
-  }
-}
-
 .btn--white {
   background: transparent;
   color: $white;
@@ -852,12 +825,12 @@ button {
     }
 
     input::placeholder {
-      color: $white;
+      color: $dark-grey;
       font-size: 12px;
     }
 
     .form-control {
-      color: $white;
+      color: $de-pink;
     }
 
     .form-check {
@@ -1239,6 +1212,9 @@ section.section-genre {
   }
 }
 
+/* Input Forms & Button */
+@import "components/input";
+
 /* Web Comics */
 @import "components/webcomics";
 
@@ -1247,6 +1223,9 @@ section.section-genre {
 
 /* Blog */
 @import "components/for-educators";
+
+/* Footer */
+@import "components/footer";
 
 /* Webcomics Single */
 
@@ -1388,72 +1367,3 @@ section.section-contact {
   border-top: 1px solid $de-blue;
 }
 
-/* Footer */
-
-.footer {
-  margin-top: 3rem;
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
-
-  .footer-brand {
-    img {
-      width: 80%;
-    }
-  }
-
-  .footer-social-links {
-
-    a {
-      color: $white;
-    }
-
-    a:hover, a:active, a:focus {
-      color: $de-light-blue;
-    }
-  }
-}
-
-.footer-border-mobile {
-  display: none;
-  min-height: 0px;
-}
-
-/* Return to top button */
-
-#return-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 3;
-  background: $de-pink;
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-#return-to-top:hover {
-  bottom: 30px;
-}
-
-#return-to-top i {
-  color: $white;
-  margin: 0;
-  position: relative;
-  left: 16px;
-  top: 13px;
-  font-size: 19px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
