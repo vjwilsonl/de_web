@@ -72,7 +72,7 @@
                                 <div class="col-sm-12 col-lg-4 blog-card">
                                     <a class="" href="<?= get_post_permalink() ?>">
                                         <div class="blog-image">
-                                            <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover">
+                                            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>" class="blog-cover">
                                             <div class="blog-image-hover"></div>
                                         </div>
                                     </a>

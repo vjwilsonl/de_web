@@ -182,6 +182,11 @@ header.main-header {
     background-color: $de-background;
     display: none;
 
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     .navbar {
       .navbar-brand {
         img {
@@ -344,15 +349,15 @@ p {
 
 /* Sections */
 
-body:not(.home) {
-  section {
-    border-top: 0;
-
-    .section-title {
-      margin-top: 0;
-    }
-  }
-}
+//body:not(.home) {
+//  section {
+//    border-top: 0;
+//
+//    .section-title {
+//      margin-top: 0;
+//    }
+//  }
+//}
 
 .coming-soon {
   background: $de-blue;
@@ -405,8 +410,9 @@ aside {
   width: 100%;
 }
 
-.post-meta {
-  color: $de-blue;
+.post-date {
+  color: $dark-grey;
+  font-family: $mukta;
 }
 
 /* Lists */
@@ -503,12 +509,12 @@ ul > li {
     text-align: center;
 
     a {
-      color: $de-blue;
+      color: $de-pink;
       font-size: 16px;
       margin: auto;
 
       &:hover {
-        color: $de-light-blue;
+        color: $de-pink;
       }
     }
   }
@@ -524,24 +530,24 @@ ul > li {
 
 .post-content {
   a {
-    color: $de-blue;
+    color: $de-pink;
     text-decoration: underline;
   }
 
   a:hover {
-    color: $de-light-blue;
+    color: $de-pink;
     text-transform: uppercase;
   }
 
   blockquote {
     font-size: 18px;
-    font-family: "Archivo", sans-serif;
+    font-family: $mukta;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.4;
     padding: 0 1rem;
-    color: $de-blue;
-    border-left: 1px solid $de-blue;
+    color: $de-pink;
+    border-left: 1px solid $de-pink;
   }
 }
 
@@ -1375,7 +1381,57 @@ section.section-contact {
   }
 }
 
-.post-related {
-  border-top: 1px solid $de-blue;
+section.related-post {
+  border-top: $de-divider;
+  margin: 3rem 0;
+
+  .row {
+    margin-top: 1rem;
+  }
+  .related-post-card {
+    .related-post-image {
+      position: relative;
+      height: 200px;
+      overflow: visible;
+      margin-bottom: 20px;
+    }
+
+    .related-post-image:after {
+      content: '';
+      color: #FF0098;
+      position: absolute;
+      height: 104%;
+      width: 80%;
+      border: 0;
+      border-right-width: 3px;
+      border-bottom-width: 3px;
+      border-style: solid;
+      top: 0;
+      right: -8px;
+    }
+
+    .related-post-cover {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .related-post-image-hover {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 5;
+    }
+
+    .related-post-image-hover:hover {
+      background: $image-hover;
+      transition: 1s ease;
+    }
+
+    .related-post-title a, .related-post-title a:hover, .related-post-title a:visited {
+      color: $de-blue;
+    }
+  }
 }
 

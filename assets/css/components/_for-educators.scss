@@ -58,7 +58,9 @@ section.section-for-educators {
 
   .for-educators-body {
     .for-educators-title {
-
+      a, a:hover, a:visited {
+        color: $de-blue;
+      }
     }
 
     .for-educators-text {

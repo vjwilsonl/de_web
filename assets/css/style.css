@@ -108,6 +108,9 @@ header.main-header {
     width: 100%;
     background-color: #F7F7F7;
     display: none; }
+    .navbar-wrapper.sticky .container {
+      padding-left: 0;
+      padding-right: 0; }
     .navbar-wrapper.sticky .navbar .navbar-brand img {
       max-height: 70px;
       padding: 0.3rem 0; }
@@ -230,11 +233,6 @@ p {
   word-wrap: break-word; }
 
 /* Sections */
-body:not(.home) section {
-  border-top: 0; }
-  body:not(.home) section .section-title {
-    margin-top: 0; }
-
 .coming-soon {
   background: #002677; }
 
@@ -268,8 +266,9 @@ aside .section-title {
 .w-100 {
   width: 100%; }
 
-.post-meta {
-  color: #002677; }
+.post-date {
+  color: #545454;
+  font-family: "Mukta", san-serif; }
 
 /* Lists */
 ul {
@@ -336,11 +335,11 @@ ul > li {
     height: 40px;
     text-align: center; }
     .share-buttons ul li a {
-      color: #002677;
+      color: #FF0098;
       font-size: 16px;
       margin: auto; }
       .share-buttons ul li a:hover {
-        color: #72C7E7; }
+        color: #FF0098; }
   .share-buttons.share-buttons--fix {
     position: sticky;
     top: 80px;
@@ -348,22 +347,22 @@ ul > li {
 
 /* Links on text post*/
 .post-content a {
-  color: #002677;
+  color: #FF0098;
   text-decoration: underline; }
 
 .post-content a:hover {
-  color: #72C7E7;
+  color: #FF0098;
   text-transform: uppercase; }
 
 .post-content blockquote {
   font-size: 18px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Mukta", san-serif;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1.4;
   padding: 0 1rem;
-  color: #002677;
-  border-left: 1px solid #002677; }
+  color: #FF0098;
+  border-left: 1px solid #FF0098; }
 
 /* Hamburger menu */
 .hamburger {
@@ -1031,6 +1030,10 @@ section.section-blog .blog-body .blog-read a {
   color: #FF0098;
   letter-spacing: 0.5px; }
 
+/* Single BLog Section */
+section.section-blog-single p {
+  font-family: "Mukta", san-serif; }
+
 /* Blog */
 /* For Educators Section */
 section.section-for-educators .for-educators-card {
@@ -1079,6 +1082,9 @@ section.section-for-educators .for-educators-image-hover {
 section.section-for-educators .for-educators-image-hover:hover {
   background: url("../images/DottedOverlay.svg");
   transition: 1s ease; }
+
+section.section-for-educators .for-educators-body .for-educators-title a, section.section-for-educators .for-educators-body .for-educators-title a:hover, section.section-for-educators .for-educators-body .for-educators-title a:visited {
+  color: #002677; }
 
 section.section-for-educators .for-educators-body .for-educators-text {
   font-family: "Mukta", san-serif;
@@ -1234,5 +1240,40 @@ section.section-features .caption {
 section.section-contact .contact-item i {
   color: #002677; }
 
-.post-related {
-  border-top: 1px solid #002677; }
+section.related-post {
+  border-top: 1px solid #E5E5E5;
+  margin: 3rem 0; }
+  section.related-post .row {
+    margin-top: 1rem; }
+  section.related-post .related-post-card .related-post-image {
+    position: relative;
+    height: 200px;
+    overflow: visible;
+    margin-bottom: 20px; }
+  section.related-post .related-post-card .related-post-image:after {
+    content: '';
+    color: #FF0098;
+    position: absolute;
+    height: 104%;
+    width: 80%;
+    border: 0;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-style: solid;
+    top: 0;
+    right: -8px; }
+  section.related-post .related-post-card .related-post-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; }
+  section.related-post .related-post-card .related-post-image-hover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 5; }
+  section.related-post .related-post-card .related-post-image-hover:hover {
+    background: url("../images/DottedOverlay.svg");
+    transition: 1s ease; }
+  section.related-post .related-post-card .related-post-title a, section.related-post .related-post-card .related-post-title a:hover, section.related-post .related-post-card .related-post-title a:visited {
+    color: #002677; }
