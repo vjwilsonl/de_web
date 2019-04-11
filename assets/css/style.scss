@@ -521,8 +521,9 @@ ul > li {
 
   &.share-buttons--fix {
     position: sticky;
-    top: 80px;
+    top: 110px;
     z-index: 2;
+    transition: ease-out;
   }
 }
 

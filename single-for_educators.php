@@ -2,19 +2,15 @@
 
     <main>
         <div class="container">
-            <section class="section-blog-single">
+            <section class="section-for-educators-single">
                 <div class="row">
                     <div class="col-12">
                         <?php while( have_posts() ) : the_post(); ?>
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="featured-img">
-                                        <img class="w-100 mb-4" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>">
-                                    </div>
                                     <div class="post-heading">
-                                        <p class="blog-date mb-1"><?= get_the_date( 'F j, Y' ); ?></p>
-                                        <h1 class="blog-title"><?= the_title(); ?></h1>
+                                        <h1 class="for-educators-title"><?= the_title(); ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +58,8 @@
 
                                 <!-- Post -->
                                 <div class="col-10">
-                                    <div class="blog-wrapper">
-                                        <div class="blog-content">
+                                    <div class="for-educators-wrapper">
+                                        <div class="for-educators-content">
                                             <?php the_content(); ?>
                                         </div>
                                     </div>
@@ -78,7 +74,7 @@
                             if ($tags):
                                 $args = array(
                                     //'tag__in'         => $tags,
-                                    'post_type'         => 'post',
+                                    'post_type'         => 'for_educators',
                                     'post__not_in'      => array( $post->ID ),
                                     'posts_per_page'    => 3,
                                     'orderby'           => 'rand',

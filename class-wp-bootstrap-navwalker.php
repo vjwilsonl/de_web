@@ -136,7 +136,15 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			if ( isset( $args->has_children ) && $args->has_children ) {
 				$classes[] = 'dropdown';
 			}
-			if ( in_array( 'current-menu-item', $classes, true ) || in_array( 'current-menu-parent', $classes, true ) ) {
+
+			// Add .active for parent menu when sub-page is visited
+            $requestURI = explode('/', $_SERVER['REQUEST_URI']);
+            $requestURIFirstPart = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/" . $requestURI[1] . "/";
+
+			if ( in_array( 'current-menu-item', $classes, true )
+                 || in_array( 'current-menu-parent', $classes, true )
+                 || $item->url === $requestURIFirstPart // Add .active for parent menu when sub-page is visited
+            ) {
 				$classes[] = 'active';
 			}
 

@@ -75,3 +75,17 @@ section.section-for-educators {
   }
 
 }
+
+section.section-for-educators-single {
+  border: 0;
+  padding: 0 1.5rem;
+
+  .post-heading {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-family: $mukta;
+  }
+}
