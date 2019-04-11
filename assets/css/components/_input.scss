@@ -29,112 +29,27 @@ button.btn {
   border: 2px solid $de-pink;
   border-radius: 0;
   overflow: visible;
+  outline:none;
+
+  &:focus {
+    outline:none;
+    box-shadow: none;
+  }
+
+  &:after {
+    content: '';
+    color: #FF0098;
+    position: absolute;
+    height: 109%;
+    width: 100%;
+    border: 0;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-style: solid;
+    top: 3px;
+    right: -6px;
+  }
 }
-
-button.btn:after {
-  content: '';
-  color: #FF0098;
-  position: absolute;
-  height: 109%;
-  width: 100%;
-  border: 0;
-  border-right-width: 4px;
-  border-bottom-width: 4px;
-  border-style: solid;
-  top: 3px;
-  right: -6px;
-}
-
-//button.btn:hover button.btn:after {
-//  content: '';
-//  color: #FF0098;
-//  position: absolute;
-//  height: 109%;
-//  width: 100%;
-//  border: 0;
-//  border-right-width: 4px;
-//  border-bottom-width: 4px;
-//  border-style: solid;
-//  top: 3px;
-//  right: -6px;
-//}
-
-//button.btn {
-//  position: absolute;
-//  left: 50%;
-//  top: 50%;
-//  transform: translateX(-50%) translateY(-50%);
-//
-//  background: #fff;
-//  width: 100px;
-//  padding: 20px 30px;
-//
-//  border: 5px solid #4ac0ee;
-//  border-radius: 0;
-//  color: #4ac0ee;
-//  font-weight: bold;
-//  text-transform: uppercase;
-//  text-align:center;
-//
-//  z-index: 2;
-//  //@include transition(all .15s .15s ease-out);
-//
-//  &:after,
-//  &:before {
-//    position: absolute;
-//    width: 100%;
-//    max-width: 100%;
-//    top: 100%;
-//    left: 0;
-//    bottom: -10px;
-//    content: '';
-//    z-index: 1;
-//    //@include transition(all .15s .15s ease-out);
-//  }
-//
-//  &:before {
-//    background: #4ac0ee;
-//    top: 10px;
-//    left: -15px;
-//    height: 100%;
-//    width: 15px;
-//  }
-//
-//  &:after {
-//    width:100%;
-//    background: #4ac0ee;
-//    right: 0px;
-//    left: -15px;
-//    height: 15px;
-//  }
-//
-//  &:hover {
-//    background: #4ac0ee;
-//    color: #fff;
-//    margin-left: -7.5px;
-//    margin-bottom: -7.5px;
-//
-//    &:after,
-//    &:before {
-//      top: 100%;
-//      left: 0;
-//      bottom: 0px;
-//    }
-//
-//    &:before {
-//      top: 0px;
-//      left: 0px;
-//      width: 0px;
-//    }
-//
-//    &:after {
-//      right: 0px;
-//      left: 0px;
-//      height: 0px;
-//    }
-//
-//  }
-//}
 
 @mixin transition($x...){
   -webkit-transition: $x;
@@ -183,5 +98,43 @@ button.btn:after {
     //  right: 0;
     //  @include transition(color 4s, background-color 4s, border-color 4s);
     //}
+  }
+}
+
+button.sort-button {
+  border: 1px solid #C4C4C4;
+  color: $dark-grey;
+
+  &:after {
+    content: none;
+  }
+
+  &:hover {
+    background-color: $de-pink;
+    border: 1px solid $de-pink;
+    color: $dark-grey;
+  }
+}
+
+.dropdown-menu {
+  background: $de-background;
+  border: 1px solid #C4C4C4;
+  border-radius: 0;
+  color: $de-pink;
+  min-width: 8rem;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  z-index: 6;
+
+  .dropdown-item {
+    color: $de-pink;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+
+    &:hover {
+      color: $white;
+      background: $de-pink;
+    }
   }
 }

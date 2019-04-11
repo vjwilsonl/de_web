@@ -540,24 +540,6 @@ button:focus {
   .btn--white.btn-animated:hover {
     color: #002677; }
 
-.dropdown .btn {
-  padding: 0.75rem 1.5rem; }
-
-.dropdown-menu {
-  color: #002677;
-  border: 2px solid #002677;
-  border-radius: 0;
-  font-size: 13px;
-  background: #f5f5f5;
-  z-index: 2; }
-  .dropdown-menu .dropdown-item {
-    color: #002677;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem; }
-    .dropdown-menu .dropdown-item:hover {
-      color: #fff;
-      background: #002677; }
-
 .sorting-result {
   text-align: right;
   text-transform: uppercase;
@@ -850,20 +832,23 @@ button.btn {
   padding: 0.5rem 2rem;
   border: 2px solid #FF0098;
   border-radius: 0;
-  overflow: visible; }
-
-button.btn:after {
-  content: '';
-  color: #FF0098;
-  position: absolute;
-  height: 109%;
-  width: 100%;
-  border: 0;
-  border-right-width: 4px;
-  border-bottom-width: 4px;
-  border-style: solid;
-  top: 3px;
-  right: -6px; }
+  overflow: visible;
+  outline: none; }
+  button.btn:focus {
+    outline: none;
+    box-shadow: none; }
+  button.btn:after {
+    content: '';
+    color: #FF0098;
+    position: absolute;
+    height: 109%;
+    width: 100%;
+    border: 0;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-style: solid;
+    top: 3px;
+    right: -6px; }
 
 .btn-animated {
   transition-property: color;
@@ -887,6 +872,34 @@ button.btn:after {
     .btn-animated:hover:before {
       transform: scaleX(1);
       transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66); }
+
+button.sort-button {
+  border: 1px solid #C4C4C4;
+  color: #545454; }
+  button.sort-button:after {
+    content: none; }
+  button.sort-button:hover {
+    background-color: #FF0098;
+    border: 1px solid #FF0098;
+    color: #545454; }
+
+.dropdown-menu {
+  background: #F7F7F7;
+  border: 1px solid #C4C4C4;
+  border-radius: 0;
+  color: #FF0098;
+  min-width: 8rem;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  z-index: 6; }
+  .dropdown-menu .dropdown-item {
+    color: #FF0098;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem; }
+    .dropdown-menu .dropdown-item:hover {
+      color: #fff;
+      background: #FF0098; }
 
 /* Web Comics */
 /* Webcomics Section */

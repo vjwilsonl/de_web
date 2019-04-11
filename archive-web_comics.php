@@ -42,7 +42,6 @@
         'category_name'     => $category_name,
     );
     $total_web_comics = new WP_Query( $args );
-    $total_count_post = $total_web_comics->post_count;
 ?>
 
     <main>
@@ -54,34 +53,11 @@
                     </div>
                 </div>
                 <div class="row">
-
-                    <div class="col-12 col-lg-3">
-                        <div class="sidebar sidebar-left">
-                            <div class="row">
-                                <div class="col-12 section-title">
-                                    <h2>Genre</h2>
-                                </div>
-                                <div class="col-12">
-                                    <div class="sidebar-links">
-                                        <ul class="list">
-                                            <?php
-                                                $web_comics_categories = get_categories('web_comics');
-                                                foreach ($web_comics_categories as $category): ?>
-                                                    <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>?category=<?= $category->slug ?>"><?= $category->name ?></a></li>
-                                                <?php endforeach; ?>
-                                            <li class="list-item"><a class="link-animated after" href="<?= get_post_type_archive_link( 'web_comics' ) ?>">ALL</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-9">
+                    <div class="col-12">
                         <div class="row sorting mb-4">
-                            <div class="col-8">
-                                <div class="dropdown">
-                                    <button class="btn btn--primary dropdown-toggle" type="button" id="sortingButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="col-12">
+                                <div class="dropdown alignright">
+                                    <button class="btn dropdown-toggle sort-button" type="button" id="sortingButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Sort by
                                     </button>
                                     <form method="get">
@@ -96,66 +72,55 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <p class="sorting-result"><?= $count_post ?> of <?= $total_count_post ?> of results</p>
-                            </div>
                         </div>
-
-                        <!-- Web Comics -->
-                        <div class="row webcomics-block">
-
-                            <?php
-                                if ( $web_comics->have_posts() ) :
-                                    while( $web_comics->have_posts() ) : $web_comics->the_post();
-
-                                        $creator = get_field('creator');
-                                        ?>
-
-                                        <div class="col-sm-6 col-lg-4 mb-4">
-                                            <!-- Image thumbnail -->
-                                            <a href="<?= get_post_permalink() ?>" class="thumbnail text-left hvr-underline-from-left">
-                                                <div class="caption">
-                                                    <h2><?= the_title(); ?></h2>
-                                                    <p>
-                                                        <?php
-                                                            if(is_array($creator) && !empty($creator)):
-                                                                $last_creator = end(array_keys($creator));
-                                                                foreach ($creator as $key => $value):
-                                                                    if($key == $last_creator):
-                                                                        echo $value['name'];
-                                                                    else:
-                                                                        echo $value['name'] . " / ";
-                                                                    endif;
-                                                                endforeach;
-                                                            endif;
-                                                        ?>
-                                                    </p>
-                                                </div>
-                                                <div class="overlay">
-                                                    <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>" class="webcomics-cover">
-                                                </div>
-                                            </a>
-
-                                            <!-- New flag -->
-                                            <?php if(get_field('status_flag') != "None"): ?>
-                                            <div class="flag-wrapper">
-                                                <strong class="<?=(get_field('status_flag') == "New")? "flag-new" : "flag-comingsoon" ?> flag"><?=get_field('status_flag')?></strong>
-                                            </div>
-                                            <?php endif; ?>
-                                        </div>
-                                    <?php
-                                    endwhile;
-                                else: ?>
-
-                                    <p>There are no web comics published yet. Come back later.</p>
-
-                                <?php endif; ?>
-
-                        </div>
-
-                        <!-- Page Navigation -->
-                        <?php get_bootstrap_paginate_links($web_comics) ?>
                     </div>
+                </div>
+
+                <div class="row">
+                    <!-- Web Comics -->
+                    <?php if ( $web_comics->have_posts() ) : ?>
+                        <?php while( $web_comics->have_posts() ): ?>
+                            <?php
+                            $web_comics->the_post();
+                            $creator     = get_field( 'creator' );
+                            $status_flag = ( class_exists( 'acf' ) ) ? ( ( get_field( 'status_flag' ) ) ? get_field( 'status_flag' ) : '' ) : '';
+                            ?>
+                            <div class="col-sm-12 col-lg-6 webcomics-card">
+                                <a class="" href="<?= get_post_permalink() ?>">
+                                    <div class="webcomics-image">
+                                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="webcomics-cover">
+                                        <div class="webcomics-image-hover"></div>
+                                    </div>
+                                </a>
+                                <div class="webcomics-body">
+                                    <h2 class="webcomics-title"><?= the_title(); ?></h2>
+                                    <p class="webcomics-text">
+                                        <?php
+                                            if ( is_array( $creator ) && ! empty( $creator ) ):
+                                                $last_creator = end( array_keys( $creator ) );
+                                                foreach ( $creator as $key => $value ):
+                                                    if ( $key == $last_creator ):
+                                                        echo $value['name'];
+                                                    else:
+                                                        echo $value['name'] . " / ";
+                                                    endif;
+                                                endforeach;
+                                            endif;
+                                        ?>
+                                    </p>
+                                    <p class="webcomics-read">
+                                        <a class="" href="<?= get_post_permalink() ?>">
+                                            READ COMIC <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <p>There are no web comics published yet. Come back later.</p>
+                    <?php endif; ?>
+                    <!-- Page Navigation -->
+                    <?php get_bootstrap_paginate_links($web_comics) ?>
                 </div>
             </section>
         </div>
