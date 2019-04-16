@@ -958,6 +958,39 @@ section.section-webcomics .webcomics-body .webcomics-read a {
   color: #FF0098;
   letter-spacing: 0.5px; }
 
+/* Single Webcomic */
+.webcomic-chapters-wrapper .webcomic-chapter:first-child {
+  border-top: 1px solid #E5E5E5; }
+
+.webcomic-chapters-wrapper .webcomic-chapter {
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem; }
+  .webcomic-chapters-wrapper .webcomic-chapter .chapter-cover {
+    width: 100%;
+    object-fit: cover; }
+  .webcomic-chapters-wrapper .webcomic-chapter .chapter-image {
+    width: 100%;
+    height: 85px;
+    object-fit: cover;
+    z-index: 5; }
+  .webcomic-chapters-wrapper .webcomic-chapter .chapter-body {
+    padding-left: 1rem;
+    padding-top: 1rem; }
+    .webcomic-chapters-wrapper .webcomic-chapter .chapter-body .webcomic-title .chapter-no {
+      font-family: "Mukta", san-serif;
+      font-size: 14px; }
+    .webcomic-chapters-wrapper .webcomic-chapter .chapter-body .webcomic-title .chapter-title {
+      font-size: 18px; }
+    .webcomic-chapters-wrapper .webcomic-chapter .chapter-body .chapter-read {
+      margin-top: 1.1rem; }
+
+.chapter-link--primary {
+  background: #fff;
+  color: #002677;
+  border: 0;
+  border-radius: 0; }
+
 /* Blog */
 /* Blog Section */
 section.section-blog .blog-carousel {
@@ -1069,7 +1102,7 @@ section.section-blog-single {
   section.section-blog-single p {
     font-family: "Mukta", san-serif; }
 
-/* Blog */
+/* For Educators */
 /* For Educators Section */
 section.section-for-educators .for-educators-card {
   margin: 20px 0; }
@@ -1188,30 +1221,6 @@ section.section-for-educators-single {
   transition: all 0.3s ease; }
 
 /* Webcomics Single */
-.chapter-link {
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  text-transform: uppercase;
-  overflow: hidden;
-  z-index: 1;
-  cursor: pointer;
-  padding: 1rem 0 0 1.5rem !important; }
-  .chapter-link h6 {
-    display: inline-block; }
-  .chapter-link .up {
-    color: #1de9b6;
-    font-size: 12px;
-    font-family: "Archivo", sans-serif;
-    font-weight: bold;
-    margin-left: 0.5rem; }
-
-.chapter-link--primary {
-  background: #fff;
-  color: #002677;
-  border: 0;
-  border-radius: 0; }
-
 .chapter-link-animated {
   transition-property: color;
   transition-duration: 0.5s; }

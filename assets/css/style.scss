@@ -1214,7 +1214,7 @@ section.section-genre {
 /* Blog */
 @import "components/blog";
 
-/* Blog */
+/* For Educators */
 @import "components/for-educators";
 
 /* Footer */
@@ -1222,35 +1222,7 @@ section.section-genre {
 
 /* Webcomics Single */
 
-.chapter-link {
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  text-transform: uppercase;
-  overflow: hidden;
-  z-index: 1;
-  cursor: pointer;
-  padding: 1rem 0 0 1.5rem !important;
 
-  h6 {
-    display: inline-block;
-  }
-
-  .up {
-    color: $de-green;
-    font-size: 12px;
-    font-family: $archivo;
-    font-weight: bold;
-    margin-left: 0.5rem;
-  }
-}
-
-.chapter-link--primary {
-  background: $white;
-  color: $de-blue;
-  border: 0;
-  border-radius: 0;
-}
 
 .chapter-link-animated {
   transition-property: color;
