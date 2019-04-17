@@ -36,14 +36,12 @@ $image-hover: url("../images/DottedOverlay.svg");
 /*Body*/
 
 body {
+  background-color: $de-background;
   font-family: $dinosaur;
   color: $dark-grey;
-  font-size: 13px;
-  background-color: $de-background;
-}
+  font-size: 14px;
 
-body {
-  &.wc-read {
+  .main {
     background-color: $de-background;
   }
 }
@@ -63,8 +61,11 @@ a:hover {
 }
 
 p {
+  font-family: $mukta;
+  font-size: 14px;
+
   strong {
-    font-family: $dinosaur;
+    //font-family: $dinosaur;
     font-weight: $font-medium;
   }
 }
@@ -220,43 +221,7 @@ nav[aria-label="Page navigation"] {
   transition: 0.5s;
 }
 
-.wc-pagination-web,
-.wc-pagination-mobile,
-.wc-pagination-fix-mobile {
-  z-index: 3;
-  display: none;
-  background-color: $de-blue;
-  transition: 0.5s;
 
-  .pagination {
-
-    .chapter-pg {
-      position: relative;
-      display: inline-block;
-      padding: .5rem .75rem;
-      margin-left: -1px;
-      line-height: 1.25;
-      color: $white;
-      background-color: transparent;
-      border: 0;
-    }
-
-    .page-link {
-      background-color: transparent;
-      color: $white;
-      border: 0;
-
-      &:focus,
-      &:hover {
-        color: $de-light-blue;
-      }
-    }
-
-    .page-item.disabled .page-link {
-      color: $de-light-blue;
-    }
-  }
-}
 
 .wc-read-share {
   .list-inline-item {
@@ -265,13 +230,7 @@ nav[aria-label="Page navigation"] {
   }
 }
 
-.wc-control {
-  background: $de-blue;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+
 
 /* Cards */
 
@@ -429,46 +388,8 @@ ul > li {
 /* Sidebar */
 
 .sidebar {
-  border-top: 1px solid $de-blue;
-  padding-top: 1rem;
-
-  a, a:visited, a:hover, a:active {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: relative;
-    transition: 0.5s color ease;
-    text-decoration: none;
-    color: $de-pink;
-    font-family: $archivo;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  a {
-    &:hover {
-      color: $de-light-blue;
-    }
-
-    &.after:after {
-      content: "";
-      transition: 0.5s all ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      position: absolute;
-      bottom: -0.25rem;
-      height: 4px;
-      width: 0;
-      background: $de-light-blue;
-    }
-
-    &.after:hover:after {
-      width: 100%;
-    }
-
-    &.link-animated:after {
-      left: 0;
-    }
-  }
+  border-left: $de-divider;
+  padding: 0 0 0 1rem;
 }
 
 /* Modal Box */
@@ -1047,39 +968,75 @@ section.section-jumbotron {
 
 /* Carousel */
 
-//section.section-carousel {
-//  margin-top: 0;
-//  border: 0;
-//}
-//
-//.carousel {
-//  .carousel-control-next, .carousel-control-prev {
-//    opacity: 1;
-//  }
-//
-//  .carousel-control-icon {
-//    /*background: $de-blue;
-//    padding: .5rem 1rem;*/
-//    font-size: 30px;
-//  }
-//}
+section.section-carousel {
+  margin-top: 2rem;
+  border: 0;
 
-//.carousel-indicators {
-//
-//  position: initial;
-//  margin: 1.5rem 0 0 0;
-//
-//  li {
-//    width: 19px;
-//    height: 19px;
-//    background-color: transparent;
-//    border: 2px solid $de-blue;
-//
-//    &.active {
-//      background-color: $de-blue;
-//    }
-//  }
-//}
+  //.carousel {
+  //  .carousel-control-next, .carousel-control-prev {
+  //    opacity: 1;
+  //  }
+  //
+  //  .carousel-control-icon {
+  //    /*background: $de-blue;
+  //    padding: .5rem 1rem;*/
+  //    font-size: 30px;
+  //  }
+  //}
+
+  .home-carousel {
+
+    .carousel-indicators {
+      position: relative;
+      bottom: 0;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .carousel-indicators li {
+      width: 10px;
+      height: 10px;
+      background-color: $de-background;
+      border: 1px solid $de-blue;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+
+    .carousel-indicators li.active {
+      background-color: $de-blue;
+      border: 1px solid $de-blue;
+    }
+
+    .carousel-bottom {
+      background-color: $de-pink;
+      height: 52px;
+      overflow: hidden;
+
+      .carousel-control {
+        margin: 0.8rem 0;
+      }
+
+      .carousel-control-icon {
+        color: white;
+        font-size: 20px;
+      }
+
+      .carousel-title {
+        font-family: $dinosaur;
+        color: white;
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-top: .4rem;
+        margin-bottom: .4rem;
+      }
+    }
+  }
+
+
+}
 
 /* Comics Section */
 
@@ -1211,6 +1168,9 @@ section.section-genre {
 /* Web Comics */
 @import "components/webcomics";
 
+/* Webcomics Chapter */
+@import "components/webcomics-chapter";
+
 /* Blog */
 @import "components/blog";
 
@@ -1220,7 +1180,7 @@ section.section-genre {
 /* Footer */
 @import "components/footer";
 
-/* Webcomics Single */
+
 
 
 
@@ -1321,9 +1281,21 @@ section.section-features {
 }
 
 section.section-contact {
+  font-family: $mukta;
+
   .contact-item {
     i {
-      color: $de-blue;
+      color: $de-pink;
+    }
+  }
+
+  .contact-us-social {
+    border-top: $de-divider;
+    border-bottom: $de-divider;
+
+    .contact-us-social-body {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
   }
 }
