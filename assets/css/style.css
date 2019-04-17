@@ -4,13 +4,12 @@
 /*Variables*/
 /*Body*/
 body {
+  background-color: #F7F7F7;
   font-family: "dinosaur", san-serif;
   color: #545454;
-  font-size: 13px;
-  background-color: #F7F7F7; }
-
-body.wc-read {
-  background-color: #F7F7F7; }
+  font-size: 14px; }
+  body .main {
+    background-color: #F7F7F7; }
 
 a {
   cursor: pointer;
@@ -23,9 +22,11 @@ a:hover {
   text-decoration: none;
   color: #FF0098; }
 
-p strong {
-  font-family: "dinosaur", san-serif;
-  font-weight: 500; }
+p {
+  font-family: "Mukta", san-serif;
+  font-size: 14px; }
+  p strong {
+    font-weight: 500; }
 
 /* Header and Navigation */
 header.main-header {
@@ -129,51 +130,9 @@ nav[aria-label="Page navigation"] {
   transform: translateY(80px);
   transition: 0.5s; }
 
-.wc-pagination-web,
-.wc-pagination-mobile,
-.wc-pagination-fix-mobile {
-  z-index: 3;
-  display: none;
-  background-color: #002677;
-  transition: 0.5s; }
-  .wc-pagination-web .pagination .chapter-pg,
-  .wc-pagination-mobile .pagination .chapter-pg,
-  .wc-pagination-fix-mobile .pagination .chapter-pg {
-    position: relative;
-    display: inline-block;
-    padding: .5rem .75rem;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #fff;
-    background-color: transparent;
-    border: 0; }
-  .wc-pagination-web .pagination .page-link,
-  .wc-pagination-mobile .pagination .page-link,
-  .wc-pagination-fix-mobile .pagination .page-link {
-    background-color: transparent;
-    color: #fff;
-    border: 0; }
-    .wc-pagination-web .pagination .page-link:focus, .wc-pagination-web .pagination .page-link:hover,
-    .wc-pagination-mobile .pagination .page-link:focus,
-    .wc-pagination-mobile .pagination .page-link:hover,
-    .wc-pagination-fix-mobile .pagination .page-link:focus,
-    .wc-pagination-fix-mobile .pagination .page-link:hover {
-      color: #72C7E7; }
-  .wc-pagination-web .pagination .page-item.disabled .page-link,
-  .wc-pagination-mobile .pagination .page-item.disabled .page-link,
-  .wc-pagination-fix-mobile .pagination .page-item.disabled .page-link {
-    color: #72C7E7; }
-
 .wc-read-share .list-inline-item {
   padding: .5rem .75rem;
   color: #fff; }
-
-.wc-control {
-  background: #002677;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0; }
 
 /* Cards */
 .card,
@@ -280,34 +239,8 @@ ul > li {
 
 /* Sidebar */
 .sidebar {
-  border-top: 1px solid #002677;
-  padding-top: 1rem; }
-  .sidebar a, .sidebar a:visited, .sidebar a:hover, .sidebar a:active {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: relative;
-    transition: 0.5s color ease;
-    text-decoration: none;
-    color: #FF0098;
-    font-family: "Archivo", sans-serif;
-    font-weight: bold;
-    text-transform: uppercase; }
-  .sidebar a:hover {
-    color: #72C7E7; }
-  .sidebar a.after:after {
-    content: "";
-    transition: 0.5s all ease;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: absolute;
-    bottom: -0.25rem;
-    height: 4px;
-    width: 0;
-    background: #72C7E7; }
-  .sidebar a.after:hover:after {
-    width: 100%; }
-  .sidebar a.link-animated:after {
-    left: 0; }
+  border-left: 1px solid #E5E5E5;
+  padding: 0 0 0 1rem; }
 
 /* Modal Box */
 .modal-content {
@@ -807,7 +740,10 @@ section.section-genre .genre-link-animated {
 
 /* Input Forms & Button */
 /* Input */
-input.form-control, input.form-control:focus {
+input.form-control,
+textarea.form-control,
+input.form-control:focus,
+textarea.form-control:focus {
   background: transparent;
   border: 0;
   border-bottom: 2px solid #FF0098;
@@ -815,10 +751,11 @@ input.form-control, input.form-control:focus {
   padding-left: 0;
   padding-right: 0; }
 
-input.form-control::placeholder {
+input.form-control::placeholder,
+textarea.form-control::placeholder {
   color: #545454;
   font-family: "Mukta", san-serif;
-  font-size: 12px; }
+  font-size: 14px; }
 
 .form-check {
   margin: 1rem 0; }
@@ -907,6 +844,7 @@ section.section-webcomics .webcomics-card {
   margin: 20px 0; }
 
 section.section-webcomics .webcomics-read-all {
+  font-family: "dinosaur", san-serif;
   margin-top: 1rem; }
 
 section.section-webcomics .webcomics-image {
@@ -955,8 +893,8 @@ section.section-webcomics .webcomics-body .webcomics-text {
   font-size: 14px; }
 
 section.section-webcomics .webcomics-body .webcomics-read a {
-  color: #FF0098;
-  letter-spacing: 0.5px; }
+  font-family: "dinosaur", san-serif;
+  color: #FF0098; }
 
 /* Single Webcomic */
 .webcomic-chapters-wrapper .webcomic-chapter:first-child {
@@ -983,6 +921,7 @@ section.section-webcomics .webcomics-body .webcomics-read a {
     .webcomic-chapters-wrapper .webcomic-chapter .chapter-body .webcomic-title .chapter-title {
       font-size: 18px; }
     .webcomic-chapters-wrapper .webcomic-chapter .chapter-body .chapter-read {
+      font-family: "dinosaur", san-serif;
       margin-top: 1.1rem; }
 
 .chapter-link--primary {
@@ -990,6 +929,103 @@ section.section-webcomics .webcomics-body .webcomics-read a {
   color: #002677;
   border: 0;
   border-radius: 0; }
+
+/* Webcomics Chapter */
+/* Webcomic Chapter Header */
+body.webcomic-chapter-read {
+  background-color: white; }
+  body.webcomic-chapter-read .container-fluid:first-child {
+    padding: 0; }
+
+.webcomic-chapter-header-web,
+.webcomic-chapter-header-mobile,
+.wc-pagination-fix-mobile {
+  color: #002677;
+  z-index: 3;
+  background-color: #F7F7F7;
+  transition: 0.5s; }
+  .webcomic-chapter-header-web .header-logo,
+  .webcomic-chapter-header-mobile .header-logo,
+  .wc-pagination-fix-mobile .header-logo {
+    height: 55px;
+    padding: 5px;
+    margin-top: .45rem; }
+  .webcomic-chapter-header-web .chapter-title,
+  .webcomic-chapter-header-mobile .chapter-title,
+  .wc-pagination-fix-mobile .chapter-title {
+    margin-top: 1.5rem; }
+  .webcomic-chapter-header-web .pagination,
+  .webcomic-chapter-header-mobile .pagination,
+  .wc-pagination-fix-mobile .pagination {
+    margin-top: 1rem; }
+    .webcomic-chapter-header-web .pagination .chapter-pg,
+    .webcomic-chapter-header-mobile .pagination .chapter-pg,
+    .wc-pagination-fix-mobile .pagination .chapter-pg {
+      position: relative;
+      display: inline-block;
+      padding: .45rem .75rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      background-color: transparent;
+      border: 0; }
+    .webcomic-chapter-header-web .pagination .page-link,
+    .webcomic-chapter-header-mobile .pagination .page-link,
+    .wc-pagination-fix-mobile .pagination .page-link {
+      background-color: transparent;
+      color: #B2B2B2;
+      border: 0; }
+      .webcomic-chapter-header-web .pagination .page-link:focus, .webcomic-chapter-header-web .pagination .page-link:hover,
+      .webcomic-chapter-header-mobile .pagination .page-link:focus,
+      .webcomic-chapter-header-mobile .pagination .page-link:hover,
+      .wc-pagination-fix-mobile .pagination .page-link:focus,
+      .wc-pagination-fix-mobile .pagination .page-link:hover {
+        color: #FF0098; }
+    .webcomic-chapter-header-web .pagination .page-item.disabled .page-link,
+    .webcomic-chapter-header-mobile .pagination .page-item.disabled .page-link,
+    .wc-pagination-fix-mobile .pagination .page-item.disabled .page-link {
+      color: #E5E5E5; }
+
+.webcomic-chapter-fix {
+  background: #F7F7F7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px; }
+  .webcomic-chapter-fix a {
+    color: #545454; }
+  .webcomic-chapter-fix .chapterSlide {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap; }
+  .webcomic-chapter-fix .d-block {
+    width: 20%;
+    padding-top: 1.5rem;
+    display: flex !important;
+    flex-wrap: wrap; }
+    .webcomic-chapter-fix .d-block .chapter-cover {
+      width: 100%;
+      object-fit: cover; }
+    .webcomic-chapter-fix .d-block .chapter-image {
+      width: 100%;
+      object-fit: cover;
+      z-index: 5; }
+    .webcomic-chapter-fix .d-block .chapter-body {
+      padding-left: 1rem;
+      padding-top: 1rem; }
+      .webcomic-chapter-fix .d-block .chapter-body .webcomic-title .chapter-no {
+        font-family: "Mukta", san-serif;
+        font-size: 14px;
+        margin-bottom: .5rem; }
+      .webcomic-chapter-fix .d-block .chapter-body .webcomic-title .chapter-title {
+        font-size: 18px; }
+  .webcomic-chapter-fix .d-block.active .chapter-image {
+    border: 2px solid #FF0098; }
+  .webcomic-chapter-fix .d-block.active .chapter-body .webcomic-title .chapter-no {
+    color: #FF0098; }
+  .webcomic-chapter-fix .d-block.active .chapter-body .webcomic-title .chapter-title {
+    color: #FF0098; }
 
 /* Blog */
 /* Blog Section */
@@ -1024,7 +1060,8 @@ section.section-blog .carousel-indicators li.active {
   border: 1px solid #002677; }
 
 section.section-blog .blog-read-all {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  font-family: "dinosaur", san-serif; }
 
 section.section-blog .blog-card-big .blog-image {
   position: relative;
@@ -1090,7 +1127,7 @@ section.section-blog .blog-body .blog-text {
 
 section.section-blog .blog-body .blog-read a {
   color: #FF0098;
-  letter-spacing: 0.5px; }
+  font-family: "dinosaur", san-serif; }
 
 /* Single BLog Section */
 section.section-blog-single {
@@ -1108,7 +1145,8 @@ section.section-for-educators .for-educators-card {
   margin: 20px 0; }
 
 section.section-for-educators .for-educators-read-all {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  font-family: "dinosaur", san-serif; }
 
 section.section-for-educators .for-educators-image {
   position: relative;
@@ -1160,7 +1198,7 @@ section.section-for-educators .for-educators-body .for-educators-text {
 
 section.section-for-educators .for-educators-body .for-educators-read a {
   color: #FF0098;
-  letter-spacing: 1px; }
+  font-family: "dinosaur", san-serif; }
 
 section.section-for-educators-single {
   border: 0;
@@ -1220,7 +1258,6 @@ section.section-for-educators-single {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
-/* Webcomics Single */
 .chapter-link-animated {
   transition-property: color;
   transition-duration: 0.5s; }
@@ -1290,8 +1327,16 @@ section.section-features .caption {
     background: #72C7E7;
     padding: 0.5rem; }
 
-section.section-contact .contact-item i {
-  color: #002677; }
+section.section-contact {
+  font-family: "Mukta", san-serif; }
+  section.section-contact .contact-item i {
+    color: #FF0098; }
+  section.section-contact .contact-us-social {
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5; }
+    section.section-contact .contact-us-social .contact-us-social-body {
+      margin-top: 1rem;
+      margin-bottom: 1rem; }
 
 section.related-post {
   border-top: 1px solid #E5E5E5;

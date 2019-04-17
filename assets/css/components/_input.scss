@@ -1,6 +1,9 @@
 /* Input */
 
-input.form-control, input.form-control:focus {
+input.form-control,
+textarea.form-control,
+input.form-control:focus,
+textarea.form-control:focus {
   background: transparent;
   border: 0;
   border-bottom: 2px solid $de-pink;
@@ -9,10 +12,11 @@ input.form-control, input.form-control:focus {
   padding-right: 0;
 }
 
-input.form-control::placeholder {
+input.form-control::placeholder,
+textarea.form-control::placeholder {
   color: $dark-grey;
   font-family: $mukta;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .form-check {

@@ -49,6 +49,20 @@
 					</div>
 				</div>
 			</div>
+
+            <div class="row no-gutters">
+                <div class="col-12 contact-us-social">
+                    <div class="contact-us-social-body">
+                        <h6>Follow us on social media</h6>
+
+                        <ul class="list-inline">
+                            <?php get_template_part( 'template-parts/social-url-icon' ) ?>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
 		<?php endif; ?>
 		<div class="row">
 			<div class="col-12">

@@ -12,7 +12,7 @@
  */
 ?>
 <?php if ( class_exists('acf')): ?>
-	<?= (get_field('facebook_url', 'options')) ? '<li class="list-inline-item"><a href="'. get_field('facebook_url', 'options') . ' "><i class="fab fa-facebook"></i></a></li>' : '' ; ?>
-	<?= (get_field('instagram_url', 'options')) ? '<li class="list-inline-item"><a href="'. get_field('instagram_url', 'options') . ' "><i class="fab fa-instagram"></i></a></li>' : '' ; ?>
-	<?= (get_field('twitter_url', 'options')) ? '<li class="list-inline-item"><a href="'. get_field('twitter_url', 'options') . ' "><i class="fab fa-twitter"></i></a></li>' : '' ; ?>
+	<?= (get_field('facebook_url', 'options')) ? '<li class="list-inline-item"><a href="'. get_field('facebook_url', 'options') . '" target="_blank"><i class="fab fa-facebook"></i></a></li>' : '' ; ?>
+	<?= (get_field('instagram_url', 'options')) ? '<li class="list-inline-item"><a href="'. get_field('instagram_url', 'options') . '" target="_blank"><i class="fab fa-instagram"></i></a></li>' : '' ; ?>
+	<?= (get_field('twitter_url', 'options')) ? '<li class="list-inline-item"><a href="'. get_field('twitter_url', 'options') . '" target="_blank"><i class="fab fa-twitter"></i></a></li>' : '' ; ?>
 <?php endif; ?>
