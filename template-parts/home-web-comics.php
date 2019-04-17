@@ -30,7 +30,7 @@
             <div class="col-6">
                 <p class="text-right align-middle webcomics-read-all">
                     <a class="" href="<?= get_post_type_archive_link('web_comics'); ?>">
-                        SEE ALL <i class="fas fa-arrow-right"></i>
+                        SEE ALL &nbsp;<i class="fas fa-arrow-right"></i>
                     </a>
                 </p>
             </div>
@@ -67,7 +67,7 @@
                         </p>
                         <p class="webcomics-read">
                             <a class="" href="<?= get_post_permalink() ?>">
-                                READ COMIC <i class="fas fa-arrow-right"></i>
+                                READ COMIC &nbsp;<i class="fas fa-arrow-right"></i>
                             </a>
                         </p>
                     </div>

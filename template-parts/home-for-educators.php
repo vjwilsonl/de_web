@@ -30,7 +30,7 @@
             <div class="col-6">
                 <p class="text-right align-middle for-educators-read-all">
                     <a class="" href="<?= get_post_type_archive_link('for_educators'); ?>">
-                        SEE ALL <i class="fas fa-arrow-right"></i>
+                        SEE ALL &nbsp; <i class="fas fa-arrow-right"></i>
                     </a>
                 </p>
             </div>

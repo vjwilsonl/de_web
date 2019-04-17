@@ -60,7 +60,7 @@
                                                     </p>
                                                     <p class="blog-read">
                                                         <a class="" href="<?= get_post_permalink() ?>">
-                                                            READ MORE <i class="fas fa-arrow-right"></i>
+                                                            READ MORE &nbsp; <i class="fas fa-arrow-right"></i>
                                                         </a>
                                                     </p>
                                                 </div>
@@ -84,7 +84,7 @@
                                         </p>
                                         <p class="blog-read">
                                             <a class="" href="<?= get_post_permalink() ?>">
-                                                READ MORE <i class="fas fa-arrow-right"></i>
+                                                READ MORE &nbsp; <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </p>
                                     </div>

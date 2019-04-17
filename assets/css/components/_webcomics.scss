@@ -6,6 +6,7 @@ section.section-webcomics {
   }
 
   .webcomics-read-all {
+    font-family: $dinosaur;
     margin-top: 1rem;
   }
 
@@ -67,8 +68,8 @@ section.section-webcomics {
     }
 
     .webcomics-read a {
+      font-family: $dinosaur;
       color: $de-pink;
-      letter-spacing: 0.5px;
     }
   }
 
@@ -114,6 +115,7 @@ section.section-webcomics {
       }
 
       .chapter-read {
+        font-family: $dinosaur;
         margin-top: 1.1rem;
       }
     }

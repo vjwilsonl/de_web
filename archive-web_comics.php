@@ -110,7 +110,7 @@
                                     </p>
                                     <p class="webcomics-read">
                                         <a class="" href="<?= get_post_permalink() ?>">
-                                            READ COMIC <i class="fas fa-arrow-right"></i>
+                                            READ COMIC &nbsp; <i class="fas fa-arrow-right"></i>
                                         </a>
                                     </p>
                                 </div>

@@ -28,7 +28,7 @@
             <div class="col-6">
                 <p class="text-right align-middle blog-read-all">
                     <a class="" href="<?= get_post_type_archive_link('post'); ?>">
-                        SEE ALL <i class="fas fa-arrow-right"></i>
+                        SEE ALL &nbsp; <i class="fas fa-arrow-right"></i>
                     </a>
                 </p>
             </div>
@@ -60,7 +60,7 @@
                                         </p>
                                         <p class="blog-read">
                                             <a class="" href="<?= get_post_permalink() ?>">
-                                                READ MORE <i class="fas fa-arrow-right"></i>
+                                                READ MORE &nbsp; <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </p>
                                     </div>
