@@ -9,8 +9,8 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="featured-img">
-                                        <img class="w-100 mb-4" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>">
+                                    <div class="featured-blog-image">
+                                        <img class="featured-blog-cover" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>">
                                     </div>
                                     <div class="post-heading">
                                         <p class="blog-date mb-1"><?= get_the_date( 'F j, Y' ); ?></p>

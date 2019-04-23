@@ -9,7 +9,8 @@ section.section-blog {
   .carousel-indicators {
     position: absolute;
     right: 0;
-    bottom: 5px;
+    margin-bottom: 0;
+    bottom: 0;
     left: 12px;
     -webkit-box-pack: left;
     -ms-flex-pack: left;
@@ -55,6 +56,48 @@ section.section-blog {
       object-fit: cover;
     }
 
+    .blog-image-hover:hover {
+      background: $image-hover;
+      transition: 1s ease;
+    }
+
+    /* css changes for 7:5 ratio images */
+    .blog-image-75 {
+      display: block;
+      width: 100%;
+      position: relative;
+      height: 0;
+      padding: 71.43% 0 0 0;
+      // overflow: hidden;
+    }
+
+    .blog-cover-75 {
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .blog-image-75:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: $image-hover;
+    }
+    .blog-image-75:hover:after {
+      opacity: 1;
+      transition: 1s ease;
+    }
+
     .blog-image-hover {
       position: absolute;
       top: 0;
@@ -62,16 +105,9 @@ section.section-blog {
       height: 400px;
       z-index: 5;
     }
-
-    .blog-image-hover:hover {
-      background: $image-hover;
-      transition: 1s ease;
-    }
   }
 
-
   .blog-card {
-
     margin: 2rem 0;
 
     .blog-image {
@@ -83,7 +119,7 @@ section.section-blog {
 
     .blog-image:after {
       content: '';
-      color: #FF0098;
+      color: #ff0098;
       position: absolute;
       height: 104%;
       width: 80%;
@@ -121,7 +157,6 @@ section.section-blog {
     }
 
     .blog-title {
-
     }
 
     .blog-text {
@@ -134,9 +169,7 @@ section.section-blog {
       font-family: $dinosaur;
     }
   }
-
 }
-
 
 /* Single BLog Section */
 
@@ -152,4 +185,25 @@ section.section-blog-single {
   p {
     font-family: $mukta;
   }
+}
+
+.featured-blog-image {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding: 40% 0 0 0;
+  overflow: hidden;
+}
+
+.featured-blog-cover {
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

@@ -46,9 +46,9 @@
                         <div class="carousel-item <?=($row === 1) ? "active" : "" ?>">
                             <div class="row">
                                 <div class="col-sm-12 col-lg-6">
-                                    <div class="blog-image">
-                                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover">
-                                        <div class="blog-image-hover"></div>
+                                    <div class="blog-image-75">
+                                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover-75">
+                                        <!-- <div class="blog-image-hover"></div> -->
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-lg-6">

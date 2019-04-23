@@ -19,9 +19,9 @@ section.section-for-educators {
 
   .for-educators-image:after {
     content: '';
-    color: #FF0098;
+    color: #ff0098;
     position: absolute;
-    height: 104%;
+    height: 103%;
     width: 80%;
     border: 0;
     border-right-width: 3px;
@@ -32,34 +32,46 @@ section.section-for-educators {
   }
 
   .for-educators-cover {
-    width: 100%;
-    height: 200px;
+    position: absolute;
     object-fit: cover;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   .for-educators-image {
+    display: block;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    z-index: 5;
+    position: relative;
+    height: 0;
+    padding: 71.43% 0 0 0;
+    overflow: visible;
   }
 
   .for-educators-image-hover {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     z-index: 5;
+    background: $image-hover;
+    opacity: 0;
   }
 
   .for-educators-image-hover:hover {
-    background: $image-hover;
+    opacity: 0.8;
     transition: 1s ease;
   }
 
   .for-educators-body {
     .for-educators-title {
-      a, a:hover, a:visited {
+      a,
+      a:hover,
+      a:visited {
         color: $de-blue;
       }
     }
@@ -74,7 +86,6 @@ section.section-for-educators {
       font-family: $dinosaur;
     }
   }
-
 }
 
 section.section-for-educators-single {
