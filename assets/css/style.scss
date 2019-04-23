@@ -109,103 +109,6 @@ header.main-header {
   }
 }
 
-.navbar {
-  padding: 0;
-
-  div {
-    padding: 0;
-  }
-
-  .navbar-brand {
-    img {
-      max-height: 70px;
-    }
-  }
-}
-
-.navbar-nav {
-  height: 73px;
-  width: 100%;
-  margin-top: auto;
-  margin-bottom: auto;
-
-  .nav-item {
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 65px;
-
-    a {
-      font-size: 14px;
-      color: $de-blue;
-      font-family: $dinosaur;
-      font-weight: $font-medium;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 0.9rem 1.5rem 0.5rem 1.5rem;
-      height: 65px;
-    }
-
-    a:hover {
-      padding-top: 0.9rem;
-      color: $de-pink;
-      background-image: url(../images/MenuFrame.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center -5px;
-      overflow: visible;
-      height: 65px;
-    }
-  }
-
-  .active > .nav-link,
-  .show > .nav-link,
-  .nav-link:focus {
-    padding-top: 0.9rem;
-    color: $de-pink;
-    background-image: url('../images/MenuFrame.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center -5px;
-    overflow: visible;
-    height: 65px;
-  }
-
-  .dropdown-menu {
-    background-color: $de-light-blue;
-    border: 0;
-    border-radius: 0;
-    margin: 0;
-  }
-}
-
-.navbar-wrapper {
-  background-color: $de-background;
-  margin-bottom: 25px;
-
-  &.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 20;
-    width: 100%;
-    background-color: $de-background;
-    display: none;
-
-    .container {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .navbar {
-      .navbar-brand {
-        img {
-          max-height: 70px;
-          padding: 0.3rem 0;
-        }
-      }
-    }
-  }
-}
-
 nav[aria-label='Page navigation'] {
   margin: 2rem 0;
   ul.pagination {
@@ -473,104 +376,6 @@ ul > li {
     padding: 0 1rem;
     color: $de-pink;
     border-left: 1px solid $de-pink;
-  }
-}
-
-/* Hamburger menu */
-
-.hamburger {
-  padding: 20px 30px;
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.hamburger-box {
-  width: 30px;
-  height: 20px;
-  display: inline-block;
-  position: relative;
-}
-
-.hamburger-inner {
-  display: block;
-  top: 50%;
-
-  &,
-  &:before,
-  &:after {
-    width: 30px;
-    height: 3px;
-    background-color: $white;
-    border-radius: 4px;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
-  }
-
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-  }
-
-  &:before {
-    top: -10px;
-  }
-
-  &:after {
-    bottom: -10px;
-  }
-}
-
-.hamburger--spin {
-  .hamburger-inner {
-    transition-duration: 0.22s;
-    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-
-    &:before {
-      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-    }
-
-    &:after {
-      transition: bottom 0.1s 0.25s ease-in,
-        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-  }
-
-  &.is-active {
-    .hamburger-inner {
-      transform: rotate(225deg);
-      transition-delay: 0.12s;
-      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-
-      &:before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-      }
-
-      &:after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out,
-          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-    }
   }
 }
 
@@ -1150,6 +955,9 @@ section.section-genre {
   }
 }
 
+/* Navbar */
+@import "components/navbar";
+
 /* Input Forms & Button */
 @import 'components/input';
 
@@ -1352,4 +1160,64 @@ section.related-post {
 
 .fa-stack-1x {
   font-size: smaller;
+}
+
+/*
+ * Restore Bootstrap 3 "hidden" utility classes.
+*/
+
+/* Breakpoint XS */
+@media (max-width: 575px)
+{
+  .hidden-xs-down, .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down,
+  .hidden-xs-up,
+  .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl
+  {
+    display: none !important;
+  }
+
+}
+
+/* Breakpoint SM */
+@media (min-width: 576px) and (max-width: 767px)
+{
+  .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down,
+  .hidden-xs-up, .hidden-sm-up,
+  .hidden-unless-xs, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl
+  {
+    display: none !important;
+  }
+}
+
+/* Breakpoint MD */
+@media (min-width: 768px) and (max-width: 991px)
+{
+  .hidden-md-down, .hidden-lg-down, .hidden-xl-down,
+  .hidden-xs-up, .hidden-sm-up, .hidden-md-up,
+  .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-lg, .hidden-unless-xl
+  {
+    display: none !important;
+  }
+}
+
+/* Breakpoint LG */
+@media (min-width: 992px) and (max-width: 1199px)
+{
+  .hidden-lg-down, .hidden-xl-down,
+  .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up,
+  .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-xl
+  {
+    display: none !important;
+  }
+}
+
+/* Breakpoint XL */
+@media (min-width: 1200px)
+{
+  .hidden-xl-down,
+  .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, .hidden-xl-up,
+  .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg
+  {
+    display: none !important;
+  }
 }
