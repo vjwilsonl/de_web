@@ -41,7 +41,7 @@ $(document).ready(function () {
   $(window).scroll(function (e) {
     const headerHeight = $('.main-header').height();
     if ($(this).scrollTop() > headerHeight) { // When scroll height reach the nav bar
-      $('.navbar-wrapper').addClass('sticky').slideDown(1000); // Fix the nav bar wrapper to the top of window
+      $('.navbar-wrapper').addClass('sticky').slideDown("slow"); // Fix the nav bar wrapper to the top of window
       $('.sticky-logo').show(); // Show alt-logo
       $('.main-logo').hide(); // Hide main-logo
     } else {

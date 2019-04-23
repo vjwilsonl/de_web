@@ -1,176 +1,215 @@
+<?php
+    global $wp;
+    $current_url     = home_url( $wp->request );
+    $current_url_w_q = home_url( $wp->request ) . '/?chapter=' . $chapter;
+    $curr_chapter    = $chapter_arr[ ( $chapter - 1 ) ];
+    $has_previous    = ( $chapter > 1 ) ? TRUE : FALSE;
+    $has_next        = ( $chapter < count( $chapter_arr ) ) ? TRUE : FALSE;
+
+    $sticky_header_logo     = get_field( 'sticky_header_logo', 'option' );
+    $sticky_header_logo_url = ( isset( $sticky_header_logo['url'] ) ) ? $sticky_header_logo['url'] : get_template_directory_uri() . '/assets/images/DifferenceEngine-StickyLogo.svg';
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title><?= the_title() ?> | <?= $curr_chapter['chapter_title']; ?></title>
 
     <!-- Bootstrap CSS & JS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo:400,600" rel="stylesheet">
-    <link href="//cloud.typenetwork.com/projects/2596/fontface.css/" rel="stylesheet" type="text/css">
 
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
-<?php 
-    global $wp;
-    $current_url     = home_url( $wp->request ); 
-    $current_url_w_q = home_url( $wp->request ). '/?chapter='. $chapter; 
-    $curr_chapter    = $chapter_arr[($chapter - 1)];
-    $has_previous    = ($chapter > 1) ? true : false;
-    $has_next        = ($chapter < count($chapter_arr)) ? true : false;
-?>
-<body class="wc-read">
-    <header class="wc-header">
+<body class="webcomic-chapter-read">
+<div class="container-fluid">
+    <header class="webcomic-chapter-header">
         <!--Web Header -->
-        <div class="wc-pagination-web p-2">
-            <div class="row no-gutters">
-                <div class="col-4 pl-3">
-                    <div class="row p-2">
-                        <div class="col-1">
-                            <a href="/">
-                                <i class="fas fa-home" style="color: white; font-size: 14px;"></i>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <h6 style="color: white; margin-bottom: 0"><?= the_title() ?> - <?= $curr_chapter['chapter_title']; ?></h6>
+        <div class="webcomic-chapter-header-web">
+            <div class="container">
+                <div class="row no-gutters">
+
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-4 text-center">
+                                <a href="/">
+                                    <img alt="Difference Engine" src="<?= $sticky_header_logo_url ?>" class=" header-logo" />
+                                </a>
+                            </div>
+                            <div class="col-8 text-center">
+                                <h4 class="chapter-title"><?= the_title() ?> | <?= $curr_chapter['chapter_title']; ?></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <nav aria-label="Chapter navigation">
-                      <ul class="pagination justify-content-center" style="margin-bottom: 0">
-                        <li class="page-item p-0 <?= (!$has_previous) ? 'disabled' : ''; ?>">
-                          <a class="page-link" href="<?= '?chapter='. ($chapter - 1); ?>" tabindex="-1"><i class="fas fa-angle-left"></i></a>
-                        </li>
-                        <li class="page-item p-0">
-                            <a href="<?= $current_url ?>#chapters">
-                                <i class="fas fa-list-ul" style="color: white"></i>
-                            </a>
-                            <span class="chapter-pg">Ch. <?= $chapter; ?></span>
-                        </li>
-                        <li class="page-item p-0 <?= (!$has_next) ? 'disabled' : ''; ?>">
-                          <a class="page-link" href="<?= '?chapter='. ($chapter + 1); ?>"><i class="fas fa-angle-right"></i></a>
-                        </li>
-                      </ul>
-                    </nav>
-                </div>
-                <div class="col-4 pr-3">
-                    <div class="wc-read-share text-right" id="#wc-read-share">
-                        <ul class="list-inline p-0 m-0">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url_w_q; ?>" target="_blank" title="Share on Facebook."><i class="fab fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/home/?status=<?= the_title(). ' - ' . $curr_chapter['chapter_title'] ; ?> - <?= $current_url_w_q; ?>" target="_blank" title="Tweet this!"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a class="copy-link" data-clipboard-text="<?= $current_url_w_q; ?>" tabindex="0" data-trigger="click" data-toggle="tooltip" title="Copy Link"><i class="fas fa-link"></i></a></li>
-                            <li class="list-inline-item"><a href="mailto:?subject=Look at this website&body=Hi, I found this website and thought you might like it <?= the_title(). ': ' . $curr_chapter['chapter_title']; ?> - <?= $current_url_w_q; ?>" target=""><i class="fas fa-envelope"></i></a></li>
-                        </ul>
+
+                    <div class="col-4">
+                        <nav aria-label="Chapter navigation">
+                            <ul class="pagination justify-content-center" >
+                                <li class="page-item <?= ( ! $has_previous ) ? 'disabled' : ''; ?>">
+                                    <a class="page-link" href="<?= '?chapter=' . ( $chapter - 1 ); ?>" tabindex="-1"><i class="fas fa-angle-left"></i></a>
+                                </li>
+                                <li class="page-item">
+                                    <button class="chapter-no toggle-button"><span class="chapter-pg">CHAPTER <?= $chapter; ?></span></button>
+                                </li>
+                                <li class="page-item <?= ( ! $has_next ) ? 'disabled' : ''; ?>">
+                                    <a class="page-link" href="<?= '?chapter=' . ( $chapter + 1 ); ?>"><i class="fas fa-angle-right"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
+
                 </div>
             </div>
         </div>
 
         <!-- Mobile header -->
-        <div class="wc-pagination-mobile p-2">
+        <div class="webcomic-chapter-header" style="display: none;">
             <div class="row no-gutters">
-                <div class="col-8 pl-3">
-                    <div class="row p-2">
+                <div class="col-8">
+                    <div class="row">
                         <div class="col-1">
                             <a href="/">
-                                <i class="fas fa-home" style="color: white; font-size: 14px;"></i>
+                                <i class="fas fa-home"></i>
                             </a>
                         </div>
                         <div class="col">
-                            <h6 style="color: white; margin-bottom: 0"><?= the_title() ?> - <?= $curr_chapter['chapter_title']; ?></h6>
+                            <h6><?= the_title() ?> | <?= $curr_chapter['chapter_title']; ?></h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-4 pr-3">
                     <div class="wc-read-share text-right" id="#wc-read-share">
-                        <!-- Share button -->
+                         <!-- Share button -->
                         <button type="button" class="p-2 share-buttons" data-toggle="modal" data-target="#share-modal">
-                          <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
-<!-- Modal -->
-<div class="modal fade" id="share-modal" tabindex="-1" role="dialog" aria-labelledby="share-modal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Share this comic!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p class="text-center">Share this webcomic and show support to the creator</p>
-        <ul class="list-inline text-center m-0">
-            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url_w_q; ?>" target="_blank" title="Share on Facebook."><i class="fab fa-facebook-f circle-icon"></i></a></li>
-            <li class="list-inline-item"><a href="https://twitter.com/home/?status=<?= the_title(). ' - ' . $curr_chapter['chapter_title'] ; ?> - <?= $current_url_w_q; ?>" target="_blank" title="Tweet this!"><i class="fab fa-twitter circle-icon"></i></a></li>
-            <li class="list-inline-item"><a class="copy-link" data-clipboard-text="<?= $current_url_w_q; ?>" tabindex="0" data-trigger="click" data-toggle="tooltip" title="Copy Link"><i class="fas fa-link circle-icon"></i></a></li>
-            <li class="list-inline-item"><a href="mailto:?subject=Look at this website&body=Hi, I found this website and thought you might like it <?= the_title(). ': ' . $curr_chapter['chapter_title']; ?> - <?= $current_url_w_q; ?>" target=""><i class="fas fa-envelope circle-icon"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- Fixed prev next bar for mobile -->
-    <div class="wc-control wc-pagination-fix-mobile p-2">
-        <div class="row no-gutters">
-            <div class="col-12">
-                <nav aria-label="Previous next navigation">
-                  <ul class="pagination justify-content-center" style="margin-bottom: 0">
-                    <li class="page-item p-0 <?= (!$has_previous) ? 'disabled' : ''; ?>">
-                      <a class="page-link" href="<?= '?chapter='. ($chapter - 1); ?>" tabindex="-1"><i class="fas fa-angle-left"></i> Prev</a>
-                    </li>
-                    <li class="page-item p-0">
-                        <a href="<?= $current_url ?>#chapters">
-                            <i class="fas fa-list-ul" style="color: white"></i>
-                        </a>
-                        <span class="chapter-pg">Ch. <?= $chapter; ?></span>
-                    </li>
-                    <li class="page-item p-0 <?= (!$has_next) ? 'disabled' : ''; ?>">
-                      <a class="page-link" href="<?= '?chapter='. ($chapter + 1); ?>">Next <i class="fas fa-angle-right"></i></a>
-                    </li>
-                  </ul>
-                </nav>
+<!-- Chapter Bar -->
+<div class="webcomic-chapter-bar-top" >
+    <div class="row mx-auto my-auto">
+        <div class="col-1 text-center">
+            <p class="carousel-control">
+                <a class="" href="#recipeCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-icon slide-left" aria-hidden="true">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                </a>
+            </p>
+        </div>
+        <div class="col-10 w-100">
+            <div id="recipeCarousel" class="carousel slide w-100" >
+                <div class="carousel-inner w-100" role="listbox">
+                    <!-- Chapter links -->
+                    <?php if ( is_array( $chapter_arr_rev ) && count( $chapter_arr_rev ) ): ?>
+                        <?php $row = 1 ?>
+                        <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
+
+                            <div class="carousel-item <?= ( (count( $chapter_arr ) - $key) == $row )? "active" : ""?>">
+                                <div class="d-block col-3 <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
+                                    <div class="col-12 chapter-cover">
+                                        <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
+                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 chapter-body">
+                                        <div class="webcomic-title" >
+                                            <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
+                                                <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Final Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
+                                                <h6 class="chapter-title"><?= $value['chapter_title']; ?></h6>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
+        <div class="col-1 text-center">
+            <p class="carousel-control">
+                <a class="" href="#recipeCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-icon slide-right" aria-hidden="true">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
+            </p>
+        </div>
     </div>
+    <div class="row no-gutters toggle-bar">
+        <div class="col-12 text-center">
+            <button class="toggle-button">
+                <i class="fas fa-angle-up"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
 <!-- Main -->
 <main>
     <div class="container">
-        <section class="section-wc-content">
+        <section class="section-webcomic-content">
             <br>
-            <?php if ( is_array($curr_chapter['comic_gallery']) && count($curr_chapter['comic_gallery'])): ?>
-            <div class="row no-gutters">
-                <div class="wc-img-area" style="max-width: 600px; margin: auto">
-                    <?php foreach ($curr_chapter['comic_gallery'] as $key => $value): ?>
-                    <img src="<?= $value['url']; ?>" class="w-100">
-                    <?php endforeach; ?>
+            <?php if ( is_array( $curr_chapter['comic_gallery'] ) && count( $curr_chapter['comic_gallery'] ) ): ?>
+                <div class="row no-gutters">
+                    <div class="webcomic-img-area" style="max-width: 600px; margin: auto">
+                        <?php foreach ( $curr_chapter['comic_gallery'] as $key => $value ): ?>
+                            <img alt="<?= $curr_chapter['chapter_title']; ?>" src="<?= $value['url']; ?>" class="w-100">
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
             <?php endif; ?>
+
             <div class="row no-gutters">
                 <div class="col-12">
-                    <div class="wc-share text-center">
-                        <h6>Share this webcomic and show support for the creator!</h6>
+                    <div class="webcomic-share text-center">
+                        <h6>Share this comic <br/> and show support for the creator!</h6>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url_w_q; ?>" target="_blank" title="Share on Facebook."><i class="fab fa-facebook-f circle-icon"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/home/?status=<?= the_title(). ' - ' . $curr_chapter['chapter_title'] ; ?> - <?= $current_url_w_q; ?>" target="_blank" title="Tweet this!"><i class="fab fa-twitter circle-icon"></i></a></li>
-                            <li class="list-inline-item"><a class="copy-link" data-clipboard-text="<?= $current_url_w_q; ?>" tabindex="0" data-trigger="click" data-toggle="tooltip" title="Copy Link"><i class="fas fa-link circle-icon"></i></a></li>
-                            <li class="list-inline-item"><a href="mailto:?subject=Look at this website&body=Hi, I found this website and thought you might like it <?= the_title(). ': ' . $curr_chapter['chapter_title']; ?> - <?= $current_url_w_q; ?>" target=""><i class="fas fa-envelope circle-icon"></i></a></li>
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url_w_q; ?>" target="_blank" title="Share on Facebook.">
+                                    <span class="fa-stack">
+                                        <i class="fal fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://twitter.com/home/?status=<?= the_title() . ' - ' . $curr_chapter['chapter_title']; ?> - <?= $current_url_w_q; ?>" target="_blank" title="Tweet this!">
+                                    <span class="fa-stack">
+                                        <i class="fal fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="copy-link" data-clipboard-text="<?= $current_url_w_q; ?>" tabindex="0" data-trigger="click" data-toggle="tooltip" title="Copy Link">
+                                    <span class="fa-stack">
+                                        <i class="fal fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-link fa-stack-1x"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:?subject=Look at this website&body=Hi, I found this website and thought you might like it <?= the_title() . ': ' . $curr_chapter['chapter_title']; ?> - <?= $current_url_w_q; ?>" target="">
+                                    <span class="fa-stack">
+                                        <i class="fal fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-envelope fa-stack-1x"></i>
+                                    </span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -178,4 +217,88 @@
         </section>
     </div>
 </main>
-<?php wp_footer(); ?>
+
+<!-- Chapter Bar -->
+<div class="webcomic-chapter-bar-bottom" >
+    <div class="row mx-auto my-auto">
+        <div class="col-1 text-center">
+            <p class="carousel-control">
+                <a class="" href="#recipeCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-icon slide-left" aria-hidden="true">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                </a>
+            </p>
+        </div>
+        <div class="col-10 w-100">
+            <div id="recipeCarousel" class="carousel slide w-100" >
+                <div class="carousel-inner w-100" role="listbox">
+                    <!-- Chapter links -->
+                    <?php if ( is_array( $chapter_arr_rev ) && count( $chapter_arr_rev ) ): ?>
+                        <?php $row = 1 ?>
+                        <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
+
+                            <div class="carousel-item <?= ( (count( $chapter_arr ) - $key) == $row )? "active" : ""?>">
+                                <div class="d-block col-3 <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
+                                    <div class="col-12 chapter-cover">
+                                        <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
+                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 chapter-body">
+                                        <div class="webcomic-title" >
+                                            <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
+                                                <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Final Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
+                                                <h6 class="chapter-title"><?= $value['chapter_title']; ?></h6>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 text-center">
+            <p class="carousel-control">
+                <a class="" href="#recipeCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-icon slide-right" aria-hidden="true">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+  // Add your javascript here
+
+  $('#recipeCarousel').carousel('pause');
+
+  $('.carousel .carousel-item').each(function(){
+    let next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (let i = 0; i < 4; i++) {
+      next=next.next();
+      if (!next.length) {
+        // next = $(this).siblings(':first');
+      }
+      // next.children(':first-child').clone().appendTo($(this));
+    }
+  });
+
+  $(".toggle-button").click(function () {
+    $(".webcomic-chapter-bar-top").slideToggle("slow");
+  })
+
+</script>
+
+</body>
+</html>

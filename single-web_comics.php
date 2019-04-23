@@ -22,7 +22,7 @@
         ?>
         <?php if ( $valid_chapter ) : ?> <!-- show reader -->
         <?php include( locate_template( 'template-parts/webcomic/chapter.php', FALSE, FALSE ) ); ?>
-        <?php get_footer(); ?>
+        <?php //get_footer(); ?>
     <?php else: ?> <!-- show web comic info -->
         <?php get_header(); ?>
         <?php include( locate_template( 'template-parts/webcomic/info.php', FALSE, FALSE ) ); ?>

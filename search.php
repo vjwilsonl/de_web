@@ -1,55 +1,91 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Difference_Engine
- */
+    /**
+     * The template for displaying search results pages
+     *
+     * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+     *
+     * @package Difference_Engine
+     */
 
-get_header();
+    get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+    <main class="main">
+        <div class="container section-wrapper">
 
-		<?php if ( have_posts() ) : ?>
+            <section class="section">
+                <div class="row section-title">
+                    <div class="col-12">
+                        <h1>
+                            <?php printf( esc_html__( 'Search Results for: %s', 'difference-engine' ), '<span>' . get_search_query() . '</span>' ); ?>
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <?php
+                            while( have_posts() ) :
+                                the_post();
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'difference-engine' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+                                /**
+                                 * Run the loop for the search to output the results.
+                                 * If you want to overload this in a child theme then include a file
+                                 * called content-search.php and that will be used instead.
+                                 */
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+                                if(get_post_type() === 'post') : ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+                                    <main>
+                                        <div class="container">
+                                            <section class="section-blog">
+                                                <div class="row">
+                                                    <div class="col-12 section-title">
+                                                        <h1>Blog</h1>
+                                                    </div>
+                                                </div>
+                                                <?php get_template_part('search-template-parts/archive-blog'); ?>
+                                            </section>
+                                        </div>
+                                    </main>
 
-			endwhile;
+                                <?php elseif (get_post_type() === 'for_educators') : ?>
+                                    <main>
+                                        <div class="container">
+                                            <section class="section-for-educators">
+                                                <div class="row">
+                                                    <div class="col-12 section-title">
+                                                        <h1>For Educators</h1>
+                                                    </div>
+                                                </div>
+                                                <?php get_template_part('search-template-parts/archive-for_educators'); ?>
+                                            </section>
+                                        </div>
+                                    </main>
 
-			the_posts_navigation();
+                                <?php elseif (get_post_type() === 'web_comics') : ?>
+                                    <main>
+                                        <div class="container">
+                                            <section class="section-for-educators">
+                                                <div class="row">
+                                                    <div class="col-12 section-title">
+                                                        <h1>For Educators</h1>
+                                                    </div>
+                                                </div>
+                                                <?php get_template_part('search-template-parts/archive-web_comics'); ?>
+                                            </section>
+                                        </div>
+                                    </main>
+                                <?php else: ?>
+                                    <?php get_template_part( 'template-parts/content', 'search' ); ?>
+                                <?php endif; ?>
 
-		else :
+                            <?php endwhile; ?>
+                    </div>
+                </div>
+            </section>
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+        </div>
+    </main>
 
 <?php
-get_sidebar();
-get_footer();
+    get_footer();

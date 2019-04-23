@@ -4,27 +4,28 @@
         <main>
             <div class="container">
                 <div class="row no-gutters">
-                    <div class="wc-banner">
-                        <img class="w-100" alt="<?= the_title(); ?>" src="<?= ( ! empty( get_field( 'banner_image' ) ) ) ? get_field( 'banner_image' )['url'] : '' ?>">
+                    <div class="webcomic-banner">
+                        <img class="img-fluid" alt="<?= the_title(); ?>" src="<?= ( ! empty( get_field( 'banner_image' ) ) ) ? get_field( 'banner_image' )['url'] : '' ?>">
                     </div>
                 </div>
             </div>
             <div class="container">
                 <section class="section-webcomic-single">
+
                     <div class="row">
-                        <div class="col-12 col-lg-9">
-                            <div class="row mb-2">
-                                <div class="col-12 section-title">
-                                    <h1><?= the_title(); ?></h1>
-                                </div>
+                        <div class="col-12">
+                            <div class="section-title">
+                                <h1><?= the_title(); ?></h1>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="wc-content-wrapper">
-                                        <?= the_content(); ?>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-9 webcomic-content-wrapper">
+                            <div class="webcomic-description">
+                                <?= the_content(); ?>
                             </div>
+
                             <div class="row">
                                 <div class="col-12">
                                     <div class="share-buttons">
@@ -104,19 +105,19 @@
                         <div class="col-12 col-lg-3">
                             <div class="sidebar">
                                 <div class="row">
-                                    <div class="col-12 section-title">
+                                    <div class="col-12">
                                         <h2>Creator(s)</h2>
                                     </div>
                                 </div>
                                 <?php if ( is_array( $creator_arr ) && count( $creator_arr ) ): ?>
                                     <?php foreach ( $creator_arr as $key => $value ): ?>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <img alt="<?= $value['name']; ?>" class="rounded-circle w-100" src="<?= ( $value['image']['url'] ) ? $value['image']['url'] : ''; ?>">
                                             </div>
-                                            <div class="col-9 wc-creator-section">
-                                                <h3><?= $value['name']; ?></h3>
-                                                <strong><?= $value['role']; ?></strong>
+                                            <div class="col-8 webcomic-creator-section">
+                                                <h4><?= $value['name']; ?></h4>
+                                                <p><?= $value['role']; ?></p>
                                                 <?= $value['description']; ?>
                                             </div>
                                         </div>
@@ -125,6 +126,7 @@
                                 <?php endif; ?>
                             </div>
                         </div>
+
                     </div>
                 </section>
             </div>

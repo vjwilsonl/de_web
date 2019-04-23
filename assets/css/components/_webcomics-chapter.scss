@@ -1,0 +1,202 @@
+/* Webcomic Chapter Header */
+
+body.webcomic-chapter-read {
+  background-color: white;
+
+  .container-fluid:first-child {
+    padding: 0;
+  }
+}
+
+.webcomic-chapter-header-web,
+.webcomic-chapter-header-mobile,
+.wc-pagination-fix-mobile {
+  color: $de-blue;
+  z-index: 3;
+  //display: none;
+  background-color: $de-background;
+  transition: 0.5s;
+
+  .header-logo {
+    height: 55px;
+    padding: 5px;
+    margin-top: .45rem;
+  }
+
+  .chapter-title {
+    margin-top: 1.5rem;
+  }
+
+  .pagination {
+    margin-top: 1rem;
+
+    button.chapter-no {
+      background-color: $de-background;
+      color: $de-blue;
+      padding: 0 2rem;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+      outline:none;
+      cursor: pointer;
+
+      &:focus {
+        outline:none;
+        box-shadow: none;
+      }
+    }
+
+    .chapter-pg {
+      position: relative;
+      display: inline-block;
+      padding: .45rem .75rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .page-link {
+      background-color: transparent;
+      color: #B2B2B2;
+      border: 0;
+
+      &:focus,
+      &:hover {
+        color: $de-pink;
+      }
+    }
+
+    .page-item.disabled .page-link {
+      color: $light-grey;
+    }
+  }
+}
+
+section.section-webcomic-content {
+  margin: 0;
+  border: 0;
+
+  .webcomic-share {
+    margin: 3rem 0;
+  }
+}
+
+
+.webcomic-chapter-bar-top,
+.webcomic-chapter-bar-bottom {
+  background: $de-background;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  a {
+    color: $dark-grey;
+  }
+
+  .toggle-bar {
+    background-color: white;
+
+    .toggle-button {
+      background-color: $de-background;
+      color: #B2B2B2;
+      padding: 0 2rem;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+      outline:none;
+      cursor: pointer;
+
+      &:focus {
+        outline:none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(0%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(0%);
+  }
+
+  .carousel-inner .carousel-item-right,
+  .carousel-inner .carousel-item-left{
+    transform: translateX(0);
+  }
+
+  .carousel-control {
+    margin: 4rem 0;
+  }
+
+  .carousel-control-icon {
+    color: $dark-grey;
+    font-size: 20px;
+  }
+
+  .d-block {
+    width: 20%;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    display: flex !important;
+    flex-wrap: wrap;
+
+    .chapter-cover {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .chapter-image {
+      width: 100%;
+      object-fit: cover;
+      z-index: 5;
+    }
+
+    .chapter-body {
+      padding-left: 1rem;
+      padding-top: 1rem;
+
+      .webcomic-title {
+        .chapter-no {
+          font-family: $mukta;
+          font-size: 14px;
+          margin-bottom: .5rem;
+        }
+
+        .chapter-title {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .d-block.active {
+    .chapter-image {
+      border: 2px solid $de-pink;
+    }
+
+    .chapter-body {
+      .webcomic-title {
+        .chapter-no {
+          color: $de-pink;
+        }
+
+        .chapter-title {
+          color: $de-pink;
+        }
+      }
+    }
+  }
+
+}

@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-lg-12 blog-card-big">
-                <div id="blogCarouselIndicators" class="carousel slide blog-carousel" data-ride="carousel">
+                <div id="blogCarouselIndicators" class="carousel slide blog-carousel">
                     <?php $row = 1; ?>
                     <?php while( $blog_post->have_posts() ): ?>
                         <?php
