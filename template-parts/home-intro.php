@@ -21,13 +21,8 @@
         <div class="col-sm-12 col-lg-9">
             <h1><?= $intro_text ?></h1>
         </div>
-        <div class="col-sm-12 col-lg-3 text-right hidden-sm-down">
-            <a href="<?= $button_url ?>">
-                <button class="btn btn-animated">MORE ABOUT US</button>
-            </a>
-        </div>
-        <div class="col-sm-12 col-lg-3 text-left hidden-md-up">
-            <a href="<?= $button_url ?>">
+        <div class="col-sm-12 col-lg-3 text-left">
+            <a href="<?= $button_url ?>" class="float-md-right">
                 <button class="btn btn-animated">MORE ABOUT US</button>
             </a>
         </div>
