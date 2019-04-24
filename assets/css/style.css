@@ -1454,6 +1454,41 @@ section.section-for-educators-single {
   section.section-for-educators-single p {
     font-family: "Mukta", san-serif; }
 
+/* About Page */
+.behind-the-name {
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
+
+.behind-the-team {
+  margin-bottom: 3rem; }
+  .behind-the-team .team-card {
+    padding-right: 1rem; }
+    .behind-the-team .team-card .team-role {
+      color: #002677; }
+    .behind-the-team .team-card .team-image {
+      position: relative;
+      height: 200px;
+      width: 200px;
+      overflow: visible;
+      margin-bottom: 2rem; }
+      .behind-the-team .team-card .team-image:after {
+        content: '';
+        color: #ff0098;
+        position: absolute;
+        height: 104%;
+        width: 80%;
+        border: 0;
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+        border-style: solid;
+        top: 0;
+        right: -8px; }
+      .behind-the-team .team-card .team-image .team-cover {
+        position: absolute;
+        object-fit: cover;
+        height: 100%;
+        width: 100%; }
+
 /* Footer */
 /* Footer */
 .footer {
