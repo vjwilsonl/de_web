@@ -735,7 +735,8 @@ section.section-genre .genre-link-animated {
     .navbar-wrapper .navbar-mobile div {
       padding: 0; }
     .navbar-wrapper .navbar-mobile .navbar-brand img {
-      max-height: 70px; }
+      max-height: 70px;
+      padding: 0.3rem 0; }
     .navbar-wrapper .navbar-mobile .mobile-search {
       margin-top: 1rem; }
     .navbar-wrapper .navbar-mobile .hamburger {
@@ -818,8 +819,8 @@ section.section-genre .genre-link-animated {
         margin: 0 1rem; }
 
 .navbar-wrapper.sticky .navbar-mobile {
-  padding-left: .5rem;
-  padding-right: 2.5rem; }
+  padding-left: 1rem;
+  padding-right: 2.7rem; }
 
 /* Input Forms & Button */
 /* Input */

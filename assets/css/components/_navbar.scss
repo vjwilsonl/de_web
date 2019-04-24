@@ -106,6 +106,7 @@
     .navbar-brand {
       img {
         max-height: 70px;
+        padding: 0.3rem 0;
       }
     }
 
@@ -251,7 +252,7 @@
 .navbar-wrapper.sticky {
 
   .navbar-mobile {
-    padding-left: .5rem;
-    padding-right: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 2.7rem;
   }
 }
