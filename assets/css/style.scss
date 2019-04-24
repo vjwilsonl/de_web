@@ -213,16 +213,6 @@ p {
 
 /* Sections */
 
-//body:not(.home) {
-//  section {
-//    border-top: 0;
-//
-//    .section-title {
-//      margin-top: 0;
-//    }
-//  }
-//}
-
 .coming-soon {
   background: $de-blue;
 }
@@ -230,6 +220,9 @@ p {
 section,
 aside {
   margin: 3rem 0;
+}
+
+section.border-top {
   border-top: $de-divider;
 }
 

@@ -10,6 +10,7 @@ textarea.form-control:focus {
   border-radius: 0;
   padding-left: 0;
   padding-right: 0;
+  margin: .5rem 0;
 }
 
 input.form-control::placeholder,
@@ -30,7 +31,8 @@ button.btn {
   color: $de-pink;
   background-color: $de-background;
   padding: 0.5rem 2rem;
-  border: 2px solid $de-pink;
+  margin: .5rem 0;
+  border: 1px solid $de-pink;
   border-radius: 0;
   overflow: visible;
   outline:none;
@@ -44,14 +46,14 @@ button.btn {
     content: '';
     color: #FF0098;
     position: absolute;
-    height: 109%;
+    height: 107%;
     width: 100%;
     border: 0;
     border-right-width: 4px;
     border-bottom-width: 4px;
     border-style: solid;
     top: 3px;
-    right: -6px;
+    right: -5px;
   }
 }
 

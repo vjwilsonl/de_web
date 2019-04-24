@@ -22,7 +22,7 @@
 ?>
 
 <?php if ( $for_educators->have_posts() ): ?>
-    <section class="section-for-educators">
+    <section class="section-for-educators border-top">
         <div class="row section-title">
             <div class="col-6">
                 <h1>For Educators</h1>

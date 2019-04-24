@@ -67,7 +67,7 @@
             </div>
 
             <div class="navbar-wrapper">
-                <div class="container">
+                <div class="container hidden-sm-down">
                     <nav class="navbar navbar-expand-lg navbar-desktop hidden-sm-down">
                         <div class="col-sm-6 col-lg-3">
                             <a class="navbar-brand" href="<?= get_home_url(); ?>">
@@ -94,12 +94,13 @@
                     </nav>
                 </div>
 
-                <div class="container">
+                <div class="container hidden-md-up">
                     <div class="row">
                     <nav class="navbar navbar-mobile hidden-md-up">
                         <div class="col-9">
                             <a class="navbar-brand" href="<?= get_home_url(); ?>">
                                 <img class="img-fluid main-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine">
+                                <img class="img-fluid sticky-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine" style="display: none;">
                             </a>
                         </div>
                         <div class="col-3">

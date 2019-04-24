@@ -2,7 +2,6 @@
   background-color: $de-background;
   margin-bottom: 25px;
 
-
   .navbar-desktop {
     padding: 0;
 
@@ -88,6 +87,10 @@
         img {
           max-height: 70px;
           padding: 0.3rem 0;
+        }
+
+        .sticky-logo {
+          display: inline-block !important;
         }
       }
     }
@@ -243,27 +246,12 @@
       }
     }
   }
+}
 
-  &.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 20;
-    width: 100%;
-    background-color: $de-background;
-    display: none;
+.navbar-wrapper.sticky {
 
-    .container {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .navbar {
-      .navbar-brand {
-        img {
-          max-height: 70px;
-          padding: 0.3rem 0;
-        }
-      }
-    }
+  .navbar-mobile {
+    padding-left: .5rem;
+    padding-right: 2.5rem;
   }
 }
