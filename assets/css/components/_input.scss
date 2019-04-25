@@ -3,6 +3,9 @@
 input.form-control,
 textarea.form-control,
 input.form-control:focus,
+input.form-control:-webkit-autofill,
+input.form-control:-webkit-autofill:hover,
+input.form-control:-webkit-autofill:focus,
 textarea.form-control:focus {
   background: transparent;
   border: 0;
