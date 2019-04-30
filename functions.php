@@ -126,6 +126,22 @@ function difference_engine_scripts() {
 
 	wp_enqueue_script( 'difference-engine-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	if ( is_home() ) {
+		// Get featured ID to exclude in ajax call
+		$tag = get_term_by('slug', ' featured','post_tag');
+		$tag_id =  $tag->term_id;
+
+	  wp_enqueue_script( 'difference-blog-archive', get_template_directory_uri() . '/assets/js/blog-archive.js', NULL, '20190430', true );
+
+		wp_localize_script('difference-blog-archive', 'customData', array(
+			"featuredId" => $tag_id
+		));
+	}
+
+	if ( is_post_type_archive('for_educators') ) {
+
+	  wp_enqueue_script( 'difference-for-educators-archive', get_template_directory_uri() . '/assets/js/for-educators-archive.js', NULL, '20190430', true );
+	}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -256,4 +272,41 @@ function get_bootstrap_paginate_links($query) {
 		echo '</ul>';
 		echo '</nav>';
 	}
+}
+
+//add featured image to post REST API
+add_action('rest_api_init', 'register_rest_images' );
+function register_rest_images(){
+    register_rest_field( array('post', 'for_educators'),
+        'fimg_url',
+        array(
+            'get_callback'    => 'get_rest_featured_image',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+function get_rest_featured_image( $object, $field_name, $request ) {
+    if( $object['featured_media'] ){
+        $img = wp_get_attachment_image_src( $object['featured_media'], 'app-thumb' );
+        return $img[0];
+    }
+    return false;
+}
+//add trimmed content to post REST API
+add_action('rest_api_init', 'register_rest_trimmed_content' );
+function register_rest_trimmed_content(){
+    register_rest_field( array('post'),
+        'trimmed_content',
+				array(
+            'get_callback'    => 'get_rest_trimmed_content',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+
+function get_rest_trimmed_content($object) {
+	$trimmed_content = wp_trim_words( get_the_content($object), 25, "" );
+	return ($trimmed_content);
 }

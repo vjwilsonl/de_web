@@ -12,7 +12,7 @@
 
 <?php
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-    
+
     $args = array(
         'post_type'         => 'for_educators',
         'posts_per_page'    => 8,
@@ -23,7 +23,7 @@
     );
     $for_educators = new WP_Query( $args );
 ?>
-    
+
     <main>
         <div class="container">
             <section class="section-for-educators">
@@ -33,7 +33,8 @@
                     </div>
                 </div>
 
-                <div class="row for-educators-block">
+                <div class="row for-educators-block" id="for-educators-block">
+                    <?php /*
                     <?php if ( $for_educators->have_posts() ) : ?>
                         <?php while( $for_educators->have_posts() ): ?>
                             <?php $for_educators->the_post(); ?>
@@ -54,10 +55,14 @@
                     <?php else: ?>
                         <p>There are no post published yet. Come back later.</p>
                     <?php endif; ?>
+                    */ ?>
                 </div>
 
                 <!-- Page Navigation -->
-                <?php get_bootstrap_paginate_links($for_educators) ?>
+                <?php //get_bootstrap_paginate_links($for_educators) ?>
+                <div id="for-educators-get-div" class="col-12 text-center" style="display:none" >
+                  <button id="for-educators-get-btn" class="btn btn-animated" >Show more</button>
+                </div>
             </section>
         </div>
     </main>
