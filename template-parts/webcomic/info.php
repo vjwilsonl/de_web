@@ -4,8 +4,8 @@
         <main>
             <div class="container">
                 <div class="row no-gutters">
-                    <div class="webcomic-banner">
-                        <img class="img-fluid" alt="<?= the_title(); ?>" src="<?= ( ! empty( get_field( 'banner_image' ) ) ) ? get_field( 'banner_image' )['url'] : '' ?>">
+                    <div class="webcomic-banner-cover">
+                        <img class="webcomic-banner-image" alt="<?= the_title(); ?>" src="<?= ( ! empty( get_field( 'banner_image' ) ) ) ? get_field( 'banner_image' )['url'] : '' ?>">
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                                 <div class="col-12">
                                     <div class="share-buttons">
                                         <ul class="list-inline">
-                                            <li class="list-inline-item" style="width: 100px;"><p>Share this comic!</p></li>
+                                            <li class="list-inline-item" style="width: 114px;"><p>Share this comic!</p></li>
                                             <li class="list-inline-item">
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" title="Share on Facebook.">
                                                     <span class="fa-stack">
@@ -75,8 +75,10 @@
                                         <div class="webcomic-chapters-wrapper">
                                             <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
                                                 <div class="row no-gutters webcomic-chapter">
-                                                    <div class="col-sm-12 col-lg-5 chapter-cover">
-                                                        <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                                    <div class="col-sm-12 col-lg-5">
+                                                        <div class="chapter-cover">
+                                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                                        </div>
                                                     </div>
                                                     <div class="col-sm-12 col-lg-7 chapter-body">
                                                         <div class="row no-gutters">
@@ -103,28 +105,27 @@
 
                         <!-- Sidebar (Author) -->
                         <div class="col-12 col-lg-3">
+                            <?php if ( is_array( $creator_arr ) && count( $creator_arr ) ): ?>
                             <div class="sidebar">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2>Creator(s)</h2>
+                                        <h2>Creator<?=(count( $creator_arr ) > 1) ? 's' : ''; ?></h2>
                                     </div>
                                 </div>
-                                <?php if ( is_array( $creator_arr ) && count( $creator_arr ) ): ?>
-                                    <?php foreach ( $creator_arr as $key => $value ): ?>
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <img alt="<?= $value['name']; ?>" class="rounded-circle w-100" src="<?= ( $value['image']['url'] ) ? $value['image']['url'] : ''; ?>">
-                                            </div>
-                                            <div class="col-8 webcomic-creator-section">
-                                                <h4><?= $value['name']; ?></h4>
-                                                <p><?= $value['role']; ?></p>
-                                                <?= $value['description']; ?>
-                                            </div>
+                                <?php foreach ( $creator_arr as $key => $value ): ?>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img alt="<?= $value['name']; ?>" class="rounded-circle w-100" src="<?= ( $value['image']['url'] ) ? $value['image']['url'] : ''; ?>">
                                         </div>
-                                        <br>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+                                        <div class="col-8 webcomic-creator-section">
+                                            <h4><?= $value['name']; ?></h4>
+                                            <p><?= $value['role']; ?></p>
+                                            <?= $value['description']; ?>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
+                            <?php endif; ?>
                         </div>
 
                     </div>

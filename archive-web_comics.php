@@ -13,6 +13,7 @@
     endif;
 
     if($get_order == 'asc' || $get_order == 'desc'):
+        $sortBy = ($get_order == 'asc') ? 'Title (A-Z)' : 'Title (Z-A)';
         $args = array(
             'post_type'         => 'web_comics',
             'category_name'     => $category_name,
@@ -23,6 +24,7 @@
             'page'              => $paged,
         );
     else:
+        $sortBy = 'Recently added';
         $args = array(
             'post_type'         => 'web_comics',
             'category_name'     => $category_name,
@@ -57,8 +59,9 @@
                         <div class="row sorting mb-4">
                             <div class="col-12">
                                 <div class="dropdown alignright">
+                                    <span>SORT BY &nbsp;</span>
                                     <button class="btn dropdown-toggle sort-button" type="button" id="sortingButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Sort by
+                                        <?=$sortBy?> &nbsp;<i class="fas fa-chevron-down"></i>
                                     </button>
                                     <form method="get">
                                         <?php if(isset( $_GET['category'])): ?>
@@ -67,7 +70,7 @@
                                         <div class="dropdown-menu collapse" aria-labelledby="sortingButton">
                                             <button type="submit" name="order-by" value="asc" class="dropdown-item" >Title (A-Z)</button>
                                             <button type="submit" name="order-by" value="desc" class="dropdown-item" >Title (Z-A)</button>
-                                            <button type="submit" name="order-by" value="new" class="dropdown-item" >Newest</button>
+                                            <button type="submit" name="order-by" value="new" class="dropdown-item" >Recently added</button>
                                         </div>
                                     </form>
                                 </div>
