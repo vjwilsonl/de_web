@@ -102,3 +102,13 @@
         </div>
     </section>
 <?php endif; ?>
+
+<!-- Other Pages -->
+
+<section class="">
+    <div class="row">
+        <div class="col-12">
+            <?= the_content(); ?>
+        </div>
+    </div>
+</section>
