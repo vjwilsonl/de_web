@@ -3,6 +3,9 @@
 input.form-control,
 textarea.form-control,
 input.form-control:focus,
+input.form-control:-webkit-autofill,
+input.form-control:-webkit-autofill:hover,
+input.form-control:-webkit-autofill:focus,
 textarea.form-control:focus {
   background: transparent;
   border: 0;
@@ -10,6 +13,7 @@ textarea.form-control:focus {
   border-radius: 0;
   padding-left: 0;
   padding-right: 0;
+  margin: .5rem 0;
 }
 
 input.form-control::placeholder,
@@ -30,7 +34,8 @@ button.btn {
   color: $de-pink;
   background-color: $de-background;
   padding: 0.5rem 2rem;
-  border: 2px solid $de-pink;
+  margin: .5rem 0;
+  border: 1px solid $de-pink;
   border-radius: 0;
   overflow: visible;
   outline:none;
@@ -44,14 +49,14 @@ button.btn {
     content: '';
     color: #FF0098;
     position: absolute;
-    height: 109%;
+    height: 107%;
     width: 100%;
     border: 0;
     border-right-width: 4px;
     border-bottom-width: 4px;
     border-style: solid;
     top: 3px;
-    right: -6px;
+    right: -5px;
   }
 }
 
@@ -90,19 +95,35 @@ button.btn {
       transform: scaleX(1);
       transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
     }
-
-    //&:after {
-    //  content: '';
-    //  color: #FF0098;
-    //  position: absolute;
-    //  height: 100%;
-    //  width: 100%;
-    //  border: 4px solid #FF0098;
-    //  top: 0;
-    //  right: 0;
-    //  @include transition(color 4s, background-color 4s, border-color 4s);
-    //}
   }
+}
+
+button.btn-search {
+  font-weight: normal;
+  font-size: 16px;
+  color: $de-pink;
+  background-color: $de-background;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  outline: none;
+}
+
+input.input-search {
+  border-bottom: 2px solid transparent;
+}
+
+input.input-search, input.input-search:focus {
+  color: $de-pink;
+  font-family: $dinosaur;
+}
+
+input.input-search::placeholder {
+  color: $de-pink;
+  font-size: 14px;
+  font-family: $dinosaur;
+  text-transform: uppercase;
 }
 
 button.sort-button {

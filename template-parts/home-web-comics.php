@@ -22,7 +22,7 @@
 ?>
 
 <?php if ( $web_comics->have_posts() ): ?>
-    <section class="section-webcomics">
+    <section class="section-webcomics border-top">
         <div class="row section-title">
             <div class="col-6">
                 <h1>Read Online</h1>

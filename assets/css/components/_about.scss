@@ -1,0 +1,51 @@
+.behind-the-name {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.behind-the-team {
+  margin-bottom: 3rem;
+
+  .team-card {
+    padding-right: 1rem;
+
+    .team-name {}
+
+    .team-role {
+      color: $de-blue;
+    }
+
+    .team-image {
+      position: relative;
+      height: 200px;
+      width: 200px;
+      overflow: visible;
+      margin-bottom: 2rem;
+
+      &:after {
+        content: '';
+        color: #ff0098;
+        position: absolute;
+        height: 104%;
+        width: 80%;
+        border: 0;
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+        border-style: solid;
+        top: 0;
+        right: -8px;
+      }
+
+      .team-cover {
+        position: absolute;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .team-description {
+
+    }
+  }
+}

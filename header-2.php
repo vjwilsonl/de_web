@@ -67,15 +67,21 @@
             </div>
 
             <div class="navbar-wrapper">
-                <div class="container hidden-sm-down">
-                    <nav class="navbar navbar-expand-lg navbar-desktop hidden-sm-down">
-                        <div class="col-sm-6 col-lg-3">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="col-sm-6 col-lg-12">
                             <a class="navbar-brand" href="<?= get_home_url(); ?>">
                                 <img class="img-fluid main-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine">
                                 <img class="img-fluid sticky-logo" src="<?= $sticky_header_logo_url; ?>" alt="Difference Engine" style="display: none;">
                             </a>
                         </div>
 
+                        <!-- Hamburger button -->
+                        <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primenu" aria-controls="navbar-primenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
                         <div class="col-sm-12 col-lg-9 collapse navbar-collapse" id="navbar-primenu">
                             <?php
                                 wp_nav_menu(
@@ -92,59 +98,6 @@
                             ?>
                         </div>
                     </nav>
-                </div>
-
-                <div class="container hidden-md-up">
-                    <div class="row">
-                    <nav class="navbar navbar-mobile hidden-md-up">
-                        <div class="col-9">
-                            <a class="navbar-brand" href="<?= get_home_url(); ?>">
-                                <img class="img-fluid main-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine">
-                                <img class="img-fluid sticky-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine" style="display: none;">
-                            </a>
-                        </div>
-                        <div class="col-3">
-                            <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbar-primenu" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </button>
-                        </div>
-
-                        <div class="col-sm-12 collapse navbar-collapse" id="navbarSupportedContent">
-                            <div class="mobile-search">
-                                <form class="form-inline">
-                                    <div class="col-11">
-                                        <label for="search" class="sr-only">Search</label>
-                                        <input type="text" class="form-control input-search" id="search" name="search" placeholder="Search" value="<?php the_search_query(); ?>">
-                                        <input type="hidden" value="1" name="sentence" id="sentence" />
-                                    </div>
-                                    <div class="col-1">
-                                        <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                            <?php
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location'  => 'menu-1',
-                                        'container'       => FALSE,
-                                        'menu_class'      => 'navbar-nav nav-fill w-100',
-                                        'container_class' => 'nav-item',
-                                        'depth'           => 2,
-                                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                                        'walker'          => new WP_Bootstrap_Navwalker(),
-                                    )
-                                );
-                            ?>
-                            <div class="mobile-social-url">
-                                <ul class="list-inline">
-                                    <?php get_template_part( 'template-parts/social-url-icon' ) ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                    </div>
                 </div>
             </div>
         </header>

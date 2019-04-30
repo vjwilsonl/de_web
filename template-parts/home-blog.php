@@ -20,7 +20,7 @@
 ?>
 
 <?php if ( $blog_post->have_posts() ): ?>
-    <section class="section-blog">
+    <section class="section-blog border-top">
         <div class="row section-title">
             <div class="col-6">
                 <h1>Blog</h1>

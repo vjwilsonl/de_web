@@ -20,6 +20,9 @@
             <!-- Carousel -->
             <?php get_template_part( 'template-parts/home-carousel' ); ?>
 
+            <!-- Intro -->
+            <?php get_template_part( 'template-parts/home-intro' ); ?>
+
             <!-- Web Comics -->
             <?php get_template_part( 'template-parts/home-web-comics' ); ?>
 
