@@ -62,11 +62,10 @@
             </div>
         </div>
     </section>
-<?php endif; ?>
 
-<!-- About Page -->
+<?php elseif(strtolower( get_the_title() ) == 'about'): ?>
+    <!-- About Page -->
 
-<?php if ( strtolower( get_the_title() ) == 'about' ): ?>
     <section class="section-about">
         <div class="row">
             <div class="col-12">
@@ -74,12 +73,14 @@
             </div>
         </div>
 
-        <div class="row behind-the-name">
-            <div class="col-3"><h4>BEHIND THE NAME</h4></div>
-            <div class="col-9">
-                <p> <?= nl2br( get_field("behind_the_name") ); ?> </p>
+        <?php foreach ($custom_area = get_field("custom_area") as $area) : ?>
+            <div class="row custom-area">
+                <div class="col-3"><h4><?= $area['area_name'] ?></h4></div>
+                <div class="col-9">
+                    <p> <?= nl2br( $area['area_text'] ) ?> </p>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
 
         <div class="row behind-the-team">
             <div class="col-3"><h4>BEHIND THE TEAM</h4></div>
@@ -101,7 +102,8 @@
             </div>
         </div>
     </section>
-<?php endif; ?>
+
+<?php else: ?>
 
 <!-- Other Pages -->
 
@@ -112,3 +114,5 @@
         </div>
     </div>
 </section>
+
+<?php endif; ?>
