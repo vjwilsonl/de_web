@@ -46,10 +46,12 @@
                         <div class="carousel-item <?=($row === 1) ? "active" : "" ?>">
                             <div class="row">
                                 <div class="col-sm-12 col-lg-6">
-                                    <div class="blog-image-75">
-                                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover-75">
-                                        <!-- <div class="blog-image-hover"></div> -->
-                                    </div>
+                                    <a class="" href="<?= get_post_permalink() ?>">
+                                        <div class="blog-image-75">
+                                            <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover-75">
+                                            <!-- <div class="blog-image-hover"></div> -->
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-sm-12 col-lg-6">
                                     <div class="blog-body">
@@ -75,14 +77,6 @@
                             <li data-target="#blogCarouselIndicators" data-slide-to="2" ></li>
                         </ol>
                     </div>
-                    <a class="carousel-control-prev blog-carousel-control" href="#blogCarouselIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next blog-carousel-control" href="#blogCarouselIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
         </div>

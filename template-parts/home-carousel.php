@@ -36,7 +36,11 @@
                                             </p>
                                         </div>
                                         <div class="col-10 text-center">
-                                            <p class="carousel-title"><?= ($value['title']) ? $value['title'] : ''?></p>
+                                            <p class="carousel-title">
+                                                <a href="<?= ($value['url']) ? $value['url'] : ''?>" class="<?= ($value['url']) ? '' : 'disabled' ?>" >
+                                                    <?= ($value['title']) ? $value['title'] : ''?>
+                                                </a>
+                                            </p>
                                         </div>
                                         <div class="col-1 text-center">
                                             <p class="carousel-control">
