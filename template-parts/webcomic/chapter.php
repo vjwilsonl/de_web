@@ -31,7 +31,7 @@
 <div class="container-fluid">
     <header class="webcomic-chapter-header">
         <!--Web Header -->
-        <div class="webcomic-chapter-header-web">
+        <div class="webcomic-chapter-header-web hidden-md-down">
             <div class="container">
                 <div class="row no-gutters">
 
@@ -69,26 +69,20 @@
         </div>
 
         <!-- Mobile header -->
-        <div class="webcomic-chapter-header" style="display: none;">
-            <div class="row no-gutters">
-                <div class="col-8">
-                    <div class="row">
-                        <div class="col-1">
-                            <a href="/">
-                                <i class="fas fa-home"></i>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <h6><?= the_title() ?> | <?= $curr_chapter['chapter_title']; ?></h6>
-                        </div>
+        <div class="webcomic-chapter-header-mobile hidden-lg-up">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-1">
+                        <a href="/" class="homeLink">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="col-4 pr-3">
-                    <div class="wc-read-share text-right" id="#wc-read-share">
-                         <!-- Share button -->
-                        <button type="button" class="p-2 share-buttons" data-toggle="modal" data-target="#share-modal">
-                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                        </button>
+                    <div class="col-11 text-center">
+                        <h6>
+                            <button class="chapter-no toggle-button">
+                                <span class="chapter-pg">CHAPTER <?= $chapter; ?> | <?= $curr_chapter['chapter_title']; ?></span>
+                            </button>
+                        </h6>
                     </div>
                 </div>
             </div>
@@ -97,56 +91,58 @@
 </div>
 
 <!-- Chapter Bar -->
-<div class="webcomic-chapter-bar-top" >
-    <div class="row mx-auto my-auto">
-        <div class="col-1 text-center">
-            <p class="carousel-control">
-                <a class="" href="#recipeCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-icon slide-left" aria-hidden="true">
-                        <i class="fas fa-angle-left"></i>
-                    </span>
-                </a>
-            </p>
-        </div>
-        <div class="col-10 w-100">
-            <div id="recipeCarousel" class="carousel slide w-100" >
-                <div class="carousel-inner w-100" role="listbox">
-                    <!-- Chapter links -->
-                    <?php if ( is_array( $chapter_arr_rev ) && count( $chapter_arr_rev ) ): ?>
-                        <?php $row = 1 ?>
-                        <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
+<div class="webcomic-chapter-bar-top" style="display: none;">
+    <div class="container-fluid">
+        <div class="row mx-auto my-auto">
+            <div class="col-1 text-center">
+                <p class="carousel-control">
+                    <a class="" href="#recipeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-icon slide-left" aria-hidden="true">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-10">
+                <div id="recipeCarousel" class="carousel slide" >
+                    <div class="carousel-inner col-12" role="listbox">
+                        <!-- Chapter links -->
+                        <?php if ( is_array( $chapter_arr_rev ) && count( $chapter_arr_rev ) ): ?>
+                            <?php $row = 1 ?>
+                            <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
 
-                            <div class="carousel-item <?= ( (count( $chapter_arr ) - $key) == $row )? "active" : ""?>">
-                                <div class="d-block col-3 <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
-                                    <div class="col-12 chapter-cover">
-                                        <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
-                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
-                                        </a>
-                                    </div>
-                                    <div class="col-12 chapter-body">
-                                        <div class="webcomic-title" >
+                                <div class="carousel-item <?= ( (count( $chapter_arr ) - $key) == $row )? "active" : ""?>">
+                                    <div class="d-block col-3 <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
+                                        <div class="col-12 chapter-cover">
                                             <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
-                                                <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Final Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
-                                                <h6 class="chapter-title"><?= $value['chapter_title']; ?></h6>
+                                                <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
                                             </a>
+                                        </div>
+                                        <div class="col-12 chapter-body">
+                                            <div class="webcomic-title" >
+                                                <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
+                                                    <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Final Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
+                                                    <h6 class="chapter-title"><?= $value['chapter_title']; ?></h6>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-1 text-center">
-            <p class="carousel-control">
-                <a class="" href="#recipeCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-icon slide-right" aria-hidden="true">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
-                </a>
-            </p>
+            <div class="col-1 text-center">
+                <p class="carousel-control">
+                    <a class="" href="#recipeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-icon slide-right" aria-hidden="true">
+                            <i class="fas fa-angle-right"></i>
+                        </span>
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
     <div class="row no-gutters toggle-bar">

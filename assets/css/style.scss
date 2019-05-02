@@ -43,6 +43,11 @@ body {
 
   .main {
     background-color: $de-background;
+
+    section,
+    aside {
+      margin: 3rem 0;
+    }
   }
 }
 
@@ -218,7 +223,7 @@ p {
 
 section,
 aside {
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 section.border-top {
@@ -1156,6 +1161,17 @@ section.related-post {
 .fa-stack-1x {
   font-size: smaller;
 }
+
+
+/* Responsive Breakpoints */
+
+@media (max-width: 991px) {
+  .sidebar {
+    border-left: 0;
+    padding: 0;
+  }
+}
+
 
 /*
  * Restore Bootstrap 3 "hidden" utility classes.
