@@ -51,6 +51,11 @@ body {
   }
 }
 
+img:not(.img-fluid) {
+  width: 100%;
+  height: auto;
+}
+
 a {
   cursor: pointer;
   color: $de-pink;
