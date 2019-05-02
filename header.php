@@ -100,7 +100,7 @@
                         <div class="col-9">
                             <a class="navbar-brand" href="<?= get_home_url(); ?>">
                                 <img class="img-fluid main-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine">
-                                <img class="img-fluid sticky-logo" src="<?= $header_logo_url; ?>" alt="Difference Engine" style="display: none;">
+                                <img class="img-fluid sticky-logo" src="<?= $sticky_header_logo_url; ?>" alt="Difference Engine" style="display: none;">
                             </a>
                         </div>
                         <div class="col-3">
