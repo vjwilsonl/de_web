@@ -47,8 +47,8 @@
             <!-- Copyright -->
             <div class="row">
                 <div class="col-12">
-                    <div class="footer-copyright">
-                        <p><?= ( class_exists( 'acf' ) ) ? get_field( 'footer_text', 'options' ) : ''; ?></p>
+                    <div class="footer-copyright text-center">
+                        <?= ( class_exists( 'acf' ) ) ? get_field( 'footer_text', 'options' ) : ''; ?>
                     </div>
                 </div>
             </div>

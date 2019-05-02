@@ -11,7 +11,10 @@
 
   .footer-copyright {
     margin-top: .5rem;
-    font-family: $mukta;
+    p {
+      font-family: $mukta;
+      font-size: 14px;
+    }
   }
 
 }

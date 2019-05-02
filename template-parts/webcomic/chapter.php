@@ -48,7 +48,7 @@
                         <div class="row">
                             <div class="col-4 text-center">
                                 <a href="/">
-                                    <img alt="Difference Engine" src="<?= $sticky_header_logo_url ?>" class=" header-logo" />
+                                    <img alt="Difference Engine" src="<?= $sticky_header_logo_url ?>" class="img-fluid header-logo" />
                                 </a>
                             </div>
                             <div class="col-8 text-center">

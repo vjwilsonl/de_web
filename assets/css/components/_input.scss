@@ -20,7 +20,7 @@ input.form-control::placeholder,
 textarea.form-control::placeholder {
   color: $dark-grey;
   font-family: $mukta;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .form-check {
@@ -30,7 +30,7 @@ textarea.form-control::placeholder {
 button.btn {
   font-family: $dinosaur;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   color: $de-pink;
   background-color: $de-background;
   padding: 0.5rem 2rem;
@@ -49,7 +49,7 @@ button.btn {
     content: '';
     color: #FF0098;
     position: absolute;
-    height: 107%;
+    height: 106%;
     width: 100%;
     border: 0;
     border-right-width: 4px;
@@ -121,7 +121,7 @@ input.input-search, input.input-search:focus {
 
 input.input-search::placeholder {
   color: $de-pink;
-  font-size: 14px;
+  font-size: 16px;
   font-family: $dinosaur;
   text-transform: uppercase;
 }
@@ -146,7 +146,7 @@ button.sort-button {
   border-radius: 0;
   color: $de-pink;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   z-index: 6;
 
   .dropdown-item {
