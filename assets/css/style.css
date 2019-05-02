@@ -1182,42 +1182,41 @@ section.section-webcomic-content {
   .webcomic-chapter-bar-bottom .carousel-control-icon {
     color: #545454;
     font-size: 20px; }
-  .webcomic-chapter-bar-top .d-block,
-  .webcomic-chapter-bar-bottom .d-block {
-    width: 20%;
+  .webcomic-chapter-bar-top .chapter-card,
+  .webcomic-chapter-bar-bottom .chapter-card {
     padding-top: 1.5rem;
-    padding-bottom: 1rem;
-    display: flex !important;
-    flex-wrap: wrap; }
-    .webcomic-chapter-bar-top .d-block .chapter-cover,
-    .webcomic-chapter-bar-bottom .d-block .chapter-cover {
+    padding-bottom: 1rem; }
+    .webcomic-chapter-bar-top .chapter-card .chapter-cover,
+    .webcomic-chapter-bar-bottom .chapter-card .chapter-cover {
+      height: 100%;
       width: 100%;
-      object-fit: cover; }
-    .webcomic-chapter-bar-top .d-block .chapter-image,
-    .webcomic-chapter-bar-bottom .d-block .chapter-image {
-      width: 100%;
+      overflow: hidden; }
+    .webcomic-chapter-bar-top .chapter-card .chapter-image,
+    .webcomic-chapter-bar-bottom .chapter-card .chapter-image {
       object-fit: cover;
-      z-index: 5; }
-    .webcomic-chapter-bar-top .d-block .chapter-body,
-    .webcomic-chapter-bar-bottom .d-block .chapter-body {
+      object-position: left;
+      width: 100%;
+      height: 100%; }
+    .webcomic-chapter-bar-top .chapter-card .chapter-body,
+    .webcomic-chapter-bar-bottom .chapter-card .chapter-body {
       padding-left: 1rem;
       padding-top: 1rem; }
-      .webcomic-chapter-bar-top .d-block .chapter-body .webcomic-title .chapter-no,
-      .webcomic-chapter-bar-bottom .d-block .chapter-body .webcomic-title .chapter-no {
+      .webcomic-chapter-bar-top .chapter-card .chapter-body .webcomic-title .chapter-no,
+      .webcomic-chapter-bar-bottom .chapter-card .chapter-body .webcomic-title .chapter-no {
         font-family: "Mukta", san-serif;
         font-size: 14px;
         margin-bottom: .5rem; }
-      .webcomic-chapter-bar-top .d-block .chapter-body .webcomic-title .chapter-title,
-      .webcomic-chapter-bar-bottom .d-block .chapter-body .webcomic-title .chapter-title {
+      .webcomic-chapter-bar-top .chapter-card .chapter-body .webcomic-title .chapter-title,
+      .webcomic-chapter-bar-bottom .chapter-card .chapter-body .webcomic-title .chapter-title {
         font-size: 18px; }
-  .webcomic-chapter-bar-top .d-block.active .chapter-image,
-  .webcomic-chapter-bar-bottom .d-block.active .chapter-image {
+  .webcomic-chapter-bar-top .chapter-card.active .chapter-image,
+  .webcomic-chapter-bar-bottom .chapter-card.active .chapter-image {
     border: 2px solid #ff0098; }
-  .webcomic-chapter-bar-top .d-block.active .chapter-body .webcomic-title .chapter-no,
-  .webcomic-chapter-bar-bottom .d-block.active .chapter-body .webcomic-title .chapter-no {
+  .webcomic-chapter-bar-top .chapter-card.active .chapter-body .webcomic-title .chapter-no,
+  .webcomic-chapter-bar-bottom .chapter-card.active .chapter-body .webcomic-title .chapter-no {
     color: #ff0098; }
-  .webcomic-chapter-bar-top .d-block.active .chapter-body .webcomic-title .chapter-title,
-  .webcomic-chapter-bar-bottom .d-block.active .chapter-body .webcomic-title .chapter-title {
+  .webcomic-chapter-bar-top .chapter-card.active .chapter-body .webcomic-title .chapter-title,
+  .webcomic-chapter-bar-bottom .chapter-card.active .chapter-body .webcomic-title .chapter-title {
     color: #ff0098; }
 
 /* Blog */

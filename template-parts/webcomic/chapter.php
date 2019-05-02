@@ -18,6 +18,15 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title><?= the_title() ?> | <?= $curr_chapter['chapter_title']; ?></title>
 
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= get_template_directory_uri() ?>/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= get_template_directory_uri() ?>/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= get_template_directory_uri() ?>/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= get_template_directory_uri() ?>/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?= get_template_directory_uri() ?>/assets/favicon/safari-pinned-tab.svg" color="#0077c8">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- Bootstrap CSS & JS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -96,7 +105,7 @@
         <div class="row mx-auto my-auto">
             <div class="col-1 text-center">
                 <p class="carousel-control">
-                    <a class="" href="#recipeCarousel" role="button" data-slide="prev">
+                    <a class="" href="#chapter-bar-top" role="button" data-slide="prev">
                         <span class="carousel-control-icon slide-left" aria-hidden="true">
                             <i class="fas fa-angle-left"></i>
                         </span>
@@ -104,7 +113,7 @@
                 </p>
             </div>
             <div class="col-10">
-                <div id="recipeCarousel" class="carousel slide" >
+                <div id="chapter-bar-top" class="carousel" >
                     <div class="carousel-inner col-12" role="listbox">
                         <!-- Chapter links -->
                         <?php if ( is_array( $chapter_arr_rev ) && count( $chapter_arr_rev ) ): ?>
@@ -112,13 +121,13 @@
                             <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
 
                                 <div class="carousel-item <?= ( (count( $chapter_arr ) - $key) == $row )? "active" : ""?>">
-                                    <div class="d-block col-3 <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
-                                        <div class="col-12 chapter-cover">
+                                    <div class="d-block col-12 col-sm-12 col-md-6 col-lg-3 chapter-card <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
+                                        <div class="d-block col-12 chapter-cover">
                                             <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
                                                 <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
                                             </a>
                                         </div>
-                                        <div class="col-12 chapter-body">
+                                        <div class="d-block col-12 chapter-body">
                                             <div class="webcomic-title" >
                                                 <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
                                                     <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Final Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
@@ -136,7 +145,7 @@
             </div>
             <div class="col-1 text-center">
                 <p class="carousel-control">
-                    <a class="" href="#recipeCarousel" role="button" data-slide="next">
+                    <a class="" href="#chapter-bar-top" role="button" data-slide="next">
                         <span class="carousel-control-icon slide-right" aria-hidden="true">
                             <i class="fas fa-angle-right"></i>
                         </span>
@@ -219,7 +228,7 @@
     <div class="row mx-auto my-auto">
         <div class="col-1 text-center">
             <p class="carousel-control">
-                <a class="" href="#recipeCarousel" role="button" data-slide="prev">
+                <a class="" href="#chapter-bar-bottom" role="button" data-slide="prev">
                     <span class="carousel-control-icon slide-left" aria-hidden="true">
                         <i class="fas fa-angle-left"></i>
                     </span>
@@ -227,7 +236,7 @@
             </p>
         </div>
         <div class="col-10 w-100">
-            <div id="recipeCarousel" class="carousel slide w-100" >
+            <div id="chapter-bar-bottom" class="carousel w-100" >
                 <div class="carousel-inner w-100" role="listbox">
                     <!-- Chapter links -->
                     <?php if ( is_array( $chapter_arr_rev ) && count( $chapter_arr_rev ) ): ?>
@@ -235,13 +244,13 @@
                         <?php foreach ( $chapter_arr_rev as $key => $value ): ?>
 
                             <div class="carousel-item <?= ( (count( $chapter_arr ) - $key) == $row )? "active" : ""?>">
-                                <div class="d-block col-3 <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
-                                    <div class="col-12 chapter-cover">
+                                <div class="d-block col-12 col-sm-12 col-md-6 col-lg-3 chapter-card <?= ( (count( $chapter_arr ) - $key) == $chapter )? "active" : ""?>">
+                                    <div class="d-block col-12 chapter-cover">
                                         <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
-                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image img-fluid"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
                                         </a>
                                     </div>
-                                    <div class="col-12 chapter-body">
+                                    <div class="d-block col-12 chapter-body">
                                         <div class="webcomic-title" >
                                             <a href="<?= '?chapter='. ((count( $chapter_arr ) - $key)); ?>" >
                                                 <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Final Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
@@ -259,7 +268,7 @@
         </div>
         <div class="col-1 text-center">
             <p class="carousel-control">
-                <a class="" href="#recipeCarousel" role="button" data-slide="next">
+                <a class="" href="#chapter-bar-bottom" role="button" data-slide="next">
                     <span class="carousel-control-icon slide-right" aria-hidden="true">
                         <i class="fas fa-angle-right"></i>
                     </span>
@@ -272,8 +281,6 @@
 <script>
   // Add your javascript here
 
-  $('#recipeCarousel').carousel('pause');
-
   $('.carousel .carousel-item').each(function(){
     let next = $(this).next();
     if (!next.length) {
@@ -281,13 +288,13 @@
     }
     next.children(':first-child').clone().appendTo($(this));
 
-    for (let i = 0; i < 4; i++) {
-      next=next.next();
-      if (!next.length) {
-        // next = $(this).siblings(':first');
-      }
-      // next.children(':first-child').clone().appendTo($(this));
-    }
+    // for (let i = 0; i < 4; i++) {
+    //   next=next.next();
+    //   if (!next.length) {
+    //     next = $(this).siblings(':first');
+    //   }
+    //   next.children(':first-child').clone().appendTo($(this));
+    // }
   });
 
   $(".toggle-button").click(function () {

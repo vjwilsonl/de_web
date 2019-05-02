@@ -173,22 +173,21 @@ section.section-webcomic-content {
     font-size: 20px;
   }
 
-  .d-block {
-    width: 20%;
+  .chapter-card {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
-    display: flex !important;
-    flex-wrap: wrap;
 
     .chapter-cover {
+      height: 100%;
       width: 100%;
-      object-fit: cover;
+      overflow: hidden;
     }
 
     .chapter-image {
-      width: 100%;
       object-fit: cover;
-      z-index: 5;
+      object-position: left;
+      width: 100%;
+      height: 100%;
     }
 
     .chapter-body {
@@ -209,7 +208,7 @@ section.section-webcomic-content {
     }
   }
 
-  .d-block.active {
+  .chapter-card.active {
     .chapter-image {
       border: 2px solid $de-pink;
     }
