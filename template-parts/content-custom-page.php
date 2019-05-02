@@ -75,16 +75,16 @@
 
         <?php foreach ($custom_area = get_field("custom_area") as $area) : ?>
             <div class="row custom-area">
-                <div class="col-3"><h4><?= $area['area_name'] ?></h4></div>
-                <div class="col-9">
+                <div class="col-4"><h4><?= $area['area_name'] ?></h4></div>
+                <div class="col-8">
                     <p> <?= nl2br( $area['area_text'] ) ?> </p>
                 </div>
             </div>
         <?php endforeach; ?>
 
         <div class="row behind-the-team">
-            <div class="col-3"><h4>BEHIND THE TEAM</h4></div>
-            <div class="col-9">
+            <div class="col-4"><h4>BEHIND THE TEAM</h4></div>
+            <div class="col-8">
                 <div class="row no-gutters">
                     <?php foreach ($team = get_field("behind_the_team") as $member) : ?>
                     <div class="col-sm-12 col-lg-4 team-card">
