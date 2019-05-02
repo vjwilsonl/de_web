@@ -2,7 +2,7 @@ var forEducatorsGetBtn = document.getElementById('for-educators-get-btn');
 var forEducatorsGetDiv = document.getElementById('for-educators-get-div');
 var forEducatorsList = document.getElementById('for-educators-block');
 var pageCounter = 1;
-var postPerPage = 2;
+var postPerPage = 6;
 
 var dateOptions = {
   year: 'numeric',
