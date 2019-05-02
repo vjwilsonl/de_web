@@ -29,7 +29,8 @@ function getPosts(e) {
   var blogRequest = new XMLHttpRequest();
   blogRequest.open(
     'GET',
-    'http://localhost:8888/wp-json/wp/v2/posts?page=' +
+    customData.base_url +
+      '/wp-json/wp/v2/posts?page=' +
       pageCounter +
       '&per_page=' +
       postPerPage +
@@ -51,7 +52,8 @@ function getPosts(e) {
   };
 
   blogRequest.onerror = function() {
-    console.log('Connection error');
+    blogList.innerHTML +=
+      '<p class="col-sm-12">There are no blogs published yet. Come back later.</p>';
   };
 
   blogRequest.send();

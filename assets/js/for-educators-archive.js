@@ -29,7 +29,8 @@ function getPosts() {
   var forEducatorRequest = new XMLHttpRequest();
   forEducatorRequest.open(
     'GET',
-    'http://localhost:8888/wp-json/wp/v2/for_educators?page=' +
+    customData.base_url +
+      '/wp-json/wp/v2/for_educators?page=' +
       pageCounter +
       '&per_page=' +
       postPerPage
@@ -49,7 +50,8 @@ function getPosts() {
   };
 
   forEducatorRequest.onerror = function() {
-    console.log('Connection error');
+    forEducatorsList.innerHTML +=
+      '<p class="col-sm-12">There are no posts published yet. Come back later.</p>';
   };
 
   forEducatorRequest.send();

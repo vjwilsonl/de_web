@@ -134,13 +134,17 @@ function difference_engine_scripts() {
 	  wp_enqueue_script( 'difference-blog-archive', get_template_directory_uri() . '/assets/js/blog-archive.js', NULL, '20190430', true );
 
 		wp_localize_script('difference-blog-archive', 'customData', array(
-			"featuredId" => $tag_id
+			"featuredId" => $tag_id,
+			"base_url" => get_site_url()
 		));
 	}
 
 	if ( is_post_type_archive('for_educators') ) {
 
 	  wp_enqueue_script( 'difference-for-educators-archive', get_template_directory_uri() . '/assets/js/for-educators-archive.js', NULL, '20190430', true );
+		wp_localize_script('difference-for-educators-archive', 'customData', array(
+			"base_url" => get_site_url()
+		));
 	}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
