@@ -1496,7 +1496,19 @@ section.section-for-educators-single {
         position: absolute;
         object-fit: cover;
         height: 100%;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        z-index: 2;
+        -webkit-transition: opacity 0.5s linear;
+        transition: opacity 0.5s linear; }
+      .behind-the-team .team-card .team-image .team-cover-hover {
+        position: absolute;
+        object-fit: cover;
+        height: 100%;
         width: 100%; }
+    .behind-the-team .team-card .team-image:hover .team-cover {
+      opacity: 0; }
 
 /* Footer */
 /* Footer */

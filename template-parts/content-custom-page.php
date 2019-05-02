@@ -90,7 +90,10 @@
                     <div class="col-sm-12 col-lg-4 team-card">
                         <div><h6 class="team-name"><?= $member['name'] ?></h6></div>
                         <div><p class="team-role"><?= $member['role'] ?></p></div>
-                        <div class="team-image"><img src="<?= $member['image']['url'] ?>" alt="<?= $member['image']['name'] ?>" class="team-cover"></div>
+                        <div class="team-image">
+                            <img src="<?= $member['image']['url'] ?>" alt="<?= $member['image']['name'] ?>" class="team-cover">
+                            <img src="<?= $member['hover_image']['url'] ?>" alt="<?= $member['hover_image']['name'] ?>" class="team-cover-hover">
+                        </div>
                         <div>
                             <p class="team-description">
                                 <?= $member['description'] ?>
