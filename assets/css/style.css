@@ -951,6 +951,9 @@ button.sort-button {
 
 /* Web Comics */
 /* Webcomics Section */
+section.section-webcomics p {
+  margin-bottom: 1rem; }
+
 section.section-webcomics .webcomics-card {
   margin: 20px 0; }
 
@@ -1017,6 +1020,12 @@ section.section-webcomics .webcomics-body .webcomics-read a {
     object-position: left;
     width: 100%;
     height: 100%; }
+
+section.section-webcomic-single p {
+  margin-bottom: 1rem; }
+
+.webcomic-chapters-wrapper p {
+  margin-bottom: 1rem; }
 
 .webcomic-chapters-wrapper .webcomic-chapter:first-child {
   border-top: 1px solid #e5e5e5; }
@@ -1223,6 +1232,9 @@ section.section-webcomic-content {
 
 /* Blog */
 /* Blog Section */
+section.section-blog p {
+  margin-bottom: 1rem; }
+
 section.section-blog .blog-carousel {
   margin: 20px 0;
   overflow: hidden; }
@@ -1359,7 +1371,8 @@ section.section-blog-single {
     margin-top: 1rem;
     margin-bottom: 2rem; }
   section.section-blog-single p {
-    font-family: "Mukta", san-serif; }
+    font-family: "Mukta", san-serif;
+    margin-bottom: 1rem; }
 
 .featured-blog-image {
   display: block;
@@ -1512,7 +1525,8 @@ section.section-for-educators-single {
 .footer {
   margin-top: 3rem; }
   .footer .footer-text p {
-    font-family: "Mukta", san-serif; }
+    font-family: "Mukta", san-serif;
+    margin-bottom: 1rem; }
   .footer .footer-copyright {
     margin-top: .5rem; }
     .footer .footer-copyright p {

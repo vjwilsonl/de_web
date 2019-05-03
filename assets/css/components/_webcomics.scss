@@ -1,6 +1,10 @@
 /* Webcomics Section */
 
 section.section-webcomics {
+  p {
+    margin-bottom: 1rem;
+  }
+
   .webcomics-card {
     margin: 20px 0;
   }
@@ -90,7 +94,17 @@ section.section-webcomics {
   }
 }
 
+section.section-webcomic-single {
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
 .webcomic-chapters-wrapper {
+
+  p {
+    margin-bottom: 1rem;
+  }
 
   .webcomic-chapter:first-child {
     border-top: $de-divider;

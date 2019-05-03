@@ -1,6 +1,10 @@
 /* Blog Section */
 
 section.section-blog {
+  p {
+    margin-bottom: 1rem;
+  }
+
   .blog-carousel {
     margin: 20px 0;
     overflow: hidden;
@@ -184,6 +188,7 @@ section.section-blog-single {
 
   p {
     font-family: $mukta;
+    margin-bottom: 1rem;
   }
 }
 
