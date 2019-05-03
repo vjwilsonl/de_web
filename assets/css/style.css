@@ -1494,9 +1494,7 @@ section.section-for-educators-single {
         width: 100%;
         visibility: visible;
         opacity: 1;
-        z-index: 2;
-        -webkit-transition: opacity 0.5s linear;
-        transition: opacity 0.5s linear; }
+        z-index: 2; }
       .behind-the-team .team-card .team-image .team-cover-hover {
         position: absolute;
         object-fit: cover;
