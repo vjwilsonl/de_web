@@ -28,7 +28,8 @@ a:hover {
 
 p {
   font-family: "Mukta", san-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  margin-bottom: 0; }
   p strong {
     font-weight: 500; }
 
@@ -184,9 +185,6 @@ aside .section-title {
   font-family: "Mukta", san-serif; }
 
 /* Lists */
-ul > li {
-  padding: 0.25rem 0; }
-
 /* Sidebar */
 .sidebar {
   border-left: 1px solid #e5e5e5;
