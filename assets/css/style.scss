@@ -71,9 +71,12 @@ p {
   font-size: 16px;
 
   strong {
-    //font-family: $dinosaur;
     font-weight: $font-medium;
   }
+}
+
+ul {
+  font-family: $mukta;
 }
 
 /* Header and Navigation */
@@ -816,12 +819,15 @@ section.section-carousel {
       }
 
       .carousel-title {
-        font-family: $dinosaur;
-        color: white;
-        font-size: 24px;
-        text-transform: uppercase;
         margin-top: 0.4rem;
         margin-bottom: 0.4rem;
+
+        a {
+          font-family: $dinosaur;
+          color: white;
+          font-size: 24px;
+          text-transform: uppercase;
+        }
       }
     }
   }
