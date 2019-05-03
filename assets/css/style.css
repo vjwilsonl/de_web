@@ -865,7 +865,7 @@ button.btn {
     content: '';
     color: #FF0098;
     position: absolute;
-    height: 106%;
+    height: 105%;
     width: 100%;
     border: 0;
     border-right-width: 4px;
