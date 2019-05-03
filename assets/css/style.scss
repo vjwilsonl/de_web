@@ -77,6 +77,10 @@ p {
 
 ul {
   font-family: $mukta;
+
+  li {
+    padding: 0;
+  }
 }
 
 /* Header and Navigation */
@@ -754,7 +758,7 @@ section.section-jumbotron {
 
     p {
       color: $white;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
   }
 
