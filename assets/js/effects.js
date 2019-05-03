@@ -26,10 +26,10 @@ $(document).ready(function () {
   });
 
   $(window).scroll(function (e) {
-    var headerHeight = $('.main-header').height();
-    var imgHeight = $('.featured-img').height();
-    var titleHeight = $('.post-heading').height();
-    var scrollHeight = headerHeight + imgHeight + titleHeight;
+    let headerHeight = $('.main-header').height() || 0;
+    let imgHeight = $('.featured-img').height() || 0;
+    let titleHeight = $('.post-heading').height() || 0;
+    let scrollHeight = headerHeight + imgHeight + titleHeight;
 
     if ($(this).scrollTop() > scrollHeight) { // When scroll height reach the share button
       $('.share-buttons').addClass('share-buttons--fix'); // Add class to fix the placement of button
