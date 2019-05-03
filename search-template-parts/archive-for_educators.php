@@ -7,7 +7,7 @@
      * @package Difference_Engine
      */
 ?>
-<!--    <div class="row for-educators-block">-->
+    <div class="row">
         <div class="col-sm-12 col-lg-4 for-educators-card">
             <a class="" href="<?= get_post_permalink() ?>">
                 <div class="for-educators-image">
@@ -21,4 +21,4 @@
                 </h2>
             </div>
         </div>
-<!--    </div>-->
+    </div>

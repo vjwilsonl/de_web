@@ -23,8 +23,10 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
+
                         <?php
                             while( have_posts() ) :
+
                                 the_post();
 
                                 /**
@@ -36,7 +38,7 @@
                                 if(get_post_type() === 'post') : ?>
 
                                     <main>
-                                        <div class="container">
+<!--                                        <div class="container">-->
                                             <section class="section-blog">
                                                 <div class="row">
                                                     <div class="col-12 section-title">
@@ -45,12 +47,12 @@
                                                 </div>
                                                 <?php get_template_part('search-template-parts/archive-blog'); ?>
                                             </section>
-                                        </div>
+<!--                                        </div>-->
                                     </main>
 
                                 <?php elseif (get_post_type() === 'for_educators') : ?>
                                     <main>
-                                        <div class="container">
+<!--                                        <div class="container">-->
                                             <section class="section-for-educators">
                                                 <div class="row">
                                                     <div class="col-12 section-title">
@@ -59,12 +61,12 @@
                                                 </div>
                                                 <?php get_template_part('search-template-parts/archive-for_educators'); ?>
                                             </section>
-                                        </div>
+<!--                                        </div>-->
                                     </main>
 
                                 <?php elseif (get_post_type() === 'web_comics') : ?>
                                     <main>
-                                        <div class="container">
+<!--                                        <div class="container">-->
                                             <section class="section-for-educators">
                                                 <div class="row">
                                                     <div class="col-12 section-title">
@@ -73,7 +75,7 @@
                                                 </div>
                                                 <?php get_template_part('search-template-parts/archive-web_comics'); ?>
                                             </section>
-                                        </div>
+<!--                                        </div>-->
                                     </main>
                                 <?php else: ?>
                                     <?php get_template_part( 'template-parts/content', 'search' ); ?>

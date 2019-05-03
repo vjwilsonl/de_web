@@ -14,7 +14,7 @@
             $trimmed_content = wp_trim_words( get_the_content(), 25, "" );
             $publish_date = get_the_date( 'F j, Y');
         ?>
-
+        <div class="row">
         <div class="col-sm-12 col-lg-4 blog-card">
             <a class="" href="<?= get_post_permalink() ?>">
                 <div class="blog-image">
@@ -34,6 +34,7 @@
                     </a>
                 </p>
             </div>
+        </div>
         </div>
 <!--    </div>-->
 

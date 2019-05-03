@@ -9,10 +9,11 @@
 ?>
 
 <?php
-    $web_comics->the_post();
+    the_post();
     $creator     = get_field( 'creator' );
     $status_flag = ( class_exists( 'acf' ) ) ? ( ( get_field( 'status_flag' ) ) ? get_field( 'status_flag' ) : '' ) : '';
 ?>
+    <div class="row">
     <div class="col-sm-12 col-lg-6 webcomics-card">
         <a class="" href="<?= get_post_permalink() ?>">
             <div class="webcomics-image">
@@ -42,5 +43,6 @@
                 </a>
             </p>
         </div>
+    </div>
     </div>
 
