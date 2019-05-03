@@ -13,10 +13,6 @@ body {
     body .main aside {
       margin: 3rem 0; }
 
-img:not(.img-fluid) {
-  width: 100%;
-  height: auto; }
-
 a {
   cursor: pointer;
   color: #ff0098; }
