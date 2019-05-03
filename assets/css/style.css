@@ -1395,6 +1395,9 @@ section.section-blog-single {
 
 /* For Educators */
 /* For Educators Section */
+section.section-for-educators p {
+  margin-bottom: 1rem; }
+
 section.section-for-educators .for-educators-card {
   margin: 20px 0; }
 
@@ -1473,7 +1476,8 @@ section.section-for-educators-single {
     margin-top: 1rem;
     margin-bottom: 2rem; }
   section.section-for-educators-single p {
-    font-family: "Mukta", san-serif; }
+    font-family: "Mukta", san-serif;
+    margin-bottom: 1rem; }
 
 /* About Page */
 .custom-area {
