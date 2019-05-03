@@ -278,11 +278,6 @@ aside {
 
 /* Lists */
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
 ul > li {
   padding: 0.25rem 0;
 }
@@ -325,6 +320,11 @@ ul > li {
 .share-buttons {
   background: none;
   border: 0;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
 
   ul li {
     width: 40px;
