@@ -43,9 +43,9 @@
                             <div class="col-sm-12 col-lg-12 blog-card-big">
                                 <div class="row">
                                     <div class="col-sm-12 col-lg-6">
-                                        <a class="" href="<?= get_post_permalink() ?>">
-                                            <div class="blog-image">
-                                                <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover">
+                                        <a class="" href="<?= get_permalink() ?>">
+                                            <div class="blog-image-75">
+                                                <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover-75">
                                                 <div class="blog-image-hover"></div>
                                             </div>
                                         </a>
@@ -58,7 +58,7 @@
                                                 <?= $trimmed_content . " (...)"; ?>
                                             </p>
                                             <p class="blog-read">
-                                                <a class="" href="<?= get_post_permalink() ?>">
+                                                <a class="" href="<?= get_permalink() ?>">
                                                     READ MORE &nbsp; <i class="fas fa-arrow-right"></i>
                                                 </a>
                                             </p>

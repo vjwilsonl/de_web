@@ -74,12 +74,12 @@ function prepareHTML(data) {
       var published_date = new Date(data[i].date_gmt);
       html += '<div class="col-sm-12 col-lg-4 blog-card"><a class="" href="';
       html += data[i].link;
-      html += '"><div class="blog-image"><img src="';
+      html += '"><div class="blog-image-75"><img src="';
       html += data[i].fimg_url;
       html += '" alt="';
       html += data[i].title.rendered;
       html +=
-        '" class="blog-cover"><div class="blog-image-hover"></div></div></a><div class="blog-body"><p class="blog-date">';
+        '" class="blog-cover-75"><div class="blog-image-hover"></div></div></a><div class="blog-body"><p class="blog-date">';
       html += published_date.toLocaleDateString('en-US', dateOptions);
       html += '</p><h2 class="blog-title">';
       html += data[i].title.rendered;
