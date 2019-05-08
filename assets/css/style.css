@@ -1480,7 +1480,7 @@ section.section-for-educators .for-educators-image-hover {
   opacity: 0; }
 
 section.section-for-educators .for-educators-image-hover:hover {
-  opacity: 0.8;
+  opacity: 0.5;
   transition: 1s ease; }
 
 section.section-for-educators .for-educators-body .for-educators-title a,
