@@ -23,7 +23,7 @@ section.section-webcomics {
 
   .webcomics-image:after {
     content: '';
-    color: #FF0098;
+    color: #ff0098;
     position: absolute;
     height: 104%;
     width: 80%;
@@ -54,16 +54,17 @@ section.section-webcomics {
     width: 100%;
     height: 200px;
     z-index: 5;
+    background: $image-hover;
+    opacity: 0;
   }
 
   .webcomics-image-hover:hover {
-    background: $image-hover;
-    transition: 1s ease;
+    opacity: 0.5;
+    transition: 0.5s ease;
   }
 
   .webcomics-body {
     .webcomics-title {
-
     }
 
     .webcomics-text {
@@ -76,7 +77,6 @@ section.section-webcomics {
       color: $de-pink;
     }
   }
-
 }
 
 /* Single Webcomic */
@@ -101,7 +101,6 @@ section.section-webcomic-single {
 }
 
 .webcomic-chapters-wrapper {
-
   p {
     margin-bottom: 1rem;
   }
@@ -149,7 +148,6 @@ section.section-webcomic-single {
   }
 }
 
-
 /* Breakpoint SM */
 
 @media (max-width: 991px) {
@@ -162,5 +160,4 @@ section.section-webcomic-single {
       }
     }
   }
-
 }
