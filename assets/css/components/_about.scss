@@ -7,6 +7,7 @@
   margin-bottom: 3rem;
 
   .team-card {
+    margin-bottom: 1rem;
     padding-right: 1rem;
 
     .team-name {}
@@ -24,7 +25,7 @@
 
       &:after {
         content: '';
-        color: #ff0098;
+        color: $de-pink;
         position: absolute;
         height: 104%;
         width: 80%;

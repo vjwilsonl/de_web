@@ -11,22 +11,14 @@
   }
 
   .footer-copyright {
-    margin-top: .5rem;
+    margin: 2rem 0;
+
     p {
       font-family: $mukta;
       font-size: 14px;
     }
   }
-
 }
-
-.footer-border-mobile {
-  display: none;
-  min-height: 0;
-}
-
-
-
 
 /* Return to top button */
 
@@ -68,6 +60,7 @@
   transition: all 0.3s ease;
 }
 
+/* Subscribe Contact Form */
 div.wpcf7-response-output {
   margin: 2rem 0;
   padding: 0;

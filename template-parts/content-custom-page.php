@@ -56,7 +56,7 @@
             </div>
 
         <?php endif; ?>
-        <div class="row">
+        <div class="row" style="margin-top: 1rem;">
             <div class="col-12">
                 <p><?= the_content(); ?></p>
             </div>

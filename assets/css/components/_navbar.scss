@@ -1,3 +1,24 @@
+/* Social & Search Bar */
+
+header.main-header {
+  background-color: $de-background;
+  color: $de-pink;
+
+  .list-inline {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  .subnav-links,
+  .subnav-links a {
+    color: $de-pink;
+    padding: 0.5rem 0;
+    text-align: right;
+  }
+}
+
+/* Naigation Menu */
+
 .navbar-wrapper {
   background-color: $de-background;
   margin-bottom: 25px;

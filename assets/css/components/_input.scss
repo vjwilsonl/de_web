@@ -1,19 +1,25 @@
 /* Input */
-
+input,
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus,
 input.form-control,
 textarea.form-control,
+input.form-control:hover,
 input.form-control:focus,
 input.form-control:-webkit-autofill,
 input.form-control:-webkit-autofill:hover,
-input.form-control:-webkit-autofill:focus,
-textarea.form-control:focus {
-  background: transparent;
+input.form-control:-webkit-autofill:focus {
+  background: transparent !important;
   border: 0;
-  border-bottom: 2px solid $de-pink;
+  border-bottom: 2px solid $de-pink !important;
   border-radius: 0;
   padding-left: 0;
   padding-right: 0;
   margin: .5rem 0;
+  outline: 0;
+  box-shadow: none !important;
 }
 
 input.form-control::placeholder,
@@ -31,6 +37,12 @@ button.btn {
   font-family: $dinosaur;
   font-weight: normal;
   font-size: 14px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+  cursor: pointer;
   color: $de-pink;
   background-color: $de-background;
   padding: 0.5rem 2rem;
@@ -47,7 +59,7 @@ button.btn {
 
   &:after {
     content: '';
-    color: #FF0098;
+    color: $de-pink;
     position: absolute;
     height: 105%;
     width: 100%;
@@ -99,11 +111,12 @@ button.btn {
 }
 
 button.btn-search {
+  font-family: $mukta;
   font-weight: normal;
   font-size: 16px;
   color: $de-pink;
   background-color: $de-background;
-  padding: 0 1rem;
+  padding: 0.2rem 2rem 0.2rem 0.5rem;
   border: 0;
   border-radius: 0;
   overflow: hidden;
@@ -111,19 +124,24 @@ button.btn-search {
 }
 
 input.input-search {
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid transparent !important;
+  outline: none;
+  text-align: right;
 }
 
-input.input-search, input.input-search:focus {
+input.input-search,
+input.input-search:focus {
   color: $de-pink;
   font-family: $dinosaur;
+  border: 0;
+  border-bottom: 2px solid $de-pink;
 }
 
 input.input-search::placeholder {
   color: $de-pink;
-  font-size: 16px;
   font-family: $dinosaur;
   text-transform: uppercase;
+  text-align: right;
 }
 
 button.sort-button {
