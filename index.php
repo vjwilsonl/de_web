@@ -45,7 +45,7 @@
                                     <div class="col-sm-12 col-lg-6">
                                         <a class="" href="<?= get_permalink() ?>">
                                             <div class="blog-image-75">
-                                                <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="blog-cover-75">
+                                                <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title(); ?>" class="blog-cover-75">
                                                 <div class="blog-image-hover"></div>
                                             </div>
                                         </a>

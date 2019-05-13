@@ -24,64 +24,62 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <?php
-                            while( have_posts() ) :
+                        <?php if( have_posts() ):
+                            $types = array('web_comics', 'post', 'for_educators');
+                            foreach( $types as $type ): ?>
+                                <?php $count[$type] = 0; ?>
+                                <?php
+                                switch ($type) {
+                                    case "post":
+                                        $postFile = "blog";
+                                        $postName = "Blog";
+                                        $postSlug = "blog";
+                                        break;
+                                    case "web_comics":
+                                        $postFile = "web_comics";
+                                        $postName = "Web Comics";
+                                        $postSlug = "webcomics";
+                                        break;
+                                    case "for_educators":
+                                        $postFile = "for_educators";
+                                        $postName = "Educators";
+                                        $postSlug = "for-educators";
+                                        break;
+                                    default:
+                                        $postFile = "blog";
+                                        $postName = "Blog";
+                                        $postSlug = "blog";
+                                }
+                                ?>
+                                <section class="section-<?= $postSlug ?>">
+                                    <div class="row">
+                                        <div class="col-12 section-title">
+                                            <h1>Section: <?= $postName ?></h1>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                    <?php while( have_posts() ): ?>
+                                        <?php the_post(); ?>
+                                        <?php if($type == get_post_type()): ?>
+                                            <?php $count[$type] ++ ?>
+                                            <?php get_template_part("search-template-parts/archive-".$postFile); ?>
+                                        <?php endif; ?>
+                                    <?php endwhile; ?>
+                                    </div>
+                                    <?php rewind_posts(); ?>
+                                </section>
 
-                                the_post();
-
-                                /**
-                                 * Run the loop for the search to output the results.
-                                 * If you want to overload this in a child theme then include a file
-                                 * called content-search.php and that will be used instead.
-                                 */
-
-                                if(get_post_type() === 'post') : ?>
-
-                                    <main>
-<!--                                        <div class="container">-->
-                                            <section class="section-blog">
-                                                <div class="row">
-                                                    <div class="col-12 section-title">
-                                                        <h1>Blog</h1>
-                                                    </div>
-                                                </div>
-                                                <?php get_template_part('search-template-parts/archive-blog'); ?>
-                                            </section>
-<!--                                        </div>-->
-                                    </main>
-
-                                <?php elseif (get_post_type() === 'for_educators') : ?>
-                                    <main>
-<!--                                        <div class="container">-->
-                                            <section class="section-for-educators">
-                                                <div class="row">
-                                                    <div class="col-12 section-title">
-                                                        <h1>For Educators</h1>
-                                                    </div>
-                                                </div>
-                                                <?php get_template_part('search-template-parts/archive-for_educators'); ?>
-                                            </section>
-<!--                                        </div>-->
-                                    </main>
-
-                                <?php elseif (get_post_type() === 'web_comics') : ?>
-                                    <main>
-<!--                                        <div class="container">-->
-                                            <section class="section-for-educators">
-                                                <div class="row">
-                                                    <div class="col-12 section-title">
-                                                        <h1>For Educators</h1>
-                                                    </div>
-                                                </div>
-                                                <?php get_template_part('search-template-parts/archive-web_comics'); ?>
-                                            </section>
-<!--                                        </div>-->
-                                    </main>
-                                <?php else: ?>
-                                    <?php get_template_part( 'template-parts/content', 'search' ); ?>
+                                <?php if($count[$type] <= 0): ?>
+                                    <style>
+                                        .section-<?=$postSlug?> {
+                                            display: none;
+                                        }
+                                    </style>
                                 <?php endif; ?>
 
-                            <?php endwhile; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </section>
@@ -89,5 +87,4 @@
         </div>
     </main>
 
-<?php
-    get_footer();
+<?php get_footer();
