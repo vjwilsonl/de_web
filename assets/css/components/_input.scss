@@ -1,5 +1,6 @@
 /* Input */
 input,
+textarea,
 input:hover,
 input:focus,
 textarea:hover,
@@ -8,9 +9,8 @@ input.form-control,
 textarea.form-control,
 input.form-control:hover,
 input.form-control:focus,
-input.form-control:-webkit-autofill,
-input.form-control:-webkit-autofill:hover,
-input.form-control:-webkit-autofill:focus {
+textarea.form-control:hover,
+textarea.form-control:focus {
   background: transparent !important;
   border: 0;
   border-bottom: 2px solid $de-pink !important;

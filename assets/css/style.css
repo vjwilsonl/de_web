@@ -7,6 +7,8 @@ body {
   background-color: #f7f7f7;
   font-family: "dinosaur", san-serif;
   color: #545454; }
+  body *, body *:focus {
+    outline: none !important; }
   body .main {
     background-color: #f7f7f7; }
     body .main section,
@@ -356,6 +358,7 @@ header.main-header {
 /* Input Forms & Button */
 /* Input */
 input,
+textarea,
 input:hover,
 input:focus,
 textarea:hover,
@@ -364,9 +367,8 @@ input.form-control,
 textarea.form-control,
 input.form-control:hover,
 input.form-control:focus,
-input.form-control:-webkit-autofill,
-input.form-control:-webkit-autofill:hover,
-input.form-control:-webkit-autofill:focus {
+textarea.form-control:hover,
+textarea.form-control:focus {
   background: transparent !important;
   border: 0;
   border-bottom: 2px solid #e10098 !important;

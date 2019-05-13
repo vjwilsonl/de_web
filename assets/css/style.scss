@@ -37,6 +37,10 @@ body {
   font-family: $dinosaur;
   color: $dark-grey;
 
+  *, *:focus {
+    outline: none !important;
+  }
+
   .main {
     background-color: $de-background;
 
