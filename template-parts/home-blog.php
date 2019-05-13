@@ -89,9 +89,12 @@
                     </a>
                     <div class="col-sm-12 offset-lg-6 col-lg-6">
                         <ol class="carousel-indicators">
-                            <li data-target="#blogCarouselIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#blogCarouselIndicators" data-slide-to="1" ></li>
-                            <li data-target="#blogCarouselIndicators" data-slide-to="2" ></li>
+                            <?php for($row = 0; $row < $blog_post->post_count; $row++): ?>
+                                <li data-target="#blogCarouselIndicators"
+                                    data-slide-to="<?= $row ?>"
+                                    class="<?= ($row === 0) ? 'active' : '' ?>">
+                                </li>
+                            <?php endfor; ?>
                         </ol>
                     </div>
                 </div>
