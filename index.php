@@ -53,7 +53,9 @@
                                     <div class="col-sm-12 col-lg-6">
                                         <div class="blog-body">
                                             <p class="blog-date"><?= $publish_date ?></p>
-                                            <h2 class="blog-title"><?= the_title(); ?></h2>
+                                            <h2 class="blog-title">
+                                                <a class="" href="<?= get_permalink() ?>"> <?= the_title(); ?> </a>
+                                            </h2>
                                             <p class="blog-text">
                                                 <?= $trimmed_content . " (...)"; ?>
                                             </p>

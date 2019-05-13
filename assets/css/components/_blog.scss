@@ -24,7 +24,12 @@ section.section-blog {
   }
 
   .blog-carousel-control {
-    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 100px;
+    width: 15%;
+    color: $de-pink;
+    opacity: 1;
   }
 
   .carousel-indicators li {
@@ -195,6 +200,9 @@ section.section-blog {
     }
 
     .blog-title {
+      a {
+        color: $de-blue;
+      }
     }
 
     .blog-text {
@@ -249,6 +257,13 @@ section.section-blog-single {
 
 @media (max-width: 991px) {
   section.section-blog {
+
+    .blog-carousel {
+      .carousel-item {
+        min-height: 540px;
+      }
+    }
+
     .carousel-indicators {
       left: 0;
       -webkit-box-pack: center;

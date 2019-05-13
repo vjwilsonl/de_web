@@ -25,7 +25,9 @@
     <section class="section-webcomics border-top">
         <div class="row section-title">
             <div class="col-6">
-                <h1>Read Online</h1>
+                <a class="" href="<?= get_post_type_archive_link('web_comics'); ?>">
+                    <h1>Read Online</h1>
+                </a>
             </div>
             <div class="col-6">
                 <p class="text-right align-middle webcomics-read-all">
@@ -50,7 +52,10 @@
                         </div>
                     </a>
                     <div class="webcomics-body">
-                        <h2 class="webcomics-title"><?= the_title(); ?></h2>
+
+                        <h2 class="webcomics-title">
+                            <a class="" href="<?= get_post_permalink() ?>"> <?= the_title(); ?> </a>
+                        </h2>
                         <p class="webcomics-text">
                             <?php
                                 if ( is_array( $creator ) && ! empty( $creator ) ):

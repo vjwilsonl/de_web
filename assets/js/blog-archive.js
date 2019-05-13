@@ -82,7 +82,9 @@ function prepareHTML(data) {
         '" class="blog-cover-75"><div class="blog-image-hover"></div></div></a><div class="blog-body"><p class="blog-date">';
       html += published_date.toLocaleDateString('en-US', dateOptions);
       html += '</p><h2 class="blog-title">';
+      html += '<a class="" href="' + data[i].link + '">';
       html += data[i].title.rendered;
+      html += '</a>';
       html += '</h2><p class="blog-text">';
       html += data[i].trimmed_content + ' (...)';
       html += '</p><p class="blog-read"><a class="" href="';

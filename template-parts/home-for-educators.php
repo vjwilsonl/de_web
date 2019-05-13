@@ -25,7 +25,9 @@
     <section class="section-for-educators border-top">
         <div class="row section-title">
             <div class="col-6">
-                <h1>For Educators</h1>
+                <a class="" href="<?= get_post_type_archive_link('for_educators'); ?>">
+                    <h1>For Educators</h1>
+                </a>
             </div>
             <div class="col-6">
                 <p class="text-right align-middle for-educators-read-all">

@@ -96,7 +96,9 @@
                                     </div>
                                 </a>
                                 <div class="webcomics-body">
-                                    <h2 class="webcomics-title"><?= the_title(); ?></h2>
+                                    <h2 class="webcomics-title">
+                                        <a class="" href="<?= get_post_permalink() ?>"> <?= the_title(); ?> </a>
+                                    </h2>
                                     <p class="webcomics-text">
                                         <?php
                                             if ( is_array( $creator ) && ! empty( $creator ) ):

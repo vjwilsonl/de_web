@@ -65,6 +65,9 @@ section.section-webcomics {
 
   .webcomics-body {
     .webcomics-title {
+      a {
+        color: $de-blue;
+      }
     }
 
     .webcomics-text {
@@ -131,6 +134,7 @@ section.section-webcomic-single {
 
       .webcomic-title {
         .chapter-no {
+          color: $dark-grey;
           font-family: $mukta;
           font-size: 16px;
         }

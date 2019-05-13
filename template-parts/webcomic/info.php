@@ -77,14 +77,18 @@
                                                 <div class="row no-gutters webcomic-chapter">
                                                     <div class="col-sm-12 col-lg-5">
                                                         <div class="chapter-cover">
-                                                            <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                                            <a href="?chapter=<?= count( $chapter_arr ) - $key; ?>">
+                                                                <img alt="<?= $value['chapter_title']; ?>" class="chapter-image"  src="<?= ( $value['chapter_image']['url'] ) ? $value['chapter_image']['url'] : ''; ?>">
+                                                            </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 col-lg-7 chapter-body">
                                                         <div class="row no-gutters">
                                                             <div class="col-8 webcomic-title" >
-                                                                <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Last Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
-                                                                <h6 class="chapter-title"><?= $value['chapter_title']; ?></h6>
+                                                                <a href="?chapter=<?= count( $chapter_arr ) - $key; ?>">
+                                                                    <p class="chapter-no"><?= $value['chapter_no']; ?> <?= ( ! $key ) ? '(Last Chapter)' : ''; ?></p><!-- <span class="up">UP</span> -->
+                                                                    <h6 class="chapter-title"><?= $value['chapter_title']; ?></h6>
+                                                                </a>
                                                             </div>
                                                             <div class="col-4">
                                                                 <p class="text-right align-middle chapter-read">

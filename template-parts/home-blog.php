@@ -23,7 +23,9 @@
     <section class="section-blog border-top">
         <div class="row section-title">
             <div class="col-6">
-                <h1>Blog</h1>
+                <a class="" href="<?= get_post_type_archive_link('post'); ?>">
+                    <h1>Blog</h1>
+                </a>
             </div>
             <div class="col-6">
                 <p class="text-right align-middle blog-read-all">
@@ -56,7 +58,9 @@
                                 <div class="col-sm-12 col-lg-6">
                                     <div class="blog-body">
                                         <p class="blog-date"><?= $publish_date ?></p>
-                                        <h2 class="blog-title"><?= the_title(); ?></h2>
+                                        <h2 class="blog-title">
+                                            <a class="" href="<?= get_post_permalink() ?>"> <?= the_title(); ?> </a>
+                                        </h2>
                                         <p class="blog-text">
                                             <?= $trimmed_content . " (...)"; ?>
                                         </p>
@@ -70,6 +74,18 @@
                             </div>
                         </div>
                     <?php $row++; endwhile; ?>
+                    <a class="carousel-control-prev blog-carousel-control hidden-lg-up" href="#blogCarouselIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-icon slide-left" aria-hidden="true">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next blog-carousel-control hidden-lg-up" href="#blogCarouselIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-icon slide-right" aria-hidden="true">
+                            <i class="fas fa-angle-right"></i>
+                        </span>
+                        <span class="sr-only">Next</span>
+                    </a>
                     <div class="col-sm-12 offset-lg-6 col-lg-6">
                         <ol class="carousel-indicators">
                             <li data-target="#blogCarouselIndicators" data-slide-to="0" class="active"></li>
