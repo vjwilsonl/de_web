@@ -13,6 +13,7 @@
 <?php
     $args = array(
         'post_type'      => 'for_educators',
+        'tag'            => 'homepage',
         'posts_per_page' => 3,
         'order'          => 'DESC',
         'orderby'        => 'ID',
@@ -26,7 +27,7 @@
         <div class="row section-title">
             <div class="col-6">
                 <a class="" href="<?= get_post_type_archive_link('for_educators'); ?>">
-                    <h1>For Educators</h1>
+                    <h1>Educators</h1>
                 </a>
             </div>
             <div class="col-6">

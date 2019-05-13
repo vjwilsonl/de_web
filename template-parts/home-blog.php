@@ -13,6 +13,7 @@
 <?php
     $args = array(
         'posts_per_page' => 3,
+        'tag'            => 'homepage',
         'order'          => 'DESC',
         'orderby'        => 'ID',
     );
