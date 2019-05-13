@@ -49,6 +49,24 @@ section.section-blog {
   .blog-read-all {
     margin-top: 1rem;
     font-family: $dinosaur;
+
+    a {
+      i {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+    }
+
+    a:hover {
+      i {
+        position: relative;
+        transform: translateX(6px);
+        -webkit-transform: translateX(6px);
+      }
+    }
   }
 
   .blog-card-big {
@@ -210,9 +228,27 @@ section.section-blog {
       font-size: 16px;
     }
 
-    .blog-read a {
-      color: $de-pink;
-      font-family: $dinosaur;
+    .blog-read {
+      a {
+        font-family: $dinosaur;
+        color: $de-pink;
+
+        i {
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
+      }
+
+      a:hover {
+        i {
+          position: relative;
+          transform: translateX(6px);
+          -webkit-transform: translateX(6px);
+        }
+      }
     }
   }
 }

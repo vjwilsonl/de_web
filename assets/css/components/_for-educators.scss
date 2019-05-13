@@ -12,6 +12,24 @@ section.section-for-educators {
   .for-educators-read-all {
     margin-top: 1rem;
     font-family: $dinosaur;
+
+    a {
+      i {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+    }
+
+    a:hover {
+      i {
+        position: relative;
+        transform: translateX(6px);
+        -webkit-transform: translateX(6px);
+      }
+    }
   }
 
   .for-educators-image {
