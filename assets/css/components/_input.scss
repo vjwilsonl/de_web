@@ -144,6 +144,18 @@ input.input-search::placeholder {
   text-align: right;
 }
 
+// Mobile Search Button
+.mobile-search {
+  input {
+    width: 100% !important;
+  }
+
+  input::placeholder {
+    text-align: left;
+  }
+}
+
+// Sorting Option On Webcomics Archive 
 button.sort-button {
   border: 1px solid #C4C4C4;
   color: $dark-grey;

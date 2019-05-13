@@ -475,6 +475,12 @@ input.input-search::placeholder {
   text-transform: uppercase;
   text-align: right; }
 
+.mobile-search input {
+  width: 100% !important; }
+
+.mobile-search input::placeholder {
+  text-align: left; }
+
 button.sort-button {
   border: 1px solid #C4C4C4;
   color: #545454; }
