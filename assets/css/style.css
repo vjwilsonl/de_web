@@ -934,17 +934,17 @@ section.section-blog .blog-card {
     height: 200px;
     overflow: visible;
     margin-bottom: 20px; }
-  section.section-blog .blog-card .blog-image:after {
+  section.section-blog .blog-card .blog-image-75::before {
     content: '';
     color: #e10098;
     position: absolute;
-    height: 104%;
+    height: 103%;
     width: 80%;
     border: 0;
     border-right-width: 2px;
     border-bottom-width: 2px;
     border-style: solid;
-    top: 0;
+    top: 0px;
     right: -8px; }
   section.section-blog .blog-card .blog-cover {
     width: 100%;
@@ -963,7 +963,8 @@ section.section-blog .blog-card {
     width: 100%;
     position: relative;
     height: 0;
-    padding: 71.43% 0 0 0; }
+    padding: 71.43% 0 0 0;
+    margin-bottom: 0.75rem; }
   section.section-blog .blog-card .blog-cover-75 {
     position: absolute;
     object-fit: cover;

@@ -79,7 +79,7 @@ function prepareHTML(data) {
       html += '" alt="';
       html += data[i].title.rendered;
       html +=
-        '" class="blog-cover-75"><div class="blog-image-hover"></div></div></a><div class="blog-body"><p class="blog-date">';
+        '" class="blog-cover-75"></div></a><div class="blog-body"><p class="blog-date">';
       html += published_date.toLocaleDateString('en-US', dateOptions);
       html += '</p><h2 class="blog-title">';
       html += '<a class="" href="' + data[i].link + '">';
