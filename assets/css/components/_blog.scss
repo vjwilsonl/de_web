@@ -143,17 +143,17 @@ section.section-blog {
       margin-bottom: 20px;
     }
 
-    .blog-image:after {
+    .blog-image-75::before {
       content: '';
       color: $de-pink;
       position: absolute;
-      height: 104%;
+      height: 103%;
       width: 80%;
       border: 0;
       border-right-width: 2px;
       border-bottom-width: 2px;
       border-style: solid;
-      top: 0;
+      top: 0px;
       right: -8px;
     }
 
@@ -181,6 +181,7 @@ section.section-blog {
       position: relative;
       height: 0;
       padding: 71.43% 0 0 0;
+      margin-bottom: 0.75rem;
       // overflow: hidden;
     }
 
@@ -293,7 +294,6 @@ section.section-blog-single {
 
 @media (max-width: 991px) {
   section.section-blog {
-
     .blog-carousel {
       .carousel-item {
         min-height: 540px;
