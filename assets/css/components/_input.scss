@@ -81,6 +81,7 @@ button.btn {
 }
 
 .btn-animated {
+  color: $de-background;
   transition-property: color;
   transition-duration: 0.5s;
 
@@ -92,6 +93,7 @@ button.btn {
     right: 0;
     bottom: 0;
     background: $de-pink;
+    color: $de-background;
     transform: scaleX(0);
     transform-origin: 0 50%;
     transition-property: transform;

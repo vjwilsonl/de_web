@@ -423,6 +423,7 @@ button.btn {
     right: -5px; }
 
 .btn-animated {
+  color: #f7f7f7;
   transition-property: color;
   transition-duration: 0.5s; }
   .btn-animated:before {
@@ -433,6 +434,7 @@ button.btn {
     right: 0;
     bottom: 0;
     background: #e10098;
+    color: #f7f7f7;
     transform: scaleX(0);
     transform-origin: 0 50%;
     transition-property: transform;
